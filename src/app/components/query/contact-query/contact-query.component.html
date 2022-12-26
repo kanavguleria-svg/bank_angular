@@ -1,0 +1,78 @@
+<app-landing-nav></app-landing-nav>
+<div class="bg-gray-100 pt-10 flex flex-col justify-center items-center">
+  <h2 class="text-3xl pb-1 border-b border-b-primary">Get In Touch</h2>
+  <!-- left-address -->
+  <div class="flex form-container items-center">
+    <div class="w-1/3">
+      <img
+        src="../../../../assets/img/bank.jpg"
+        class="object-contain"
+        alt=""
+      />
+    </div>
+
+    <!-- Form -->
+    <div class="w-2/3 px-10">
+      <form>
+        <div class="flex justify-between">
+          <div>
+            <label for="fullname">Full Name</label>
+            <br />
+            <input
+              class="bg-gray-100 border-b border-gray-800 mt-3 outline-none"
+              type="text"
+              placeholder="Name"
+              required
+              size="30"
+              [(ngModel)]="name"
+            />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <br />
+            <input
+              class="bg-gray-100 border-b border-gray-800 mt-3 outline-none"
+              size="30"
+              type="email"
+              placeholder="Email"
+              required
+              [(ngModel)]="email"
+            />
+          </div>
+        </div>
+
+        <div class="my-7">
+          <label for="phone">Phone</label>
+          <br />
+          <input
+            class="bg-gray-100 border-b border-gray-800 mt-3 outline-none"
+            type="text"
+            placeholder="Phone"
+            [(ngModel)]="phone"
+          />
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <br />
+          <textarea
+            class="bg-gray-100 border border-gray-800 mt-3 outline-none"
+            name="message"
+            id="message"
+            cols="30"
+            rows="5"
+            placeholder="Message"
+            [(ngModel)]="message"
+          ></textarea>
+        </div>
+        <button
+          class="px-2 py-1 text-white bg-primary rounded-md hover:text-primary hover:bg-white mt-3 hover:border-primary hover:border"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
