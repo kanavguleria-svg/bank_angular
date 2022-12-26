@@ -25,10 +25,9 @@ const routes: Routes = [
     component: UserDashboardComponent,
     canActivate: [AuthActivateRouteGuard],
   },
+  {path:'resgister',component:UserRegistrationComponent},
 ];
-const routes: Routes = [
-  {path:'',component:UserRegistrationComponent}
-];
+ 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
