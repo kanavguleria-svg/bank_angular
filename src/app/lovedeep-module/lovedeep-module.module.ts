@@ -18,6 +18,7 @@ import {
 } from '@angular/common/http';
 import { XhrInterceptor } from '../interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule,AppRoutingModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',

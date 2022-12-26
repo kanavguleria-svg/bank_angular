@@ -25,7 +25,7 @@ export class UserService {
   }
 
   saveAccountDetails(account_details:Account_details,customerId:number):Observable<any>{
-    return this.http.post(`${this.basePath}/customer/${customerId}/account-details`, account_details, {responseType: 'text'});
+    return this.http.post(`${this.basePath}/register/customer/${customerId}/account-details`, account_details, {responseType: 'text'});
   }
 
   constructor(private http: HttpClient) { }

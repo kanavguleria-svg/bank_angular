@@ -25,7 +25,7 @@ const routes: Routes = [
     component: UserDashboardComponent,
     canActivate: [AuthActivateRouteGuard],
   },
-  {path:'resgister',component:UserRegistrationComponent},
+  {path:'register',component:UserRegistrationComponent},
 ];
  
 
