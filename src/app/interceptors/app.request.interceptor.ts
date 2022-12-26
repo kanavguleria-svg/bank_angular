@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { Customer } from '../models/customer.model';
+
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
   customer = new Customer();

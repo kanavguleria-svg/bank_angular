@@ -1,7 +1,9 @@
-<nav class="flex justify-between px-8 py-4 items-center text-gray-300">
-  <div>H<span class="text-primary">M</span>B</div>
-  <div class="flex">
-    <div class="my-2"><a href="">Logout</a></div>
-    <div>Lovedeep</div>
+<nav class="flex justify-between px-8 py-4 items-center bg-gray-100">
+  <div class="text-xl">H<span class="text-primary text-2xl">M</span>B</div>
+  <div class="flex items-center">
+    <div *ngIf="customer.authStatus == 'AUTH'" class="mx-4">
+      <a routerLink="/logout">Logout</a>
+    </div>
+    <div>{{ customer.name }}</div>
   </div>
 </nav>

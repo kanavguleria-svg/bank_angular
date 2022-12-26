@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LogoutComponent } from './lovedeep-module/components/logout/logout.component';
 import { ContactQueryComponent } from './lovedeep-module/components/query/contact-query/contact-query.component';
 import { LandingComponent } from './lovedeep-module/pages/landing/landing.component';
 import { LoginComponent } from './lovedeep-module/pages/login/login.component';
 import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/user-dashboard.component';
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
-
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'customerdashboard',
     component: UserDashboardComponent,
     canActivate: [AuthActivateRouteGuard],
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
   },
 ];
 

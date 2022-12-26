@@ -20,6 +20,7 @@ import { XhrInterceptor } from '../interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserNavComponent } from './layout/user-nav/user-nav.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { UserNavComponent } from './layout/user-nav/user-nav.component';
     AdminDashboardComponent,
     UserNavComponent,
     UserDashboardComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,
