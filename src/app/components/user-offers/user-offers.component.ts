@@ -8,9 +8,9 @@ import { LandingNavComponent } from 'src/app/layout/landing-nav/landing-nav.comp
   styleUrls: ['./user-offers.component.css'],
 })
 export class UserOffersComponent implements OnInit {
-  startdate!: string;
-  enddate!: string;
-  offerdetails!: string;
+  startdate: string;
+  enddate: string;
+  offerdetails: string;
   constructor() {}
 
   ngOnInit(): void {}

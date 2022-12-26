@@ -1,9 +1,9 @@
 <div>
-    <form (ngSubmit)="maketrxn()" class="form-control" method="POST">
+    <form (ngSubmit)="maketrxn()" method="POST">
         <input type="text" name="account_num_sender" id="account_num_sender" [(ngModel)] = "trxndetails.account_num_sender">
         <input type="text" name="account_num_reciever" id="account_num_reciever" [(ngModel)] = "trxndetails.account_num_reciever">
         <input type="number" name="transaction_amt" id="transaction_amt" [(ngModel)] = "trxndetails.transaction_amt">
         <input type="text" name="trxnDescription" id="trxnDescription" [(ngModel)] = "trxndetails.trxnDescription">
-        <input type="button" value="Make Transaction" (click)="maketrxn()">
+        <input type="button" value="Make Transaction">
     </form>
 </div>

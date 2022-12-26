@@ -21,7 +21,6 @@ import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
     AppComponent,
     LandingComponent,
     LandingNavComponent,
@@ -43,7 +42,8 @@ import { LoginComponent } from './pages/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     UserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
