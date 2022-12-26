@@ -18,6 +18,8 @@ import {
 } from '@angular/common/http';
 import { XhrInterceptor } from '../interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
+import { AppRoutingModule } from '../app-routing.module';
+import { UserNavComponent } from './layout/user-nav/user-nav.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,14 @@ import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
     LoginComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
+    UserNavComponent,
+    UserDashboardComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',
@@ -60,6 +65,7 @@ import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
     LoginComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
+    UserNavComponent,
   ],
 })
 export class LovedeepModuleModule {}

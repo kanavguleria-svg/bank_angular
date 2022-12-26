@@ -4,7 +4,6 @@ import { ContactQueryComponent } from './lovedeep-module/components/query/contac
 import { LandingComponent } from './lovedeep-module/pages/landing/landing.component';
 import { LoginComponent } from './lovedeep-module/pages/login/login.component';
 import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/user-dashboard.component';
-
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 
 const routes: Routes = [
