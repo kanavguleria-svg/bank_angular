@@ -1,0 +1,54 @@
+<div class="flex login justify-between">
+  <div class="login-form">
+    <h1 class="text-2xl">H<span class="text-primary">M</span>B</h1>
+    <form
+      (ngSubmit)="validateUser(loginForm)"
+      #loginForm="ngForm"
+      class="formio"
+    >
+      <h1 class="text-2xl">Welcome Back</h1>
+      <span class="line bg-primary"></span>
+      <div class="mb-8 mt-14">
+        <label for="username">Username</label>
+        <br />
+        <input
+          class="border-b border-gray-800 mt-3 outline-none"
+          type="text"
+          name="username"
+          id="username"
+          placeholder="username"
+          size="30"
+          required
+          [(ngModel)]="model.username"
+          #username="ngModel"
+        />
+      </div>
+      <div class="mb-8">
+        <label for="password">Password</label>
+        <br />
+        <input
+          class="border-b border-gray-800 mt-3 outline-none"
+          type="password"
+          name="password"
+          id="password"
+          size="30"
+          placeholder="password"
+          required
+          [(ngModel)]="model.password"
+          #password="ngModel"
+          minlength="5"
+        />
+      </div>
+      <button
+        class="bg-primary text-white button-submit hover:text-primary hover:bg-white hover:border hover:border-primary"
+        type="submit"
+      >
+        Login
+      </button>
+      <h1 class="text-sm mt-4">
+        Don't Have An Account? <a class="text-sky-800" href="">Register Here</a>
+      </h1>
+    </form>
+  </div>
+  <div class="login-img"></div>
+</div>

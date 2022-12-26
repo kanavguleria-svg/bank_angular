@@ -1,0 +1,55 @@
+<app-landing-nav></app-landing-nav>
+<section class="offers mb-20 mt-5">
+  <h2 class="text-center mb-10 text-2xl pb-1 border-b border-b-primary">
+    Create User Offers
+  </h2>
+  <div class="form-section shadow shadow-gray-300 p-3 rounded-md">
+    <div class="gift"></div>
+    <div class="offer-form py-3">
+      <form>
+        <div class="flex">
+          <div class="mr-10">
+            <label for="start">Start Date</label>
+            <br />
+            <input
+              id="start"
+              class="border-b border-gray-800 mt-3 outline-none"
+              type="date"
+              [(ngModel)]="startdate"
+            />
+          </div>
+          <div>
+            <label for="end">End Date</label>
+            <br />
+            <input
+              id="end"
+              class="border-b border-gray-800 mt-3 outline-none"
+              type="date"
+              [(ngModel)]="enddate"
+            />
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <label for="offer-details">Offer Details</label>
+          <br />
+          <textarea
+            class="border border-gray-800 mt-3 outline-none pt-3 pl-3"
+            name="offer-details"
+            id="offer-details"
+            cols="40"
+            rows="5"
+            placeholder="Offer Details"
+            [(ngModel)]="offerdetails"
+          ></textarea>
+        </div>
+        <button
+          class="px-2 py-1 text-white bg-primary rounded-md hover:text-primary hover:bg-white mt-3 hover:border-primary hover:border"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
