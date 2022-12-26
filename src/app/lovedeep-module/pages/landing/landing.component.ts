@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LandingNavComponent } from 'src/app/layout/landing-nav/landing-nav.component';
-import { CrouselComponent } from 'src/app/components/crousel/crousel.component';
-import { FooterComponent } from 'src/app/layout/footer/footer.component';
+import { FooterComponent } from '../../layout/footer/footer.component';
+import { LandingNavComponent } from '../../layout/landing-nav/landing-nav.component';
 
 @Component({
   selector: 'app-landing',

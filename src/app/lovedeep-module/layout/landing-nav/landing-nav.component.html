@@ -13,7 +13,9 @@
     <!--? right-part -->
     <div class="upper-right">
       <a routerLink="register">Register</a>
-      <a class="login py-1 px-2 bg-primary rounded-md" href="#">Login</a>
+      <a class="login py-1 px-2 bg-primary rounded-md" routerLink="/login"
+        >Login</a
+      >
     </div>
   </div>
 
@@ -26,21 +28,16 @@
 
     <!--? right-part -->
     <div class="lower-right">
-      <a
-        class="text-white border-white border-2 py-2 px-3 font-medium rounded-lg hover:text-primary hover:bg-white"
-        (click)="showDropdown()"
-        href="#"
-        >Services</a
-      >
+      <span class="dropdown-service" (click)="showDropdown()">Services</span>
       <a class="text-white" href="#">Offers</a>
       <a class="text-white" href="#">Pay</a>
       <a class="text-white" href="#">Contact</a>
-      <a class="text-white"routerLink="checkbR">checkbook</a>
       <!--? services-dropdown -->
       <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
         <a href="#">Credit Card</a>
         <a href="#">Loans</a>
-        <a href="#">CheckBook</a>
+        <a routerLink="/checkbR">Checkbook</a>
+        <a routerLink="/creditR">CreditCard Req.</a>
       </span>
     </div>
   </div>

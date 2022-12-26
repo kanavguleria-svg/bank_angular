@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CrouselComponent } from 'src/app/lovedeep-module/components/crousel/crousel.component';
 
+import { UserDashboardComponent } from './user-dashboard.component';
 
-
-describe('CrouselComponent', () => {
-  let component: CrouselComponent;
-  let fixture: ComponentFixture<CrouselComponent>;
+describe('UserDashboardComponent', () => {
+  let component: UserDashboardComponent;
+  let fixture: ComponentFixture<UserDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrouselComponent ]
+      declarations: [ UserDashboardComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CrouselComponent);
+    fixture = TestBed.createComponent(UserDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

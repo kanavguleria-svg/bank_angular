@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CrouselComponent } from 'src/app/lovedeep-module/components/crousel/crousel.component';
 
+import { AdminDashboardComponent } from './admin-dashboard.component';
 
-
-describe('CrouselComponent', () => {
-  let component: CrouselComponent;
-  let fixture: ComponentFixture<CrouselComponent>;
+describe('AdminDashboardComponent', () => {
+  let component: AdminDashboardComponent;
+  let fixture: ComponentFixture<AdminDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrouselComponent ]
+      declarations: [ AdminDashboardComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CrouselComponent);
+    fixture = TestBed.createComponent(AdminDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,11 @@
 <div class="flex login justify-between">
   <div class="login-form">
     <h1 class="text-2xl">H<span class="text-primary">M</span>B</h1>
-    <form class="formio">
+    <form
+      (ngSubmit)="validateUser(loginForm)"
+      #loginForm="ngForm"
+      class="formio"
+    >
       <h1 class="text-2xl">Welcome Back</h1>
       <span class="line bg-primary"></span>
       <div class="mb-8 mt-14">
@@ -14,6 +18,9 @@
           id="username"
           placeholder="username"
           size="30"
+          required
+          [(ngModel)]="model.username"
+          #username="ngModel"
         />
       </div>
       <div class="mb-8">
@@ -26,6 +33,10 @@
           id="password"
           size="30"
           placeholder="password"
+          required
+          [(ngModel)]="model.password"
+          #password="ngModel"
+          minlength="5"
         />
       </div>
       <button

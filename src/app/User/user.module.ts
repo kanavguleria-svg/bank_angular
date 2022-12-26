@@ -4,11 +4,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserUpdationComponent } from './user-updation/user-updation.component';
 import { FormsModule } from '@angular/forms';
 import { AppModule } from '../app.module';
-
-import { LandingComponent } from '../pages/landing/landing.component';
-import { LandingNavComponent } from '../layout/landing-nav/landing-nav.component';
-import { CreditCardComponent } from '../credit-and-check/credit-card/credit-card.component';
 import { CreditAndCheckModule } from '../credit-and-check/credit-and-check.module';
+
 
 
 
@@ -16,7 +13,7 @@ import { CreditAndCheckModule } from '../credit-and-check/credit-and-check.modul
 @NgModule({
   declarations: [UserRegistrationComponent, UserUpdationComponent],
   imports: [
-    CommonModule,FormsModule,CreditAndCheckModule
+    CommonModule,FormsModule
   ],
   providers:[],
   exports:[UserRegistrationComponent,UserUpdationComponent]

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from 'src/app/layout/footer/footer.component';
-import { LandingNavComponent } from 'src/app/layout/landing-nav/landing-nav.component';
-
+import { FooterComponent } from 'src/app/lovedeep-module/layout/footer/footer.component';
+import { LandingNavComponent } from 'src/app/lovedeep-module/layout/landing-nav/landing-nav.component';
 @Component({
   selector: 'app-contact-query',
   templateUrl: './contact-query.component.html',
