@@ -1,7 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserModule } from './User/user.module';
+import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
+import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { LandingNavComponent } from './layout/landing-nav/landing-nav.component';
 import { CrouselComponent } from './components/crousel/crousel.component';
@@ -23,8 +27,13 @@ import { LoginComponent } from './pages/login/login.component';
     UserQueryComponent,
     UserOffersComponent,
     LoginComponent,
+    AppComponent,
+    AddPayeeComponent,
+    UpdatePayeeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule,
+    UserModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
