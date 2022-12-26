@@ -34,7 +34,7 @@
   width: 120px;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  right: 200px;
+  right: 160px;
   color: white;
 }
 
@@ -45,4 +45,18 @@
 .show a:hover {
   margin: 0;
   background-color: black;
+}
+
+.dropdown-service {
+  color: white;
+  border: 2px solid white;
+  background-color: #ff7b00;
+  padding: 4px 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.dropdown-service:hover {
+  background-color: white;
+  color: #ff7b00;
 }

@@ -19,17 +19,28 @@
   <div class="login-form-crousel rounded-xl">
     <div class="form">
       <h2 class="loginbutton text-center mb-10 text-lg font-medium">LOGIN</h2>
-      <form class="register-form">
-        <input type="text" placeholder="name" />
-        <input type="password" placeholder="password" />
-        <input type="text" placeholder="email address" />
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form>
-      <form class="login-form">
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
-        <button>login</button>
+      <form
+        (ngSubmit)="validateUser(loginForm)"
+        #loginForm="ngForm"
+        class="login-form"
+      >
+        <input
+          [(ngModel)]="model.username"
+          #username="ngModel"
+          type="text"
+          placeholder="username"
+          name="username"
+          required
+        />
+        <input
+          [(ngModel)]="model.password"
+          #password="ngModel"
+          type="password"
+          placeholder="password"
+          name="password"
+          required
+        />
+        <button type="submit">login</button>
       </form>
     </div>
   </div>

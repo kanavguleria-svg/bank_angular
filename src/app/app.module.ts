@@ -11,6 +11,15 @@ import { UserQueryComponent } from './components/query/user-query/user-query.com
 import { FormsModule } from '@angular/forms';
 import { UserOffersComponent } from './components/user-offers/user-offers.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+  HttpClientXsrfModule,
+} from '@angular/common/http';
+import { XhrInterceptor } from './interceptors/app.request.interceptor';
+import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 
 @NgModule({
   declarations: [
@@ -23,9 +32,27 @@ import { LoginComponent } from './pages/login/login.component';
     UserQueryComponent,
     UserOffersComponent,
     LoginComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'XSRF-TOKEN',
+      headerName: 'X-XSRF-TOKEN',
+    }),
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: XhrInterceptor,
+      multi: true,
+    },
+    AuthActivateRouteGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
