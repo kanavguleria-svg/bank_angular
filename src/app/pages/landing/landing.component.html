@@ -1,0 +1,94 @@
+<app-landing-nav></app-landing-nav>
+<app-crousel [images]="images" [autoSlide]="true"></app-crousel>
+<div class="features flex flex-col my-8 mb-14">
+  <!--? netbanking -->
+  <div class="flex mb-8">
+    <!--* image-section -->
+    <div class="w-1/2 netbank">
+      <img
+        class="border-round"
+        src="../../../assets/offers/netbank.jpg"
+        alt="netbanking"
+      />
+    </div>
+
+    <!--* text-section -->
+    <div class="w-1/2 flex flex-col justify-center items-center">
+      <h1 class="text-3xl mb-3">Net Banking</h1>
+      <p class="text-xl mb-12">Fast | Secured | Easy</p>
+      <p class="text-sm mb-3">
+        Get Great Offers And CashBack On Payments Online
+      </p>
+      <p class="text-sm mb-12">Monthly 1 Free Movie Ticket on Spend of 5000</p>
+      <div class="mb-6">
+        <p class="text-center font-italic text-2xl mb-3">
+          Our Services Include
+        </p>
+        <span class="border-b-2 border-gray-500 mr-3">Upi Service</span>
+        <span class="border-b-2 border-gray-500 ml-3">Mobile Banking</span>
+      </div>
+      <button
+        class="text-primary px-3 py-2 rounded border-primary border-2 hover:bg-primary hover:text-white"
+      >
+        Explore NetBanking
+      </button>
+    </div>
+  </div>
+
+  <!--? creditcard -->
+  <div class="flex mb-8">
+    <!--* text-section -->
+    <div class="w-1/2 flex flex-col justify-center items-start credit">
+      <h1 class="text-3xl mb-3">Coral Credit Card</h1>
+      <div class="flex flex-col justify-start my-3">
+        <p class="text-sm mb-3">Earn up to 10,000 additional reward points</p>
+        <p class="text-sm mb-3">Buy 1, get 1 movie ticket free at BookMyShow</p>
+        <p class="text-sm mb-3">
+          One complimentary railway lounge visit per quarter
+        </p>
+      </div>
+      <button
+        class="text-primary px-3 py-2 rounded border-primary border-2 hover:bg-primary hover:text-white"
+      >
+        Apply Credit Card
+      </button>
+    </div>
+
+    <!--* image-section -->
+    <div
+      class="w-1/2 creditcard bg-gray-200 p-2 flex justify-center items-center border-round-mid mr-8"
+    >
+      <img class="rounded-md" src="../../../assets/HMB.png" alt="" />
+    </div>
+  </div>
+
+  <!--? loan -->
+  <div class="flex">
+    <!--* image-section -->
+    <div class="w-1/2 netbank">
+      <img
+        class="object-cover border-round"
+        src="../../../assets/offers/hloan.jpg"
+        alt="netbanking"
+      />
+    </div>
+
+    <!--* text-section -->
+    <div class="w-1/2 flex flex-col justify-center items-center">
+      <h1 class="text-3xl">Home Loans</h1>
+      <p class="text-xl my-5 mb-10">Easy Installements | Low Interest Rates</p>
+      <div class="mb-6 mt-10">
+        <p class="text-center font-italic text-2xl mb-3">Our Other Loans</p>
+        <span class="border-b-2 border-gray-500 mr-3">Education Loans</span>
+        <span class="border-b-2 border-gray-500 ml-3 mr-3">Car Loans</span>
+        <span class="border-b-2 border-gray-500 ml-3">Business Loans</span>
+      </div>
+      <button
+        class="text-primary px-3 py-2 rounded border-primary border-2 hover:bg-primary hover:text-white"
+      >
+        Explore Loans
+      </button>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
