@@ -6,6 +6,10 @@ import { LoginComponent } from './lovedeep-module/pages/login/login.component';
 import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/user-dashboard.component';
 
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+import { CheckbookComponent } from './credit-and-check/checkbook/checkbook.component';
+import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.component';
+
+
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
 
 const routes: Routes = [
@@ -26,6 +30,9 @@ const routes: Routes = [
     canActivate: [AuthActivateRouteGuard],
   },
   {path:'register',component:UserRegistrationComponent},
+  {path:'checkbR',component:CheckbookComponent},
+  {path:'creditR',component:CreditCardComponent},
+  {path:'',component:LandingComponent},
 ];
  
 
