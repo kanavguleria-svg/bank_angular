@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './pages/landing/landing.component';
-import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
-import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
-import { LoginComponent } from './pages/login/login.component';
-import { UserQueryComponent } from './components/query/user-query/user-query.component';
-import { ContactQueryComponent } from './components/query/contact-query/contact-query.component';
-import { UserOffersComponent } from './components/user-offers/user-offers.component';
+import { ContactQueryComponent } from './lovedeep-module/components/query/contact-query/contact-query.component';
+import { LandingComponent } from './lovedeep-module/pages/landing/landing.component';
+import { LoginComponent } from './lovedeep-module/pages/login/login.component';
+import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/user-dashboard.component';
+
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 
 const routes: Routes = [

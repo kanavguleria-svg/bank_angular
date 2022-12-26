@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from 'src/app/layout/footer/footer.component';
-import { LandingNavComponent } from 'src/app/layout/landing-nav/landing-nav.component';
-
+import { FooterComponent } from '../../layout/footer/footer.component';
+import { LandingNavComponent } from '../../layout/landing-nav/landing-nav.component';
 @Component({
   selector: 'app-user-offers',
   templateUrl: './user-offers.component.html',
