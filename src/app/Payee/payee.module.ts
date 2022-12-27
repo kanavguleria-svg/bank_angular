@@ -10,6 +10,6 @@ import { UpdatePayeeComponent } from './update-payee/update-payee.component';
   declarations: [AddPayeeComponent,UpdatePayeeComponent],
   imports: [
     CommonModule,FormsModule
-  ]
+  ],exports:[AddPayeeComponent,UpdatePayeeComponent],
 })
 export class PayeeModule { }

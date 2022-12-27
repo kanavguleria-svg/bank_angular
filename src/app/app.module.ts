@@ -10,17 +10,16 @@ import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
 import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
 import { LovedeepModuleModule } from './lovedeep-module/lovedeep-module.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PayeeModule } from './Payee/payee.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddPayeeComponent,
-    UpdatePayeeComponent
   ],
   providers: [],
   imports: [
     BrowserModule,
-    AppRoutingModule,UserModule,FormsModule,HttpClientModule,CreditAndCheckModule,LovedeepModuleModule
+    AppRoutingModule,UserModule,FormsModule,HttpClientModule,CreditAndCheckModule,LovedeepModuleModule,PayeeModule
   ],
   bootstrap: [AppComponent],}
 )
