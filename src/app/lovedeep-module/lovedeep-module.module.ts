@@ -21,6 +21,7 @@ import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserNavComponent } from './layout/user-nav/user-nav.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     UserNavComponent,
     UserDashboardComponent,
     LogoutComponent,
+    SidenavComponent,
   ],
   imports: [
     CommonModule,
