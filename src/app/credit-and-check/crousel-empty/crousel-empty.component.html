@@ -1,0 +1,45 @@
+<div *ngIf="images && images.length > 0" class="carousel-container">
+    <img
+      *ngFor="let image of images; let i = index"
+      [src]="image.imageSrc"
+      [alt]="image.imageAlt"
+      [ngClass]="{ 'image-active': selectedIndex === i }"
+      class="fade"
+    />
+  
+
+    <!-- to display text over the crousel  -->
+    <!-- <div class="textdesc">
+      <h2
+        *ngFor="let desc of images; let i = index"
+        [ngClass]="{ textactive: selectedIndex === i }"
+      >
+        {{ desc.imageDesc }}
+      </h2>
+    </div> -->
+
+    <div *ngIf="indicators" class="carousel-dot-container">
+        <span
+          *ngFor="let dot of images; let i = index"
+          class="dot"
+          [ngClass]="{ active: selectedIndex === i }"
+          (click)="selectImage(i)"
+        ></span>
+      </div>
+    
+      <!-- <button
+        (click)="onPrevClick()"
+        *ngIf="controls"
+        class="btn-carousel btn-prev"
+      >
+        <span class="icon-carousel icon-prev">&larr;</span>
+      </button>
+    
+      <button
+        (click)="onNextClick()"
+        *ngIf="controls"
+        class="btn-carousel btn-next"
+      >
+        <span class="icon-carousel icon-next">&rarr;</span>
+      </button> -->
+    

@@ -12,13 +12,13 @@
                     <form (ngSubmit)="loanrequest()" name="ngForm" method=post>
                         <div class="row g-3">
                             <div class="col-12 col-sm-12">
-                                <input type="number" class="form-control bg-light border-0"
-                                    [placeholder]="customphacc" name="customphacc" style="height: 55px;" [readOnly]="true">
+                                <input type="number" class="form-control bg-light border-0" [placeholder]="customphacc"
+                                    name="customphacc" style="height: 55px;" [readOnly]="true">
                             </div>
                             <div class="col-12 col-sm-12">
-                                <select class="form-select" name="loan_type"
-                                    id="loan_type" [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;">
-                                    <option [ngValue]="null" [disabled]="true" [hidden]="true" >Select Loan Type</option>
+                                <select class="form-select" name="loan_type" id="loan_type"
+                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;">
+                                    <option [ngValue]="null" [disabled]="true" [hidden]="true">Select Loan Type</option>
                                     <!-- <option value="" disabled selected hidden>Choose a drink</option> -->
                                     <option *ngFor="let type of loantypes" [value]="type">
                                         {{type}}
@@ -26,12 +26,11 @@
                                 </select>
                             </div>
                             <div class="col-6 col-sm-6">
-                                <select class="form-select rounded"
-                                    [(ngModel)]="loanReqDetails.loan_term" name="loan_term" id="loan_term"
-                                    style="height: 55px;"
-                                    (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
-                                    >
-                                    <option [ngValue]="0" [disabled]="true" [hidden]="true" >Select Loan Term (in Yrs)</option>
+                                <select class="form-select rounded" [(ngModel)]="loanReqDetails.loan_term"
+                                    name="loan_term" id="loan_term" style="height: 55px;"
+                                    (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)">
+                                    <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Term (in Yrs)
+                                    </option>
                                     <option *ngFor="let term of loanterm" [value]="term">
                                         {{term+" years"}}
                                     </option>
@@ -40,10 +39,10 @@
                             <div class="col-6 col-sm-6">
                                 <select class="form-select form-outline bg-light border-0"
                                     [(ngModel)]="loanReqDetails.loan_amt" name="loan_amt" id="loan_amt"
-                                    style="height: 55px;" 
+                                    style="height: 55px;"
                                     (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
                                     #loanamt>
-                                    <option [ngValue]="0" [disabled]="true" [hidden]="true" >Select Loan Amount</option>
+                                    <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Amount</option>
                                     <option *ngFor="let amt of loanamount" [value]="amt.id">
                                         {{amt.value}}
                                     </option>
@@ -53,23 +52,24 @@
                             <ng-container *ngIf="loanamt.value=='0'">
                                 <div class="col-12 col-sm-12">
                                     <input type="number" class="form-control bg-light border-0"
-                                        placeholder="Custom Loan Amount" [(ngModel)]="custom_loan_amt" name="loan_amt_custom"style="height: 55px;"
-                                        (blur)="calculate_loan_rate(loanReqDetails.loan_term,custom_loan_amt)"
-                                        >
+                                        placeholder="Custom Loan Amount" [(ngModel)]="custom_loan_amt"
+                                        name="loan_amt_custom" style="height: 55px;"
+                                        (blur)="calculate_loan_rate(loanReqDetails.loan_term,custom_loan_amt)">
                                 </div>
                             </ng-container>
                             <div class="col-12 col-sm-12">
-                                <input type="number" class="form-control bg-light border-0"
-                                [placeholder]="loanrate" name="loan_rate" [readonly]="true" style="height: 55px;">
+                                <input type="number" class="form-control bg-light border-0" [placeholder]="loanrate"
+                                    name="loan_rate" [readonly]="true" style="height: 55px;">
                             </div>
                             <div class="col-12 col-sm-12">
-                                <textarea class="form-control" [(ngModel)] = "loanReqDetails.loan_desc" id="loan_desc" name="loan_desc" rows="3"placeholder="Add Loan Description"></textarea>
+                                <textarea class="form-control" [(ngModel)]="loanReqDetails.loan_desc" id="loan_desc"
+                                    name="loan_desc" rows="3" placeholder="Add Loan Description"></textarea>
                                 <!-- <input type="textfield" class="form-control bg-light" placeholder="Add Loan Description"  name="loan_desc" style="height: 55px;"> -->
                             </div>
 
                             <div class="col-12">
                                 <input class="btn btn-dark w-100 py-3" type="submit" name="submit"
-                                    value="Make Loan Request"/>
+                                    value="Make Loan Request" />
                             </div>
                         </div>
                     </form>

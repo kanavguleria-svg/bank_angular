@@ -1,0 +1,44 @@
+<nav class="flex flex-col">
+  <!--? upper-nav -->
+  <div class="flex justify-between px-4 items-center bg-gray-900 py-2">
+    <!--? left part -->
+    <div class="upper-left">
+      <a href="#">Personal</a>
+      <span>|</span>
+      <a href="#">Asset Management</a>
+      <span>|</span>
+      <a href="#">Business</a>
+    </div>
+
+    <!--? right-part -->
+    <div class="upper-right">
+      <a routerLink="/register">Register</a>
+      <a class="login py-1 px-2 bg-primary rounded-md" routerLink="/login"
+        >Login</a
+      >
+    </div>
+  </div>
+
+  <!--? lower-nav -->
+  <div class="flex justify-between px-4 items-center py-2 bg-primary">
+    <!--? brand -->
+    <div class="text-black text-2xl font-medium pl-3">
+      H<span class="text-white text-3xl">M</span>B
+    </div>
+
+    <!--? right-part -->
+    <div class="lower-right">
+      <span class="dropdown-service" (click)="showDropdown()">Services</span>
+      <a class="text-white" href="#">Offers</a>
+      <a class="text-white" href="#">Pay</a>
+      <a class="text-white" href="#">Contact</a>
+      <!--? services-dropdown -->
+      <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
+        <a href="#">Credit Card</a>
+        <a href="#">Loans</a>
+        <a routerLink="/checkbR">Checkbook</a>
+        <a routerLink="/creditR">CreditCard Req.</a>
+      </span>
+    </div>
+  </div>
+</nav>

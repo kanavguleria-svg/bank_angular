@@ -1,112 +1,76 @@
-<!-- <div>
-    <form (ngSubmit)="maketrxn()" method="POST">
-        <input type="text" name="account_num_sender" id="account_num_sender" [(ngModel)] = "trxndetails.account_num_sender">
-        <input type="text" name="account_num_reciever" id="account_num_reciever" [(ngModel)] = "trxndetails.account_num_reciever">
-        <input type="number" name="transaction_amt" id="transaction_amt" [(ngModel)] = "trxndetails.transaction_amt">
-        <input type="text" name="trxnDescription" id="trxnDescription" [(ngModel)] = "trxndetails.trxnDescription">
-        <input type="button" value="Make Transaction">
-    </form>
-</div> -->
-
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
-<div class="container">
-	<header class="header">
-		<h1 id="title" class="text-center">Transactions</h1>
-		<!-- <p id="description" class="text-center">
-			Thank you for taking the time to help us improve the platform
-		</p> -->
-	</header>
-	<div class="form-wrap">	
-		<form id="survey-form">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label id="name-label" for="name">Name</label>
-						<input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" required>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label id="email-label" for="email">Email</label>
-						<input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" required>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label id="number-label" for="number">Age <small>(optional)</small></label>
-						<input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age" >
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label>current role</label>
-						<select id="dropdown" name="role" class="form-control" required>
-							<option disabled selected value>Select</option>
-							<option value="student">Student</option>
-							<option value="job">Full Time Job</option>
-							<option value="learner">Full Time Learner</option>
-							<option value="preferNo">Prefer not to say</option>
-							<option value="other">Other</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label>Would you recommend survey to a friend?</label>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" id="customRadioInline1" value="Definitely" name="customRadioInline1" class="custom-control-input" checked="">
-							<label class="custom-control-label" for="customRadioInline1">Definitely</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" id="customRadioInline2" value="Maybe" name="customRadioInline1" class="custom-control-input">
-							<label class="custom-control-label" for="customRadioInline2">Maybe</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" id="customRadioInline3" value="Not sure" name="customRadioInline1" class="custom-control-input">
-							<label class="custom-control-label" for="customRadioInline3">Not sure</label>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-md-6">
-					<div class="form-group">
-						<label>This survey useful yes or no?</label>
-						<div class="custom-control custom-checkbox custom-control-inline">
-							<input type="checkbox" class="custom-control-input" name="yes" value="yes" id="yes" checked="">
-							<label class="custom-control-label" for="yes">Yes</label>
+<!-- Bootstrap Form -->
+<div class="container-fluid py-5">
+	<div class="container">
+		<div class="row g-5">
+			<div class="col-lg-12">
+				<div class="bg-orange shadow-lg border-5 p-5" >
+					<h1 class="mb-4 text-dark">Transactions</h1>
+					<form (ngSubmit)="transfer()" [formGroup]="transferForm" name="ngform" method=post>
+						<div class="row g-3">
+							<div class="col-12 col-sm-12">
+								<textarea class="form-control"[placeholder]="customphacc" name="account_num_sender"
+									style="height: 90px; resize: none;"
+									[readonly]="true" [disabled]="true"></textarea>
+							</div>
+							<div class="col-6 col-sm-6">
+								<input type="text" id="account_num_reciever" class="form-control"
+									[ngClass]="{ 'is-invalid': submitted && account_num_reciever.errors }"
+									formControlName="account_num_reciever" placeholder="Reciever's Account Number" style="height: 55px;"  required>
+								<div *ngIf="submitted || account_num_reciever.invalid && (account_num_reciever.dirty || account_num_reciever.touched)"
+									class="invalid-feedback">
+									<div *ngIf="account_num_reciever.errors?.['required']">
+										Reciever's account number is required.
+									</div>
+									<div *ngIf="account_num_reciever.errors?.['minlength'] || account_num_reciever.errors?.['maxlength']">
+										Acount number must be 12 characters long.
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-sm-6">
+								<input type="text" id="transaction_amt" class="form-control"
+									[ngClass]="{ 'is-invalid': submitted && transaction_amt.errors }"
+									formControlName="transaction_amt" placeholder="Amount" style="height: 55px;" required>
+								<div *ngIf="submitted || transaction_amt.invalid && (transaction_amt.dirty || transaction_amt.touched)"
+									class="invalid-feedback">
+									<div *ngIf="transaction_amt.errors?.['required']">
+										Amount is required.
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-sm-6">
+								<input type="text" id="account_num_reciever" class="form-control"
+									 [placeholder]="transaction_dt" style="height: 55px;" [disabled]="true" [readOnly]="true" >
+							</div>
+							<div class="col-6 col-sm-6">
+                                <select class="form-control"
+								formControlName="trxnDescription" name="trxnDescription" id="trxnDescription"
+                                    style="height: 55px;" #trxnDescription required>
+                                    <option [ngValue]="null" [disabled]="true" [hidden]="true">Transaction Description</option>
+                                    <option *ngFor="let desc of trxndes" [value]="desc">
+                                        {{desc}}
+                                    </option>
+                                    <option value="transaction">Other</option>
+                                </select>
+                            </div>
+                            <ng-container *ngIf="trxnDescription.value=='transaction'">
+                                <div class="col-12 col-sm-12">
+                                    <textarea id="trxnDescriptionCustom" formControlName="trxnDescriptionCustom"class="form-control" placeholder="Transaction Description" value="Transaction"></textarea>
+								</div> 
+                            </ng-container>
+							<div class="col-12">
+								<button class="btn btn-dark w-100 py-3" type="submit" name="submit"
+									value="Make_Transaction" >
+									<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+									Make Transaction</button>
+							</div>
 						</div>
-						<div class="custom-control custom-checkbox custom-control-inline">
-							<input type="checkbox" class="custom-control-input" name="no" value="no" id="no">
-							<label class="custom-control-label" for="no">No</label>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
-
-
-			<div class="row">
-				<div class="col-md-12">
-					<div class="form-group">
-						<label>Leave Message</label>
-						<textarea  id="comments" class="form-control" name="comment" placeholder="Enter your comment here..."></textarea>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-4">
-					<button type="submit" id="submit" class="btn btn-primary btn-block">Submit Survey</button>
-				</div>
-			</div>
-
-		</form>
-	</div>	
+		</div>
+	</div>
 </div>

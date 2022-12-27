@@ -1,0 +1,109 @@
+<app-landing-nav></app-landing-nav>
+<h1 style="color:#ff7b00"  class="text-3xl font-bold underline p-6 text-center shadow-orange-100 shadow-md ">
+  Apply now and get a decison with in 1hr of applying
+</h1>
+
+<div class="flex justify-evenly ">
+    <div class=" container mx-auto p-9 mx-10  .grid-cols-1">
+    <form  (ngSubmit)="createCreditCard(id,creditCard)"  class="w-full max-w-lg ">
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                Pan no
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="your line 1"
+            [(ngModel)]="creditCard.pan_num" name="pan_num"
+            required
+            >
+            <p class="text-gray-600 text-xs italic">enter your pan number</p>
+          </div>
+        </div>
+    
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+              Annual salary
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="your address line 2"
+            [(ngModel)]="creditCard.annual_salary"
+            name="annual_salary"
+            required
+            >
+          </div>
+        </div>
+
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+
+            
+       
+            <div class="w-full  px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+               Type of Card
+              </label>
+              <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+                [(ngModel)]="creditCard.type_of_card"
+                name="type_of_card"
+                required>
+                  <option>silver</option>
+                  <option>gold</option>
+                  <option>platinum</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+            </div>
+            
+
+        
+
+            <!-- <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                  Pan No.
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Narainder Modi" 
+              required
+              >
+  
+              <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+            </div> -->
+
+            
+
+        </div>
+  
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"><input type="submit"
+          
+         
+         
+          ></button>
+      </div>
+
+      </form>
+
+      <br>
+      <hr>
+      <div class="container mx-auto p-3 ">
+        <img class="h-45 rounded-bl-3xl rounded-tr-3xl " src="https://www.pnm.com/documents/396023/396155/Phone+Scam+042320-01+(1).jpg/9a596f7a-97ad-b2f7-0be1-960e3e4873c3?t=1588709701398" alt="not available">
+      
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="container mx-auto p-9  shadow-2xl .grid-cols-1 rounded-3xl">
+      <img class="h-50 w-50 rounded-bl-3xl rounded-tr-3xl" src="https://imgs.search.brave.com/GmAv3aWPdfEcwEXKBcHeXcS6ftcMcBb3wVVeHOHZYZE/rs:fit:600:1000:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2Q3LzI1/LzRkL2Q3MjU0ZGE1/ODU1YjlmZjM3NmQ4/OGMwYTk1ZTdjNDRh/LmpwZw" alt="not available">
+    
+    </div>
+    
+    </div>
+
+    
+    <app-footer></app-footer>

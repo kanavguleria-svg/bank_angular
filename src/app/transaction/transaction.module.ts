@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MakeTransactionComponent } from './make-transaction/make-transaction.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TrxnDashboardComponent } from './trxn-dashboard/trxn-dashboard.component';
 
@@ -15,7 +15,8 @@ import { TrxnDashboardComponent } from './trxn-dashboard/trxn-dashboard.componen
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     MakeTransactionComponent,
