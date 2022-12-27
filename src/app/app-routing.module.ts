@@ -40,7 +40,11 @@ const routes: Routes = [
   },
   { path: 'usercontact', component: UserQueryComponent },
   { path: 'accountdetails', component: AccountDetailsComponent },
-  { path: 'admindashboard', component: AdminDashboardComponent },
+  {
+    path: 'admindashboard',
+    component: AdminDashboardComponent,
+    canActivate: [AuthActivateRouteGuard],
+  },
 ];
 
 @NgModule({
