@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreditCard } from 'src/app/types/CreditCard';
+import { CreditCard } from 'src/app/models/CreditCard';
 
 
 import { CreditCardService } from './credit-card.service';

@@ -1,5 +1,4 @@
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +9,7 @@ import { UserModule } from './User/user.module';
 import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
 import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
 import { LovedeepModuleModule } from './lovedeep-module/lovedeep-module.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
