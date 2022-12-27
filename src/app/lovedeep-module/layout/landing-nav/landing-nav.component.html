@@ -23,7 +23,7 @@
   <div class="flex justify-between px-4 items-center py-2 bg-primary">
     <!--? brand -->
     <div class="text-black text-2xl font-medium pl-3">
-      H<span class="text-white text-3xl">M</span>B
+      <a routerLink="/home"> H<span class="text-white text-3xl">M</span>B </a>
     </div>
 
     <!--? right-part -->
@@ -31,7 +31,7 @@
       <span class="dropdown-service" (click)="showDropdown()">Services</span>
       <a class="text-white" href="#">Offers</a>
       <a class="text-white" href="#">Pay</a>
-      <a class="text-white" href="#">Contact</a>
+      <a class="text-white" routerLink="/contact">Contact</a>
       <!--? services-dropdown -->
       <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
         <a href="#">Credit Card</a>
