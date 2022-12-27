@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { LoanReq } from './loan-req';
 import { LoanAccount } from './loanacc';
 
@@ -9,7 +10,7 @@ import { LoanAccount } from './loanacc';
 })
 export class LoanReqService {
 
-  private basepath = "http://localhost:8090";
+  private basepath = environment.rooturl;
 
   constructor(private http: HttpClient) { }
 
