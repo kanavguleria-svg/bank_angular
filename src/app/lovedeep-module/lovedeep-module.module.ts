@@ -42,7 +42,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule,AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
     HttpClientXsrfModule.withOptions({
