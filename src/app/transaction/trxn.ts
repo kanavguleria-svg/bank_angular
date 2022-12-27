@@ -6,4 +6,7 @@ export class TransactionDetails{
     transaction_dt: string;
     customer_id: number;
     trxnDescription: string;
+    closing_bal_sender: number;
+    closing_bal_reciever: number;
+
 }

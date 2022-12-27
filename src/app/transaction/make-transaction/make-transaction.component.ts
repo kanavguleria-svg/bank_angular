@@ -61,16 +61,16 @@ export class MakeTransactionComponent implements OnInit {
   
   get fval() { return this.transferForm.controls; }
 
-  maketrxn() {
-    console.log(this.trxndetails);
-    this.service.maketrxn(this.trxndetails, 0).subscribe(data => {
-      this.message = data;
-      this.trxndetails = new TransactionDetails();
-    }, error => {
-      console.log(error);
-    }
-    )
-  }
+  // maketrxn() {
+  //   console.log(this.trxndetails);
+  //   this.service.maketrxn(this.trxndetails, 0).subscribe(data => {
+  //     this.message = data;
+  //     this.trxndetails = new TransactionDetails();
+  //   }, error => {
+  //     console.log(error);
+  //   }
+  //   )
+  // }
   transfer() {
     this.submitted = true;
     this.trxndetails.account_num_reciever =  this.transferForm.get('account_num_reciever').value;

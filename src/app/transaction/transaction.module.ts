@@ -4,6 +4,7 @@ import { MakeTransactionComponent } from './make-transaction/make-transaction.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TrxnDashboardComponent } from './trxn-dashboard/trxn-dashboard.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 
@@ -16,7 +17,8 @@ import { TrxnDashboardComponent } from './trxn-dashboard/trxn-dashboard.componen
     CommonModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   exports: [
     MakeTransactionComponent,
