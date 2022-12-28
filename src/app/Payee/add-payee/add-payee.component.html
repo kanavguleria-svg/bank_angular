@@ -1,3 +1,4 @@
+<app-landing-nav></app-landing-nav>
 <body>
     <div class="container">
       <header class="header">
@@ -7,35 +8,37 @@
       <form id="survey-form" #myform="ngForm">
         <div class="form-group">
           <label id="name-label" for="name">Name</label>
-          <input type="text" name="name" id="name" class="form-control" placeholder="Name" required />
+          <input type="text" name="name" id="name" class="form-control" placeholder="Name" required [(ngModel)]="payee.name" #name="ngModel"/>
         </div>
         <div class="form-group">
           <label id="email-label" for="email">Email</label>
-          <input type="email" name="email" id="email" class="form-control" placeholder="Email" required />
+          <input type="email" name="email" id="email" class="form-control" placeholder="Email" required [(ngModel)]="payee.email" #email="ngModel"/>
         </div>
         <div class="form-group">
           <label id="number-label" for="number">Phone</label>
-          <input type="text" name="phone" id="phone"  class="form-control" placeholder="Phone" required/>
+          <input type="text" name="phone" id="phone"  class="form-control" placeholder="Phone" required [(ngModel)]="payee.phone" #phone="ngModel"/>
         </div>
         <div class="form-group">
             <label id="number-label" for="number">Account Number</label>
-            <input type="number" name="acno" id="acno" class="form-control" placeholder="Account number" required/>
+            <input type="number" name="acno" id="acno" class="form-control" placeholder="Account number" required [(ngModel)]="payee.payee_account_no" #acno="ngModel"/>
           </div>
           <div class="form-group">
             
             <label id="number-label" for="number">Bank_name</label>
-            <input type="text" name="age" id="bankname" class="form-control" placeholder="Bank name" required/>
+            <input type="text" name="age" id="bankname" class="form-control" placeholder="Bank name" required [(ngModel)]="payee.bank_name" #name="ngModel"/>
         
           </div>
        
         
   
         <div class="form-group"><div class="btn">
-          <button type="submit" id="submit" class="submit-button">Save</button>
+          <button [disabled]="myform.form.invalid" (click)="savePayee()" type="submit" id="submit" class="submit-button">Save</button>
         </div>
   
         </div>
+        <div *ngIf="toggle">Payee Added!</div>
   
       </form>
     </div>
   </body>
+  <app-footer></app-footer>
