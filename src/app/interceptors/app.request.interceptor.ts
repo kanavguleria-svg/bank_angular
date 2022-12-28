@@ -12,27 +12,24 @@ import { Customer } from '../models/customer.model';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
-  customer = new Customer();
+  user = new Customer();
   constructor(private router: Router) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     let httpHeaders = new HttpHeaders();
     if (sessionStorage.getItem('userdetails')) {
-      this.customer = JSON.parse(sessionStorage.getItem('userdetails')!);
+      this.user = JSON.parse(sessionStorage.getItem('userdetails')!);
     }
-    if (this.customer && this.customer.password && this.customer.email) {
+    if (this.user && this.user.password && this.user.email) {
       httpHeaders = httpHeaders.append(
         'Authorization',
-        'Basic ' +
-          window.btoa(this.customer.email + ':' + this.customer.password)
+        'Basic ' + window.btoa(this.user.email + ':' + this.user.password)
       );
     }
-
     let xsrf = sessionStorage.getItem('XSRF-TOKEN');
     if (xsrf) {
       httpHeaders = httpHeaders.append('X-XSRF-TOKEN', xsrf);
     }
-
     httpHeaders = httpHeaders.append('X-Requested-With', 'XMLHttpRequest');
     const xhr = req.clone({
       headers: httpHeaders,

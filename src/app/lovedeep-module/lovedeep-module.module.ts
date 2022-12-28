@@ -21,6 +21,10 @@ import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserNavComponent } from './layout/user-nav/user-nav.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { UserdashhomeComponent } from './components/userdashhome/userdashhome.component';
+import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +41,15 @@ import { LogoutComponent } from './components/logout/logout.component';
     UserNavComponent,
     UserDashboardComponent,
     LogoutComponent,
+    SidenavComponent,
+    UserdashhomeComponent,
+    AccountDetailsComponent,
+    AdminsidenavComponent,
   ],
   imports: [
     CommonModule,
-    FormsModule,AppRoutingModule,
+    FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
     HttpClientXsrfModule.withOptions({

@@ -40,7 +40,6 @@ export class CrouselComponent implements OnInit {
       .validateLoginDetails(this.model)
       .subscribe((responseData) => {
         this.model = <any>responseData.body;
-        console.log(this.model);
         let xsrf = getCookie('XSRF-TOKEN')!;
         window.sessionStorage.setItem('XSRF-TOKEN', xsrf);
         this.model.authStatus = 'AUTH';
@@ -48,8 +47,11 @@ export class CrouselComponent implements OnInit {
           'userdetails',
           JSON.stringify(this.model)
         );
-        // conditional dashboard rendering
-        this.router.navigate(['customerdashboard']);
+        if (this.model.role == 'ROLE_ADMIN') {
+          this.router.navigate(['admindashboard']);
+        } else {
+          this.router.navigate(['customerdashboard']);
+        }
       });
   }
 

@@ -8,11 +8,12 @@ import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/u
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { CheckbookComponent } from './credit-and-check/checkbook/checkbook.component';
 import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.component';
-
-
+import { UserQueryComponent } from './lovedeep-module/components/query/user-query/user-query.component';
+import { AccountDetailsComponent } from './lovedeep-module/components/account-details/account-details.component';
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
-import { UserUpdationComponent } from './User/user-updation/user-updation.component';
+import { AdminDashboardComponent } from './lovedeep-module/pages/admin-dashboard/admin-dashboard.component';
 import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
+import { UserUpdationComponent } from './User/user-updation/user-updation.component';
 
 const routes: Routes = [
   {
@@ -38,10 +39,11 @@ const routes: Routes = [
   //user Routes
   {path:'register',component:UserRegistrationComponent},
   {path:'updateUser',component:UserUpdationComponent},
-  {path:'addPayee',component:AddPayeeComponent},
-
+ 
   //payee Routes
   {path:'updatePayee',component:AddPayeeComponent},
+  {path:'addPayee',component:AddPayeeComponent},
+
   {path:'checkbR',component:CheckbookComponent},
 
   {path:'creditR',component:CreditCardComponent},
@@ -50,8 +52,14 @@ const routes: Routes = [
     path: 'logout',
     component: LogoutComponent,
   },
+  { path: 'usercontact', component: UserQueryComponent },
+  { path: 'accountdetails', component: AccountDetailsComponent },
+  {
+    path: 'admindashboard',
+    component: AdminDashboardComponent,
+    canActivate: [AuthActivateRouteGuard],
+  },
 ];
- 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
