@@ -17,8 +17,10 @@ export class MakeTransactionComponent implements OnInit {
   trxndetails: TransactionDetails;
   message: string = '';
   flag: boolean= false;
+  customphacc: string;
+  private customer_id: number;
+  private customer_bal: number;
 
-  customphacc="Account number : \nAccount Balance : ";
 
   trxndes: string[] = [
     'Bills',
@@ -33,8 +35,14 @@ export class MakeTransactionComponent implements OnInit {
   constructor(private service: TrxnService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    this.getAccountDetails();
+
     this.transaction_dt = "Date : "+this.tr_dt.getDate()+"-"+this.tr_dt.getMonth()+"-"+this.tr_dt.getFullYear();
+    this.customphacc="Account number : "+this.customer_id+"\nAccount Balance : "+this.customer_bal;
+
     this.trxndetails = new TransactionDetails();
+
     this.transferForm = new FormGroup({
       account_num_reciever: new FormControl(this.trxndetails.account_num_reciever, [
         Validators.required,
@@ -50,6 +58,13 @@ export class MakeTransactionComponent implements OnInit {
     });
   
   }
+
+  getAccountDetails() {
+    if (sessionStorage.getItem('userdetails')) {
+      this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
+      this.customer_bal = JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_num_sender;
+    }
+  }
   
   get account_num_reciever() { return this.transferForm.get('account_num_reciever'); }
 
@@ -61,16 +76,6 @@ export class MakeTransactionComponent implements OnInit {
   
   get fval() { return this.transferForm.controls; }
 
-  // maketrxn() {
-  //   console.log(this.trxndetails);
-  //   this.service.maketrxn(this.trxndetails, 0).subscribe(data => {
-  //     this.message = data;
-  //     this.trxndetails = new TransactionDetails();
-  //   }, error => {
-  //     console.log(error);
-  //   }
-  //   )
-  // }
   transfer() {
     this.submitted = true;
     this.trxndetails.account_num_reciever =  this.transferForm.get('account_num_reciever').value;
@@ -85,7 +90,7 @@ export class MakeTransactionComponent implements OnInit {
     }
     this.loading = true;
     try {
-      this.service.maketrxn(this.trxndetails, 0).subscribe(data => {  
+      this.service.maketrxn(this.trxndetails, this.customer_id).subscribe(data => {  
           this.loading = false;
           this.message = data;
           if (data) {

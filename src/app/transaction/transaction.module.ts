@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TrxnDashboardComponent } from './trxn-dashboard/trxn-dashboard.component';
 import { DataTablesModule } from 'angular-datatables';
+import { CreditAndCheckModule } from '../credit-and-check/credit-and-check.module';
 
 
 
@@ -18,7 +19,8 @@ import { DataTablesModule } from 'angular-datatables';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    CreditAndCheckModule
   ],
   exports: [
     MakeTransactionComponent,

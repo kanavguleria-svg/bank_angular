@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'src/app/models/customer.model';
 import { LoanReq } from '../loan-req';
 import { LoanReqService } from '../loan-req.service';
 import { LoanAccount } from '../loanacc';
@@ -46,7 +47,7 @@ export class LoanReqComponent implements OnInit {
   loanReqDetails: LoanReq;
   loanacc: LoanAccount;
   message: string;
-  customer_id: number = 0;
+  customer_id: number;
   customphacc: string;
 
   constructor(private service: LoanReqService) { }
@@ -56,7 +57,11 @@ export class LoanReqComponent implements OnInit {
     this.loanReqDetails.loan_type = null;
     this.loanReqDetails.loan_amt = 0;
     this.loanReqDetails.loan_term = 0;
-    this.getCustomerAccno();
+    // this.getCustomerAccno();
+    if(sessionStorage.getItem('userdetails')) {
+      this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
+    }
+    console.log(this.customer_id)
     
   }
 
@@ -84,12 +89,7 @@ export class LoanReqComponent implements OnInit {
   }
 
   calculate_loan_rate(term: number, amount: any) {
-    console.log("called")
-    console.log(typeof term)
-    console.log(amount)
     amount = parseInt(amount)
-    console.log(typeof amount)
-
     let final_rate: number = 0;
     if (term>=1 && term<=5) {
       final_rate = 11.2;
