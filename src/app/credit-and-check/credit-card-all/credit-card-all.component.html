@@ -1,0 +1,41 @@
+<app-landing-nav></app-landing-nav>
+
+<div class="grid place-items-start ...  flex items-stretch justify-center ...">
+    <h3 class="item-center">ALL CREDIT CARDS</h3>
+    <div class=" mx-auto my-auto ">
+        <table class="table table-hover border-2  ">
+            <tr class="bg-success text-black border-2 border-black p-1 justify-center">
+                
+                <th class="p-3">customer_id</th>
+                <th class="p-3">Pan No.</th>
+                <th class="p-3">Annual salary</th>
+                <th class="p-3">Type of Card</th>
+                <th class="p-3">Approve</th>
+                <th class="p-3">req_dt</th>
+                
+            </tr>
+        
+             <tr class=" text-black border-2 border-black" *ngFor="let cc of creditCollection ; let i = index">
+                
+                <ng-container *ngFor="let k of findRecords(cc)">
+                    <td class="border-black border-1 font-sans text-center p-1">{{k}}</td>
+                </ng-container>
+                <!-- <td>
+                    <!-- <button class="btn btn-danger" (click)="">DELETE</button> | -->
+                    <!-- <button class="btn btn-info" (click)="">EDIT</button> -->
+                <!-- </td> -->
+            </tr> 
+            
+        </table>
+        </div>
+   
+  </div>
+
+
+
+
+<button (click)="getCreditCards()" class="bg-blue-500 shadow-lg shadow-blue-500/50 ...">show</button>
+
+
+
+<app-footer></app-footer>

@@ -11,6 +11,8 @@ import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.
 
 
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
+import { CreditCardAllComponent } from './credit-and-check/credit-card-all/credit-card-all.component';
+import { CheckbookAllComponent } from './credit-and-check/checkbook-all/checkbook-all.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,9 @@ const routes: Routes = [
   {path:'checkbR',component:CheckbookComponent},
   {path:'creditR',component:CreditCardComponent},
   {path:'',component:LandingComponent},
+
+  {path:'admin/listCredits',component:CreditCardAllComponent},
+  {path:'admin/check_books/requests',component:CheckbookAllComponent},
 ];
 
 @NgModule({

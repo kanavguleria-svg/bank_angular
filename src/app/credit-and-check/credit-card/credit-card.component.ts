@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CreditCard } from 'src/app/types/CreditCard';
+import { CreditCard } from 'src/app/models/CreditCard';
 
 
-import { CreditCardService } from './credit-card.service';
+import { CreditCardService } from '../credit-card.service';
 
 @Component({
   selector: 'app-credit-card',
@@ -27,10 +27,11 @@ export class CreditCardComponent implements OnInit {
   createCreditCard(id:number,credit_card:CreditCard){
     this.creditCardServ.createCreditCard(this.id,this.creditCard).subscribe(data =>{
       console.log("credit card is running ");
-      
       this.message = data;
       this.creditCard = new CreditCard();
-    }
-    );
+    }, error => {
+      console.log(error);
+    });
+    
   }
 }

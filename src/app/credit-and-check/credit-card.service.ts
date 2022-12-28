@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CreditCard } from 'src/app/types/CreditCard';
+import { CreditCard } from 'src/app/models/CreditCard';
 
 
 @Injectable({
@@ -18,7 +18,7 @@ export class CreditCardService {
 
   getCreditCard()
   {
-    return this.http.get(`${this.basePath}/admin/credit_cards/requests`,{responseType:'text'});
+    return this.http.get<any>(`${this.basePath}/admin/credit_cards/requests`);
   }
 
   removeCreditCard(id:number)
