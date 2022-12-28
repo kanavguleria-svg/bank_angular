@@ -11,6 +11,8 @@ import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.
 
 
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
+import { UserUpdationComponent } from './User/user-updation/user-updation.component';
+import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
 
 const routes: Routes = [
   {
@@ -22,17 +24,28 @@ const routes: Routes = [
     path: 'home',
     component: LandingComponent,
   },
+  //landing Route
   { path: 'login', component: LoginComponent },
+
   { path: 'contact', component: ContactQueryComponent },
+
   {
     path: 'customerdashboard',
     component: UserDashboardComponent,
     canActivate: [AuthActivateRouteGuard],
   },
+
+  //user Routes
   {path:'register',component:UserRegistrationComponent},
+  {path:'updateUser',component:UserUpdationComponent},
+  {path:'addPayee',component:AddPayeeComponent},
+
+  //payee Routes
+  {path:'updatePayee',component:AddPayeeComponent},
   {path:'checkbR',component:CheckbookComponent},
+
   {path:'creditR',component:CreditCardComponent},
-  {path:'',component:LandingComponent},
+
   {
     path: 'logout',
     component: LogoutComponent,
