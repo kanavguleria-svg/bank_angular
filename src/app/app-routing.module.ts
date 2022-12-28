@@ -13,6 +13,9 @@ import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
 import { CreditCardAllComponent } from './credit-and-check/credit-card-all/credit-card-all.component';
 import { CheckbookAllComponent } from './credit-and-check/checkbook-all/checkbook-all.component';
+import { MakeTransactionComponent } from './transaction/make-transaction/make-transaction.component';
+import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashboard.component';
+import { LoanReqComponent } from './loan/loan-req/loan-req.component';
 
 const routes: Routes = [
   {
@@ -38,10 +41,27 @@ const routes: Routes = [
 
   {path:'admin/listCredits',component:CreditCardAllComponent},
   {path:'admin/check_books/requests',component:CheckbookAllComponent},
+  { path: 'register', component: UserRegistrationComponent },
+  { path: 'checkbR', component: CheckbookComponent },
+  { path: 'creditR', component: CreditCardComponent },
+  { path: '', component: LandingComponent },
+  {
+    path: 'payment', 
+    component: MakeTransactionComponent
+  },
+  {
+    path: 'transaction', 
+    component: TrxnDashboardComponent
+  },
+  {
+    path: 'loanreq',
+    component: LoanReqComponent
+  }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

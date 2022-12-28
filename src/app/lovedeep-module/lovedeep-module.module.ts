@@ -35,8 +35,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    AppRoutingModule,
+    FormsModule,AppRoutingModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
