@@ -1,10 +1,3 @@
-import {
-  HttpClientModule,
-  HTTP_INTERCEPTORS,
-  HttpClientXsrfModule,
-} from '@angular/common/http';
-import { XhrInterceptor } from './interceptors/app.request.interceptor';
-import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +10,13 @@ import { CreditAndCheckModule } from './credit-and-check/credit-and-check.module
 import { UserModule } from './User/user.module';
 import { LovedeepModuleModule } from './lovedeep-module/lovedeep-module.module';
 import { PayeeModule } from './Payee/payee.module';
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+  HttpClientXsrfModule,
+} from '@angular/common/http';
+import { XhrInterceptor } from './interceptors/app.request.interceptor';
+import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,16 +26,17 @@ import { PayeeModule } from './Payee/payee.module';
     AppRoutingModule,
     UserModule,
     FormsModule,
-    HttpClientModule,
     CreditAndCheckModule,
     LovedeepModuleModule,
     PayeeModule,
+    LoanModule,
+    TransactionModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',
-    }), LoanModule,
-    TransactionModule,
-    BrowserAnimationsModule,
+    }),
   ],
   providers: [
     {
