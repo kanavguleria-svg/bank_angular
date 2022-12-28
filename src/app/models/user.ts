@@ -11,7 +11,7 @@ export class User {
   password: string;
   unique_identity: string;
   unique_identity_number: number;
-  role: string;
+  role: string = 'ROLE_USER';
   employement_status: string;
 }
 export class Account_details {

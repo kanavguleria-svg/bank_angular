@@ -1,7 +1,7 @@
 import { Account_details } from './user';
 
 export class Customer {
-  public id: number;
+  public customer_id: number;
   public name: string;
   public email: string;
   public phone: string;
@@ -20,7 +20,7 @@ export class Customer {
   public payee: any;
 
   constructor(
-    id?: number,
+    customer_id?: number,
     name?: string,
     email?: string,
     phone?: string,
@@ -37,7 +37,7 @@ export class Customer {
     authStatus?: string,
     accountDetails?: Account_details
   ) {
-    this.id = id || 0;
+    this.customer_id = customer_id || 0;
     this.name = name || '';
     this.email = email || '';
     this.phone = phone || '';
