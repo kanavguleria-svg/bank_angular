@@ -9,13 +9,14 @@ import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { CheckbookComponent } from './credit-and-check/checkbook/checkbook.component';
 import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.component';
 
-
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
 import { CreditCardAllComponent } from './credit-and-check/credit-card-all/credit-card-all.component';
 import { CheckbookAllComponent } from './credit-and-check/checkbook-all/checkbook-all.component';
 import { MakeTransactionComponent } from './transaction/make-transaction/make-transaction.component';
 import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashboard.component';
 import { LoanReqComponent } from './loan/loan-req/loan-req.component';
+import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amdin.component';
+import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,8 @@ const routes: Routes = [
   { path: 'checkbR', component: CheckbookComponent },
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
+  { path: 'admin/createOffers', component: OffersAmdinComponent },
+  { path: 'admin/allOffers', component: OfferAllComponent },
   {
     path: 'payment', 
     component: MakeTransactionComponent

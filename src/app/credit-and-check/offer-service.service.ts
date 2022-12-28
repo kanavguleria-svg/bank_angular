@@ -15,7 +15,6 @@ export class OfferServiceService {
     return this.http.post(`${this.basePath}/admin/createoffers`,offer,{responseType:'text'});
   }
 
-
   getOffer()
   {
     return this.http.get<any>(`${this.basePath}/admin/offers`);
