@@ -48,7 +48,8 @@ import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.co
   ],
   imports: [
     CommonModule,
-    FormsModule,AppRoutingModule,
+    FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
     HttpClientXsrfModule.withOptions({
