@@ -3,7 +3,7 @@
     <div class=" container mx-auto p-9 .grid-cols-1">
       <h1><strong>Checkbook Request</strong> </h1>
       <hr>
-    <form class="w-full max-w-lg shadow-2xl shadow-orange-400 ">
+    <form (ngSubmit)=" createCheckBook(id,checkbook)" class="w-full max-w-lg shadow-2xl shadow-orange-400 ">
       <br>
 
         <div class="flex flex-wrap -mx-3 mb-6 p-2">
@@ -12,7 +12,8 @@
                 your Account no
               </label>
               <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="your account no."
-             
+              [(ngModel)]="checkbook.account_no"
+              name="account_no"
               required
               >
               <p class="text-gray-600 text-xs italic">*fill your 16 digits account no given by your bank</p>
@@ -25,7 +26,8 @@
                 No. of leafs
               </label>
               <input class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="no of leafs required "
-              
+              [(ngModel)]="checkbook.no_of_leaf"
+              name="no_of_leaf"
               required
               >
               <p class="text-gray-600 text-xs italic">* upto 10 leafs are free and Rs. 2 for ever leaf after that </p>

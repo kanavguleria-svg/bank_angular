@@ -14,6 +14,11 @@ import { UserRegistrationComponent } from './User/user-registration/user-registr
 import { AdminDashboardComponent } from './lovedeep-module/pages/admin-dashboard/admin-dashboard.component';
 import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
 import { UserUpdationComponent } from './User/user-updation/user-updation.component';
+import { CreditCardAllComponent } from './credit-and-check/credit-card-all/credit-card-all.component';
+import { CheckbookAllComponent } from './credit-and-check/checkbook-all/checkbook-all.component';
+import { MakeTransactionComponent } from './transaction/make-transaction/make-transaction.component';
+import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashboard.component';
+import { LoanReqComponent } from './loan/loan-req/loan-req.component';
 
 const routes: Routes = [
   {
@@ -59,10 +64,22 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     canActivate: [AuthActivateRouteGuard],
   },
+  {
+    path: 'payment', 
+    component: MakeTransactionComponent
+  },
+  {
+    path: 'transaction', 
+    component: TrxnDashboardComponent
+  },
+  {
+    path: 'loanreq',
+    component: LoanReqComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
