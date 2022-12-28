@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreditCard } from 'src/app/models/CreditCard';
+import { Customer } from 'src/app/models/customer.model';
 
 
 import { CreditCardService } from '../credit-card.service';
@@ -11,13 +12,17 @@ import { CreditCardService } from '../credit-card.service';
 })
 export class CreditCardComponent implements OnInit {
 
+  customer=new Customer();
   constructor(private creditCardServ:CreditCardService ) {}
 
   ngOnInit(): void {
     this.creditCard= new CreditCard();
+    if(sessionStorage.getItem('userdetails')){
+      this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
+    }
   }
 
-  id:number=3;
+  id:number=this.customer.id;
  
   
   creditCard:CreditCard;

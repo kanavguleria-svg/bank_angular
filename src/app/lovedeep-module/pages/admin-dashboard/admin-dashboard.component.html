@@ -1,1 +1,38 @@
-<p>admin-dashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HMB Admin DashBoard</title>
+  </head>
+  <body>
+    <app-user-nav></app-user-nav>
+    <div class="flex justify-between">
+      <app-adminsidenav></app-adminsidenav>
+      <div class="main-screen">
+        <h1 class="pt-10 pl-10 text-xl">ADMIN DASHBOARD</h1>
+        <div class="flex justify-evenly mt-8">
+          <div class="balance py-3 px-8 rounded-xl text-xl text-white">
+            <div>Total Users</div>
+            <div class="text-center">20</div>
+          </div>
+          <div class="services py-3 px-10 text-white rounded-xl text-xl">
+            <div>Total Borrowers</div>
+            <div class="text-center">5</div>
+          </div>
+          <div
+            class="offers py-3 px-10 flex justify-center text-xl items-center text-white rounded-xl"
+          >
+            Generate Offers
+          </div>
+        </div>
+
+        <div class="transactions mt-12 pl-10">
+          <h1 class="text-xl">Recent Requests</h1>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
