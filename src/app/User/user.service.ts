@@ -32,7 +32,7 @@ export class UserService {
     customerId: number
   ): Observable<any> {
     return this.http.post(
-      `${this.basePath}/customer/${customerId}/account-details`,
+      `${this.basePath}/register/customer/${customerId}/account-details`,
       account_details,
       { responseType: 'text' }
     );
