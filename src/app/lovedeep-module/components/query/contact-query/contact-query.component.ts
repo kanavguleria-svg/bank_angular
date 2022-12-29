@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from 'src/app/lovedeep-module/layout/footer/footer.component';
-import { LandingNavComponent } from 'src/app/lovedeep-module/layout/landing-nav/landing-nav.component';
+import { ContactQuery } from 'src/app/models/contactquery.model';
+import { QueryService } from 'src/app/services/query.service';
+
 @Component({
   selector: 'app-contact-query',
   templateUrl: './contact-query.component.html',
   styleUrls: ['./contact-query.component.css'],
 })
 export class ContactQueryComponent implements OnInit {
-  name!: string;
-  email!: string;
-  phone!: string;
-  message!: string;
+  model: ContactQuery;
+  message: any;
 
-  constructor() {}
+  constructor(private queryService: QueryService) {}
+  saveContactQuery() {
+    this.queryService.postContactQuery(this.model).subscribe((responseData) => {
+      (data) => {
+        this.message = data;
+        console.log(this.model);
+      };
+    });
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.model = new ContactQuery();
+  }
 }

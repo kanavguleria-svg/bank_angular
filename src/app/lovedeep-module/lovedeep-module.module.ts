@@ -11,13 +11,7 @@ import { UserOffersComponent } from './components/user-offers/user-offers.compon
 import { LoginComponent } from './pages/login/login.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
-import {
-  HttpClientModule,
-  HTTP_INTERCEPTORS,
-  HttpClientXsrfModule,
-} from '@angular/common/http';
-import { XhrInterceptor } from '../interceptors/app.request.interceptor';
-import { AuthActivateRouteGuard } from '../routeguards/auth.routeguard';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserNavComponent } from './layout/user-nav/user-nav.component';
 import { LogoutComponent } from './components/logout/logout.component';
@@ -52,19 +46,8 @@ import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.co
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
-    HttpClientXsrfModule.withOptions({
-      cookieName: 'XSRF-TOKEN',
-      headerName: 'X-XSRF-TOKEN',
-    }),
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: XhrInterceptor,
-      multi: true,
-    },
-    AuthActivateRouteGuard,
-  ],
+  providers: [],
   exports: [
     LandingComponent,
     LandingNavComponent,

@@ -12,7 +12,7 @@ import { PayeeServiceService } from '../payee-service.service';
 export class AllPayeeComponent implements OnInit {
   payee:Payee[];
   customer= new Customer();
-  customerId:number=this.customer.id;
+  customerId:number=this.customer.customer_id;
   message:any;
   dtOptions: any;
 

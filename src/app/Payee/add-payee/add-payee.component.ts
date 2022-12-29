@@ -11,7 +11,7 @@ import { PayeeServiceService } from '../payee-service.service';
 export class AddPayeeComponent implements OnInit {
   customer=new Customer();
   payee:Payee;
-  customerId:number=this.customer.id;
+  customerId:number=this.customer.customer_id;
   message:any;
   toggle:boolean=false;
 

@@ -13,7 +13,7 @@
 
     <!-- Form -->
     <div class="w-2/3 px-10">
-      <form>
+      <form (ngSubmit)="saveContactQuery()">
         <div class="flex justify-between">
           <div>
             <label for="fullname">Full Name</label>
@@ -24,7 +24,8 @@
               placeholder="Name"
               required
               size="30"
-              [(ngModel)]="name"
+              [(ngModel)]="model.name"
+              name="name"
             />
           </div>
 
@@ -37,7 +38,8 @@
               type="email"
               placeholder="Email"
               required
-              [(ngModel)]="email"
+              [(ngModel)]="model.email"
+              name="email"
             />
           </div>
         </div>
@@ -49,7 +51,8 @@
             class="bg-gray-100 border-b border-gray-800 mt-3 outline-none"
             type="text"
             placeholder="Phone"
-            [(ngModel)]="phone"
+            [(ngModel)]="model.phone"
+            name="phone"
           />
         </div>
 
@@ -63,7 +66,7 @@
             cols="30"
             rows="5"
             placeholder="Message"
-            [(ngModel)]="message"
+            [(ngModel)]="model.query_desc"
           ></textarea>
         </div>
         <button

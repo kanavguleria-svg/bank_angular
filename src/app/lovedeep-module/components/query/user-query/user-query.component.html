@@ -9,7 +9,7 @@
     </span>
   </div>
   <div>
-    <form>
+    <form (ngSubmit)="saveUserQuery()">
       <div>
         <label class="text-xl" for="message">Message</label>
         <br />
@@ -20,7 +20,7 @@
           cols="50"
           rows="5"
           placeholder="Message"
-          [(ngModel)]="message"
+          [(ngModel)]="model.query_desc"
         ></textarea>
       </div>
       <button

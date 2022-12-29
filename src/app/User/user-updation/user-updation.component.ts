@@ -13,7 +13,7 @@ export class UserUpdationComponent implements OnInit {
   user:User;
   message: string;
   customer= new Customer();
-  customerId:number=this.customer.id;
+  customerId:number=this.customer.customer_id;
   toggle = false;
 
   constructor(private service:UserService) { }
