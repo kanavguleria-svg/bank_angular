@@ -8,7 +8,9 @@ import { environment } from '../../environments/environment';
 })
 export class LoginService {
   constructor(private http: HttpClient) {}
+
   validateLoginDetails(customer: Customer) {
+    console.log('customer is', customer);
     window.sessionStorage.setItem('userdetails', JSON.stringify(customer));
     return this.http.get(environment.rooturl + '/user', {
       observe: 'response',

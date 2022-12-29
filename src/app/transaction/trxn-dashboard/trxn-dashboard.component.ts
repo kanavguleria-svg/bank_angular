@@ -9,7 +9,9 @@ import { TrxnService } from '../trxn.service';
 })
 export class TrxnDashboardComponent implements OnInit {
   dtOptions: any = {};
-  trxnhistory: TransactionDetails[];
+  trxnhistory: TransactionDetails[] = [
+    
+  ];
   customer_id: number;
 
   constructor(private service: TrxnService) { }

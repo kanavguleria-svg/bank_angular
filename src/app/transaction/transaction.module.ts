@@ -19,8 +19,7 @@ import { CreditAndCheckModule } from '../credit-and-check/credit-and-check.modul
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    DataTablesModule,
-    CreditAndCheckModule
+    DataTablesModule
   ],
   exports: [
     MakeTransactionComponent,
