@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'src/app/models/customer.model';
 import { User } from 'src/app/models/user';
 import { UserService } from '../user.service';
 
@@ -11,26 +12,17 @@ import { UserService } from '../user.service';
 export class UserUpdationComponent implements OnInit {
   user:User;
   message: string;
-  customerId:number=153;
+  customer= new Customer();
+  customerId:number=this.customer.id;
   toggle = false;
 
   constructor(private service:UserService) { }
-
-  
-  // status = 'Enable'; 
-  
-  // enableDisableRule() {
-  //     this.toggle = !this.toggle;
-  //     this.status = this.toggle ? 'Enable' : 'Disable';
-  // }
   ngOnInit(): void {
     this.user=new User;
-    // this.service.getcustomerId()
-    // .subscribe(data=>{
-    //   this.customerId=data.customer_id;
-    // })
- 
+    if(sessionStorage.getItem('userdetails')){
+      this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
   }
+}
 
   updateUser() {
     this.toggle = true;
@@ -39,10 +31,8 @@ export class UserUpdationComponent implements OnInit {
     .subscribe(data => {
       this.message = data;
       this.user=new User;
-      console.log(this.message); // read message // clear form
-      
-    });
-    
+      console.log(this.message); // read message // clear form 
+    }); 
   }
 
 }

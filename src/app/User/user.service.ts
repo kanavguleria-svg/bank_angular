@@ -28,6 +28,8 @@ export class UserService {
     return this.http.post(`${this.basePath}/register/customer/${customerId}/account-details`, account_details, {responseType: 'text'});
   }
 
+
+
   constructor(private http: HttpClient) { }
 
 

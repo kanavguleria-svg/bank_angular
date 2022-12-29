@@ -18,7 +18,11 @@ export class PayeeServiceService {
   }
 
   deletePayee(payeeId:number):Observable<any>{
-    return this.http.delete(`${this.basePath}/customer/payee/{payeeId}/delete`, {responseType: 'text'});
+    return this.http.delete(`${this.basePath}/customer/payee/${payeeId}/delete`, {responseType: 'text'});
+  }
+
+  getAllPayee(customerId:number):Observable<any>{
+    return this.http.get<Payee[]>(`${this.basePath}/customer/${customerId}/payee`);
   }
 
   constructor(private http: HttpClient) { }
