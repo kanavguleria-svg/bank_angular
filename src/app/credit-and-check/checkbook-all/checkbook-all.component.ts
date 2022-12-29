@@ -12,7 +12,7 @@ export class CheckbookAllComponent implements OnInit {
 constructor(private checkbookServe: CheckBookServiceService) {}
 
   ngOnInit(): void { 
-
+    this.getCheckBooks();
   }
 
   checkbookCollection:[];

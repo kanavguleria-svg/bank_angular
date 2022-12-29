@@ -20,8 +20,15 @@ import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashbo
 import { LoanReqComponent } from './loan/loan-req/loan-req.component';
 import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amdin.component';
 import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
+import { AccountDetailsComponent } from './lovedeep-module/components/account-details/account-details.component';
 
 const routes: Routes = [
+
+  //acount details
+  {
+    path: 'accountdetails',
+    component: AccountDetailsComponent,
+  },
   {
     path: '',
     redirectTo: '/home',
@@ -43,19 +50,19 @@ const routes: Routes = [
   },
 
   //user Routes
-  {path:'register',component:UserRegistrationComponent},
-  {path:'updateUser',component:UserUpdationComponent},
- 
+  { path: 'register', component: UserRegistrationComponent },
+  { path: 'updateUser', component: UserUpdationComponent },
+
   //payee Routes
-  {path:'updatePayee',component:AddPayeeComponent},
-  {path:'addPayee',component:AddPayeeComponent},
+  { path: 'updatePayee', component: AddPayeeComponent },
+  { path: 'addPayee', component: AddPayeeComponent },
 
-  {path:'checkbR',component:CheckbookComponent},
+  { path: 'checkbR', component: CheckbookComponent },
 
-  {path:'creditR',component:CreditCardComponent},
+  { path: 'creditR', component: CreditCardComponent },
 
-  {path:'admin/listCredits',component:CreditCardAllComponent},
-  {path:'admin/check_books/requests',component:CheckbookAllComponent},
+  { path: 'admin/listCredits', component: CreditCardAllComponent },
+  { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
   { path: 'checkbR', component: CheckbookComponent },
   { path: 'creditR', component: CreditCardComponent },
@@ -63,21 +70,21 @@ const routes: Routes = [
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
   {
-    path: 'payment', 
-    component: MakeTransactionComponent
+    path: 'payment',
+    component: MakeTransactionComponent,
   },
   {
-    path: 'transaction', 
-    component: TrxnDashboardComponent
+    path: 'transaction',
+    component: TrxnDashboardComponent,
   },
   {
     path: 'loanreq',
-    component: LoanReqComponent
-  }
+    component: LoanReqComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

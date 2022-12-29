@@ -12,4 +12,8 @@ export class AccountDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  accountDetailId(){
+
+  }
+
 }
