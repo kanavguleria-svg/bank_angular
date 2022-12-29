@@ -1,5 +1,7 @@
+import { Account_details } from './user';
+
 export class Customer {
-  public id: number;
+  public customer_id: number;
   public name: string;
   public email: string;
   public phone: string;
@@ -14,9 +16,11 @@ export class Customer {
   public role: string;
   public employement_status: string;
   public authStatus: string;
+  public accountDetails: Account_details;
+  public payee: any;
 
   constructor(
-    id?: number,
+    customer_id?: number,
     name?: string,
     email?: string,
     phone?: string,
@@ -30,9 +34,10 @@ export class Customer {
     unique_identity_number?: number,
     role?: string,
     employement_status?: string,
-    authStatus?: string
+    authStatus?: string,
+    accountDetails?: Account_details
   ) {
-    this.id = id || 0;
+    this.customer_id = customer_id || 0;
     this.name = name || '';
     this.email = email || '';
     this.phone = phone || '';
@@ -47,5 +52,6 @@ export class Customer {
     this.role = role || '';
     this.employement_status = employement_status || '';
     this.authStatus = authStatus || '';
+    this.accountDetails = accountDetails;
   }
 }

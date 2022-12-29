@@ -22,7 +22,7 @@ export class CreditCardComponent implements OnInit {
     }
   }
 
-  id:number=this.customer.id;
+  id:number=this.customer.customer_id;
  
   
   creditCard:CreditCard;

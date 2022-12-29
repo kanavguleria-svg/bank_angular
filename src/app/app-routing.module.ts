@@ -20,6 +20,8 @@ import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashbo
 import { LoanReqComponent } from './loan/loan-req/loan-req.component';
 import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amdin.component';
 import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
+import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
+import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
 
 const routes: Routes = [
   {
@@ -47,8 +49,9 @@ const routes: Routes = [
   {path:'updateUser',component:UserUpdationComponent},
  
   //payee Routes
-  {path:'updatePayee',component:AddPayeeComponent},
+  {path:'updatePayee/:id',component:UpdatePayeeComponent},
   {path:'addPayee',component:AddPayeeComponent},
+  {path:'getAllPayee',component:AllPayeeComponent},
 
   {path:'checkbR',component:CheckbookComponent},
 
