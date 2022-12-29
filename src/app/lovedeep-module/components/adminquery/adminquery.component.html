@@ -1,0 +1,14 @@
+<div>
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Query</th>
+      <th>QueryDt</th>
+    </tr>
+    <tr *ngFor="let query of adminUserQueries">
+      <td>{{ query.userName }}</td>
+      <td>{{ query.query_desc }}</td>
+      <td>{{ query.query_dt }}</td>
+    </tr>
+  </table>
+</div>

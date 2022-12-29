@@ -19,6 +19,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { UserdashhomeComponent } from './components/userdashhome/userdashhome.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
+import { AdminqueryComponent } from './components/adminquery/adminquery.component';
+import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.co
     UserdashhomeComponent,
     AccountDetailsComponent,
     AdminsidenavComponent,
+    AdminqueryComponent,
+    AllcustomersComponent,
   ],
   imports: [
     CommonModule,

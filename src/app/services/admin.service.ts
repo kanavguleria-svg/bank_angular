@@ -13,19 +13,25 @@ export class AdminService {
   constructor(private http: HttpClient) {}
 
   getAllCustomer(): Observable<any> {
-    return this.http.get<Customer[]>(environment.rooturl + '/admin/customers');
+    return this.http.get<Customer[]>(environment.rooturl + '/admin/customers', {
+      withCredentials: true,
+    });
   }
 
   getUserQuery(): Observable<any> {
     return this.http.get<UserContactQuery[]>(
-      environment.rooturl + '/admin/queries'
+      environment.rooturl + '/admin/queries',
+      { withCredentials: true }
     );
   }
 
-  postUserOffers(query: UserContactQuery, customerId: number): Observable<any> {
+  postUserOffers(offers: UserOffers, customerId: number): Observable<any> {
     return this.http.post(
-      environment.rooturl + `/customer/${customerId}/query`,
-      query
+      environment.rooturl + `/admin/customer/${customerId}/offers`,
+      offers,
+      {
+        withCredentials: true,
+      }
     );
   }
 }
