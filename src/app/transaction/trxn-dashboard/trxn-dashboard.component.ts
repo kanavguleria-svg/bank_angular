@@ -9,12 +9,38 @@ import { TrxnService } from '../trxn.service';
 })
 export class TrxnDashboardComponent implements OnInit {
   dtOptions: any = {};
-  trxnhistory: TransactionDetails[] = [
-    
-  ];
-  customer_id: number;
+  trxnhistory: TransactionDetails[];
+//    = [
+//     {
+//       "account_num_reciever" : 5678,
+//       "account_num_sender" : 1234,
+//       "transaction_amt" : 1000,
+//       "trxnDescription" : "TR",
+//       "transaction_id" : 1,
+//     transaction_dt : '1-1-1',
+//     customer_id : 0,
+//     closing_bal_sender: 9000,
+//     closing_bal_reciever: 10000
+//   },
+//   {
+//     "account_num_reciever" : 1234,
+//     "account_num_sender" : 5678,
+//     "transaction_amt" : 1000,
+//     "trxnDescription" : "TR",
+//     "transaction_id" : 1,
+//   transaction_dt : '1-1-1',
+//   customer_id : 0,
+//   closing_bal_sender: 9000,
+//   closing_bal_reciever: 10000
+// }
+//   ];
+  private customer_id: number;
+  account_num_sender: number;
 
-  constructor(private service: TrxnService) { }
+  constructor(private service: TrxnService) {
+    this.account_num_sender = 1234;
+
+   }
 
   ngOnInit(): void {
 
@@ -36,6 +62,7 @@ export class TrxnDashboardComponent implements OnInit {
   getcustomerId() {
     if(sessionStorage.getItem('userdetails')){
       this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
+      // JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_num_sender
     }
   }
 

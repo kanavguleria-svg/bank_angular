@@ -17,6 +17,7 @@ import { CreditAndCheckModule } from './credit-and-check/credit-and-check.module
 import { UserModule } from './User/user.module';
 import { LovedeepModuleModule } from './lovedeep-module/lovedeep-module.module';
 import { PayeeModule } from './Payee/payee.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { PayeeModule } from './Payee/payee.module';
     }), LoanModule,
     TransactionModule,
     BrowserAnimationsModule,
+    CommonModule
   ],
   providers: [
     {
