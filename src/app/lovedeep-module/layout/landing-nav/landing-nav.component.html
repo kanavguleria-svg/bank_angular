@@ -27,8 +27,8 @@
     <!--? right-part -->
     <div class="lower-right">
       <span class="dropdown-service" (click)="showDropdown()">Services</span>
-      <a class="text-white" href="#">Offers</a>
-      <a class="text-white" href="#">Pay</a>
+      <a class="text-white" routerLink="/addPayee">Offers</a>
+      <a class="text-white" routerLink="/getAllPayee">Pay</a>
       <a class="text-white" routerLink="/contact">Contact</a>
       <!--? services-dropdown -->
       <span [ngClass]="{ show: showDropDown === true }" class="dropdown">

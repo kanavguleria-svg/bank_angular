@@ -12,13 +12,14 @@ import { PayeeServiceService } from '../payee-service.service';
 export class AllPayeeComponent implements OnInit {
   payee:Payee[];
   customer= new Customer();
-  customerId:number=this.customer.customer_id;
+  customerId:number;
   message:any;
   dtOptions: any;
 
   constructor(private service:PayeeServiceService, private router: Router) { }
 
   getAllPayee(){
+    console.log(this.customerId)
     this.service.getAllPayee(this.customerId).subscribe(data => {
       this.payee = data;
       console.log(this.payee); // read message // clear form 
@@ -47,8 +48,10 @@ export class AllPayeeComponent implements OnInit {
   ngOnInit(): void {
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
-      
+      this.customerId=this.customer.customer_id;
   }
+
+  console.log(this.customer)
   this.getAllPayee();
   this.dtOptions = {
     pageLength: 5,
