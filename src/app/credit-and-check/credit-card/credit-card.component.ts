@@ -12,8 +12,10 @@ import { CreditCardService } from '../credit-card.service';
 })
 export class CreditCardComponent implements OnInit {
 
+
   customer=new Customer();
   constructor(private creditCardServ:CreditCardService ) {}
+
 
   ngOnInit(): void {
     this.creditCard= new CreditCard();
@@ -22,13 +24,14 @@ export class CreditCardComponent implements OnInit {
     }
   }
 
-  id:number=this.customer.id;
+
+  id:number=this.customer.customer_id;
  
   
   creditCard:CreditCard;
 
   message:string;
-
+  
   createCreditCard(id:number,credit_card:CreditCard){
     this.creditCardServ.createCreditCard(this.id,this.creditCard).subscribe(data =>{
       console.log("credit card is running ");
@@ -39,4 +42,5 @@ export class CreditCardComponent implements OnInit {
     });
     
   }
+
 }

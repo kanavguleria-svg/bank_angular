@@ -13,7 +13,7 @@ export class CheckbookComponent implements OnInit {
 
   constructor(private checkbookServ:CheckBookServiceService) { }
   customer=new Customer();
-  id:number=this.customer.id;
+  id:number=this.customer.customer_id;
   message:string;
   checkbook:CheckBook;
   ngOnInit(): void {
