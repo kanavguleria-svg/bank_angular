@@ -13,7 +13,7 @@ import { DataTablesModule } from 'angular-datatables';
 @NgModule({
   declarations: [AddPayeeComponent,UpdatePayeeComponent, AllPayeeComponent],
   imports: [
-    CommonModule,FormsModule,LovedeepModuleModule,DataTablesModule
+    CommonModule,FormsModule,DataTablesModule
   ],exports:[AddPayeeComponent,UpdatePayeeComponent,AllPayeeComponent],
 })
 export class PayeeModule { }

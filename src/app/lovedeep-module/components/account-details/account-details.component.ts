@@ -38,8 +38,23 @@ export class AccountDetailsComponent implements OnInit {
 
   payTog = false;
   payetoggel(){
+    if(this.addPayeeTog = true)
+    {
+      this.addPayeeTog = false;
+    }
     this.payTog=!this.payTog;
   }
+
+
+  addPayeeTog = false;
+  addpayetoggel(){
+    if(this.payTog == true)
+    {
+      this.payTog=false
+    }
+    this.addPayeeTog=!this.addPayeeTog;
+  }
+
 
   findRecords(record:{}){
     return Object.values(record);

@@ -12,7 +12,7 @@ export class AddPayeeComponent implements OnInit {
 
   customer=new Customer();
   payee:Payee;
-  customerId:number=this.customer.customer_id;
+  customerId:number;
   message:any;
   toggle:boolean=false;
 
@@ -36,7 +36,13 @@ export class AddPayeeComponent implements OnInit {
     this.payee=new Payee;
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
+      this.customerId=this.customer.customer_id;
+      console.log(this.customerId);
+      console.log("--------");
+      
     }
+    
+    
     
   }
 

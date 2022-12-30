@@ -6,22 +6,22 @@ import { Offer } from '../models/offer';
   providedIn: 'root'
 })
 export class OfferServiceService {
-  private basePath = 'http://localhost:8090';
+  private basePath = 'http://localhost:8091';
 
   constructor(private http: HttpClient) { }
 
   createOffer(offer:Offer)
   {
-    return this.http.post(`${this.basePath}/admin/createoffers`,offer,{responseType:'text'});
+    return this.http.post(`${this.basePath}/admin/createoffers`,offer,{responseType:'text',withCredentials:true});
   }
 
   getOffer()
   {
-    return this.http.get<any>(`${this.basePath}/admin/offers`);
+    return this.http.get<any>(`${this.basePath}/admin/offers`,{withCredentials:true});
   }
 
   removeOffer(id:number)
   {
-    return this.http.delete(`${this.basePath}/admin/offers/${id}/remove`,{responseType:'text'});
+    return this.http.delete(`${this.basePath}/admin/offers/${id}/remove`,{responseType:'text',withCredentials:true});
   }
 }

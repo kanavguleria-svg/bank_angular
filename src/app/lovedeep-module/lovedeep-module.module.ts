@@ -19,6 +19,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { UserdashhomeComponent } from './components/userdashhome/userdashhome.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
+import { PayeeModule } from '../Payee/payee.module';
+import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.co
     UserdashhomeComponent,
     AccountDetailsComponent,
     AdminsidenavComponent,
+
   ],
   imports: [
     CommonModule,
@@ -46,6 +49,7 @@ import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.co
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
+    PayeeModule
   ],
   providers: [],
   exports: [

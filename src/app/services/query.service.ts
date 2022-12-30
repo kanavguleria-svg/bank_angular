@@ -17,7 +17,10 @@ export class QueryService {
   postUserQuery(query: UserContactQuery, customerId: number): Observable<any> {
     return this.http.post(
       environment.rooturl + `/customer/${customerId}/query`,
-      query
+      query,{
+        observe:'response',
+        withCredentials:true,
+      }
     );
   }
 }

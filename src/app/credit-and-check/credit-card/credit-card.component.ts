@@ -16,17 +16,15 @@ export class CreditCardComponent implements OnInit {
   customer=new Customer();
   constructor(private creditCardServ:CreditCardService ) {}
 
-
+  id:number;
   ngOnInit(): void {
     this.creditCard= new CreditCard();
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
+      this.id=this.customer.customer_id;
     }
   }
 
-
-  id:number=this.customer.customer_id;
- 
   
   creditCard:CreditCard;
 
