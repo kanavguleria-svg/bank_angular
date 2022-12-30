@@ -9,12 +9,18 @@ import { Account_details, User } from 'src/app/models/user';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    this.myScriptElement = document.createElement("script");
+    this.myScriptElement.src = "assets/UserUpdateScript.js";
+    document.body.appendChild(this.myScriptElement); 
+
+  }
 
   customer=new Customer();
   accountdetails:Account_details;
   uniqueIdentity:any;
   uniqueNo:any;
+  myScriptElement: HTMLScriptElement;
 
   
 
@@ -38,9 +44,13 @@ export class AccountDetailsComponent implements OnInit {
 
   payTog = false;
   payetoggel(){
-    if(this.addPayeeTog = true)
+    if(this.addPayeeTog == true)
     {
       this.addPayeeTog = false;
+    }
+    if(this.upadatePayeeTog==true)
+    {
+      this.upadatePayeeTog=false;
     }
     this.payTog=!this.payTog;
   }
@@ -52,7 +62,24 @@ export class AccountDetailsComponent implements OnInit {
     {
       this.payTog=false
     }
+    if(this.upadatePayeeTog==true)
+    {
+      this.upadatePayeeTog=false;
+    }
     this.addPayeeTog=!this.addPayeeTog;
+  }
+
+  upadatePayeeTog=false;
+  updatePayeeToggel(){
+    if(this.addPayeeTog == true)
+    {
+      this.addPayeeTog = false;
+    }
+    if(this.payTog == true)
+    {
+      this.payTog=false
+    }
+    this.upadatePayeeTog=!this.upadatePayeeTog
   }
 
 

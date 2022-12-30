@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Customer } from 'src/app/models/customer.model';
+import { Cookies, removeCookie } from 'typescript-cookie';
 
 @Component({
   selector: 'app-logout',
@@ -12,6 +14,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit(): void {
     window.sessionStorage.setItem('userdetails', '');
     window.sessionStorage.setItem('XSRF-TOKEN', '');
+
     this.router.navigate(['/home']);
   }
 }

@@ -21,6 +21,9 @@ import { AccountDetailsComponent } from './components/account-details/account-de
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
 import { PayeeModule } from '../Payee/payee.module';
 import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
+import { AdminqueryComponent } from './components/adminquery/adminquery.component';
+import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
+import { UserModule } from '../User/user.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
     UserdashhomeComponent,
     AccountDetailsComponent,
     AdminsidenavComponent,
-
+    AdminqueryComponent,
+    AllcustomersComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -49,7 +54,8 @@ import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
-    PayeeModule
+    PayeeModule,
+    UserModule
   ],
   providers: [],
   exports: [

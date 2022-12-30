@@ -38,9 +38,11 @@
                                                         <button class=""
                                                             (click)="deletePayee(p.payee_id)">DELETE</button> |
                                                         <button class="" (click)="updatePayee(p.payee_id)">EDIT</button>
+                                                        
                                                     </td>
                                                 </tr>
                                             </table>
+                                            <button (click)="openPDF()">download</button>
                                         </div>
                                     </div>
                                 </div>
@@ -49,6 +51,7 @@
                     </div>
                 </div>
             </div>
+        <!-- </div> -->
 
     <span class="text-success">{{message}}</span>
 </body>

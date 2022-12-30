@@ -11,7 +11,7 @@ import { LovedeepModuleModule } from '../lovedeep-module/lovedeep-module.module'
 @NgModule({
   declarations: [UserRegistrationComponent, UserUpdationComponent],
   imports: [
-    CommonModule,FormsModule,LovedeepModuleModule
+    CommonModule,FormsModule
   ],
   providers:[],
   exports:[UserRegistrationComponent,UserUpdationComponent]

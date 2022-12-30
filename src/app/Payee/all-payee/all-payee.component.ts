@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import { Customer } from 'src/app/models/customer.model';
 import { Payee } from 'src/app/models/payee';
 import { PayeeServiceService } from '../payee-service.service';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-all-payee',
@@ -18,11 +22,26 @@ export class AllPayeeComponent implements OnInit {
 
   constructor(private service:PayeeServiceService, private router: Router) { }
 
+  public openPDF(): void {
+    let DATA: any = document.getElementById('mytable');
+    html2canvas(DATA).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+      PDF.save('yourpayees.pdf');
+    });
+  }
+  
+
   getAllPayee(){
     console.log(this.customerId)
     this.service.getAllPayee(this.customerId).subscribe(data => {
       this.payee = data;
-      console.log(this.payee); // read message // clear form 
+      console.log(this.payee); 
+      // read message // clear form 
     });
 
   }
@@ -32,14 +51,40 @@ export class AllPayeeComponent implements OnInit {
   }
 
   deletePayee(id:number){
-    if (confirm('Do you want to delete?')) {
-      this.service.deletePayee(id).subscribe(data => {
-        this.message = data;
-        this.getAllPayee();
-      });
-    } else {
-      this.message = 'failed';
-    }
+
+    Swal.fire({
+      title: 'Do you want to delete?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+      // customClass: {
+      //   actions: 'my-actions',
+      //   cancelButton: 'order-1 right-gap',
+      //   confirmButton: 'order-2',
+      //   denyButton: 'order-3',
+      // }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.service.deletePayee(id).subscribe(data => {
+          this.message = data;
+          this.getAllPayee();
+        });
+            } else if (result.isDenied) {
+              this.message = 'failed';
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    })
+
+
+
+    // if (confirm('Do you want to delete?')) {
+      
+    // } else {
+    //   this.message = 'failed';
+    // }
 
   }
 

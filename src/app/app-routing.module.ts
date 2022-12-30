@@ -23,6 +23,9 @@ import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
 import { AccountDetailsComponent } from './lovedeep-module/components/account-details/account-details.component';
 import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amdin.component';
 import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
+import { UserOffersComponent } from './lovedeep-module/components/user-offers/user-offers.component';
+import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
+import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
 
 const routes: Routes = [
 
@@ -44,6 +47,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'contact', component: ContactQueryComponent },
+  { path: 'customerdashboard', component: UserDashboardComponent ,outlet:'udash-outlet'},
+
 
   {
     path: 'customerdashboard',
@@ -62,16 +67,20 @@ const routes: Routes = [
 
   { path: 'checkbR', component: CheckbookComponent },
 
-  { path: 'creditR', component: CreditCardComponent },
+  // { path: 'customerdashboard/creditR', component: CreditCardComponent , outlet:'udash-outlet' },
 
   { path: 'admin/listCredits', component: CreditCardAllComponent },
   { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
-  { path: 'checkbR', component: CheckbookComponent },
+  { path: 'checkbR', component: CheckbookComponent,outlet:'udash-outlet' },
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
+  {
+    path: 'payment',
+    component: MakeTransactionComponent,
+  },
   {
     path: 'payment',
     component: MakeTransactionComponent,
@@ -84,6 +93,11 @@ const routes: Routes = [
     path: 'loanreq',
     component: LoanReqComponent,
   },
+  { path: 'adminUserQueries', component: AdminqueryComponent },
+  { path: 'generateOffers/:id', component: UserOffersComponent },
+  { path: 'allCustomers', component: AllcustomersComponent },
+  // { path: 'updateAccountDetails', component:UserUpdationComponent},
+
 ];
 
 @NgModule({
