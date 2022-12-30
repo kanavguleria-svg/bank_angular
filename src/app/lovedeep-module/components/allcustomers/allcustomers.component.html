@@ -1,0 +1,8 @@
+<div *ngFor="let customer of allCustomers">
+  <h1>{{ customer.customer_id }}</h1>
+  <h1>{{ customer.name }}</h1>
+  <h1>{{ customer["account_details"].account_no }}</h1>
+  <h1>{{ customer.username }}</h1>
+  <button (click)="generateOffer(customer.customer_id)">Generate Offer</button>
+  <br />
+</div>

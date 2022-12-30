@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit {
           'userdetails',
           JSON.stringify(this.model)
         );
-        console.log(this.model);
-        console.log(this.model.accountDetails);
         if (this.model.role == 'ROLE_ADMIN') {
           this.router.navigate(['admindashboard']);
         } else {

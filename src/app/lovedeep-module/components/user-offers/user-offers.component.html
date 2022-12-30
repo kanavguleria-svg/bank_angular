@@ -6,7 +6,7 @@
   <div class="form-section shadow shadow-gray-300 p-3 rounded-md">
     <div class="gift"></div>
     <div class="offer-form py-3">
-      <form>
+      <form (ngSubmit)="postUserOffers()">
         <div class="flex">
           <div class="mr-10">
             <label for="start">Start Date</label>
@@ -15,7 +15,8 @@
               id="start"
               class="border-b border-gray-800 mt-3 outline-none"
               type="date"
-              [(ngModel)]="startdate"
+              [(ngModel)]="offer.start_date"
+              name="startdate"
             />
           </div>
           <div>
@@ -25,7 +26,8 @@
               id="end"
               class="border-b border-gray-800 mt-3 outline-none"
               type="date"
-              [(ngModel)]="enddate"
+              [(ngModel)]="offer.expiry_date"
+              name="enddate"
             />
           </div>
         </div>
@@ -40,15 +42,17 @@
             cols="40"
             rows="5"
             placeholder="Offer Details"
-            [(ngModel)]="offerdetails"
+            [(ngModel)]="offer.offer_desc"
           ></textarea>
         </div>
         <button
+          type="submit"
           class="px-2 py-1 text-white bg-primary rounded-md hover:text-primary hover:bg-white mt-3 hover:border-primary hover:border"
         >
           Submit
         </button>
       </form>
+      {{ message }}
     </div>
   </div>
 </section>

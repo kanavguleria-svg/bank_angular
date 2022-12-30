@@ -22,6 +22,9 @@ import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amd
 import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
 import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
 import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
+import { UserOffersComponent } from './lovedeep-module/components/user-offers/user-offers.component';
+import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
+import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
 
 const routes: Routes = [
   {
@@ -45,17 +48,17 @@ const routes: Routes = [
   },
 
   //user Routes
-  {path:'register',component:UserRegistrationComponent},
-  {path:'updateUser',component:UserUpdationComponent},
- 
+  { path: 'register', component: UserRegistrationComponent },
+  { path: 'updateUser', component: UserUpdationComponent },
+
   //payee Routes
   {path:'updatePayee/:id',component:UpdatePayeeComponent},
   {path:'addPayee',component:AddPayeeComponent},
   {path:'getAllPayee',component:AllPayeeComponent},
 
-  {path:'checkbR',component:CheckbookComponent},
+  { path: 'checkbR', component: CheckbookComponent },
 
-  {path:'creditR',component:CreditCardComponent},
+  { path: 'creditR', component: CreditCardComponent },
 
   {path:'admin/listCredits',component:CreditCardAllComponent},
   {path:'admin/check_books/requests',component:CheckbookAllComponent},
@@ -66,21 +69,24 @@ const routes: Routes = [
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
   {
-    path: 'payment', 
-    component: MakeTransactionComponent
+    path: 'payment',
+    component: MakeTransactionComponent,
   },
   {
-    path: 'transaction', 
-    component: TrxnDashboardComponent
+    path: 'transaction',
+    component: TrxnDashboardComponent,
   },
   {
     path: 'loanreq',
-    component: LoanReqComponent
-  }
+    component: LoanReqComponent,
+  },
+  { path: 'adminUserQueries', component: AdminqueryComponent },
+  { path: 'generateOffers/:id', component: UserOffersComponent },
+  { path: 'allCustomers', component: AllcustomersComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
