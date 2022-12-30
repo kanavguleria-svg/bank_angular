@@ -17,6 +17,8 @@ import {
 } from '@angular/common/http';
 import { XhrInterceptor } from './interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+import { NavbarComponent } from './nav-footer/navbar/navbar.component';
+import { MainfooterComponent } from './nav-footer/mainfooter/mainfooter.component';
 
 @NgModule({
   declarations: [AppComponent],
