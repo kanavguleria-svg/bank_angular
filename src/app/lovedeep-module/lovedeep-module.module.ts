@@ -19,6 +19,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { UserdashhomeComponent } from './components/userdashhome/userdashhome.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
+import { PayeeModule } from '../Payee/payee.module';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.co
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule,PayeeModule
   ],
   providers: [],
   exports: [
