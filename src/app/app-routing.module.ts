@@ -84,7 +84,10 @@ const routes: Routes = [
   },
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
-  { path: 'allCustomers', component: AllcustomersComponent },
+  {
+    path: 'allCustomers:',
+    component: AllcustomersComponent,
+  },
 ];
 
 @NgModule({
