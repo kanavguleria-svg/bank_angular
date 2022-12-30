@@ -18,6 +18,7 @@ import { CheckbookAllComponent } from './credit-and-check/checkbook-all/checkboo
 import { MakeTransactionComponent } from './transaction/make-transaction/make-transaction.component';
 import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashboard.component';
 import { LoanReqComponent } from './loan/loan-req/loan-req.component';
+import { AccountDetailsComponent } from './lovedeep-module/components/account-details/account-details.component';
 import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amdin.component';
 import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
 import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
@@ -27,6 +28,12 @@ import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adm
 import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
 
 const routes: Routes = [
+
+  //acount details
+  {
+    path: 'accountdetails',
+    component: AccountDetailsComponent,
+  },
   {
     path: '',
     redirectTo: '/home',
@@ -40,6 +47,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'contact', component: ContactQueryComponent },
+  { path: 'customerdashboard', component: UserDashboardComponent ,outlet:'udash-outlet'},
+
 
   {
     path: 'customerdashboard',
@@ -58,16 +67,20 @@ const routes: Routes = [
 
   { path: 'checkbR', component: CheckbookComponent },
 
-  { path: 'creditR', component: CreditCardComponent },
+  // { path: 'customerdashboard/creditR', component: CreditCardComponent , outlet:'udash-outlet' },
 
-  {path:'admin/listCredits',component:CreditCardAllComponent},
-  {path:'admin/check_books/requests',component:CheckbookAllComponent},
+  { path: 'admin/listCredits', component: CreditCardAllComponent },
+  { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
-  { path: 'checkbR', component: CheckbookComponent },
+  { path: 'checkbR', component: CheckbookComponent,outlet:'udash-outlet' },
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
+  {
+    path: 'payment',
+    component: MakeTransactionComponent,
+  },
   {
     path: 'payment',
     component: MakeTransactionComponent,
@@ -82,7 +95,10 @@ const routes: Routes = [
   },
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
-  { path: 'allCustomers', component: AllcustomersComponent },
+  {
+    path: 'allCustomers:',
+    component: AllcustomersComponent,
+  },
 ];
 
 @NgModule({

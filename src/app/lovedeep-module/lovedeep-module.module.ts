@@ -20,8 +20,10 @@ import { UserdashhomeComponent } from './components/userdashhome/userdashhome.co
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
 import { PayeeModule } from '../Payee/payee.module';
+import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
+import { UserModule } from '../User/user.module';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,16 @@ import { AllcustomersComponent } from './components/allcustomers/allcustomers.co
     AdminsidenavComponent,
     AdminqueryComponent,
     AllcustomersComponent,
+    
   ],
   imports: [
     CommonModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule,PayeeModule
+    AppRoutingModule,
+    PayeeModule,
+    UserModule
   ],
   providers: [],
   exports: [

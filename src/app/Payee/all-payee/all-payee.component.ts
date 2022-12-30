@@ -94,6 +94,9 @@ export class AllPayeeComponent implements OnInit {
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
       this.customerId=this.customer.customer_id;
+      console.log(this.customerId);
+      
+      console.log("--------");
   }
 
   console.log(this.customer)

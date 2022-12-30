@@ -21,7 +21,7 @@
   margin-top: 60px;
 }
 .button-submit {
-  width: 280px;
+  width: 100px;
   padding: 3px 0;
 }
 
@@ -29,4 +29,8 @@
   margin-top: 5px;
   width: 50px;
   height: 2px;
+}
+.small-text {
+  font-size: 14px;
+  margin-top: 16px;
 }

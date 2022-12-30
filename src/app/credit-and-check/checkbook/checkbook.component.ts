@@ -17,9 +17,11 @@ export class CheckbookComponent implements OnInit {
   message:string;
   checkbook:CheckBook;
   ngOnInit(): void {
+    
     this.checkbook=new CheckBook();
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
+      this.id=this.customer.customer_id;
     }
     
   }

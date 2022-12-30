@@ -1,15 +1,166 @@
 <app-user-nav></app-user-nav>
 <div class="flex justify-between">
   <app-sidenav></app-sidenav>
-  <div class="accountdetails">
-    <div class="pt-5 pl-5">
+  <div class="accountdetails max-h-6">
+    <div class="pt-1 pl-1">
       <a
         class="text-sm text-primary border-b border-primary"
         routerLink="/customerdashboard"
         >HOME</a
       >
+      <p>Users Account details</p>
+
+      <!-- <hr> -->
+
+      <!-- <h1 class="pt-10 pl-20 justify-center underline">Account Details</h1> -->
+
+      <div class="grid grid-rows-1 grid-flow-col gap-1">
+        <div class="row-span-6 auto-cols-max ...">
+          <!-- ----------------------- -->
+
+          <div class="max-w-sm w-full lg: lg:flex">
+            <!-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
+          </div> -->
+            <div
+              class="max-h-80 border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b-lg lg:rounded-b-none lg:rounded-r p-3 flex flex-col justify-between leading-normal"
+              >
+              <div class="mb-8">
+                <p class="text-sm text-gray-600 flex items-center">
+                  <svg
+                    class="fill-current text-gray-500 w-3 h-3 mr-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z"
+                    />
+                  </svg>
+                  Members only
+                </p>
+                <br />
+                <div class="text-gray-900 font-bold text-xl mb-2 underline">
+                  Account Details
+                </div>
+
+                <div class="px-2 py-2 justify-center">
+                  <br />
+                  <h3 class="font-mono">
+                    Account No. : {{ accountdetails["account_no"] }}
+                  </h3>
+                  <h3 class="font-mono">
+                    Account Type : {{ accountdetails["account_type"] }}
+                  </h3>
+                  <h3 class="font-mono">
+                    balance : {{ accountdetails["account_balance"] }}
+                  </h3>
+                  <h3 class="font-mono">
+                    branch Address : {{ accountdetails["branch_address"] }}
+                  </h3>
+                  <div class="vl"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <div class="">
+          <div
+            class="shadow-orange-600 p-4 items-center justify-center w-[680px] rounded-xl group sm:flex space-x-2 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl"
+          >
+            <div class="">
+              <div class="space-y-10 space-x-4">
+                <div class="space-y-8">
+                  <h2
+                    class="text-md font-semibold text-cyan-900 text-justify underline"
+                  >
+                    Personal Details
+                  </h2>
+                </div>
+                <div class="h-56 grid grid-cols-3 gap-4 content-start ...">
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-1 rounded"
+                    >
+                      ID : {{ customer["customer_id"] }}
+                    </h3>
+                  </div>
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      Name : {{ customer["name"] }}
+                    </h3>
+                  </div>
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      age : {{ customer["age"] }}
+                    </h3>
+                  </div>
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      uid : {{ uniqueIdentity }}
+                    </h3>
+                  </div>
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      uno : {{ uniqueNo }}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            (click)="payetoggel()"
+          >
+            show all payees
+          </button>
+          &nbsp; &nbsp;
+          <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 p-2 rounded"
+          (click)="addpayetoggel()"
+        >
+          add Payee
+        </button>
+
+        &nbsp; &nbsp;
+        <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 p-2 rounded"
+        (click)="updatePayeeToggel()"
+      >
+        update
+      </button>
+        </div>
+
+
+
+      </div>
+      <!-- <hr /> -->
     </div>
-    <h1 class="pt-10 pl-20">Account Details</h1>
-    <div></div>
+
+    <div class="border-1 border-black" *ngIf="payTog">
+      <app-all-payee></app-all-payee>
+    </div>
+
+    <div *ngIf="addPayeeTog">
+      <app-add-payee></app-add-payee>
+    </div>
+
+    <div *ngIf="upadatePayeeTog">
+      <app-user-updation></app-user-updation>
+    </div>
   </div>
 </div>
+
+<!-- <app-footer></app-footer> -->

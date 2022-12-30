@@ -12,6 +12,7 @@ import { CreditCardService } from '../credit-card.service';
 })
 export class CreditCardComponent implements OnInit {
 
+
   customer=new Customer();
   constructor(private creditCardServ:CreditCardService ) {}
 
@@ -19,6 +20,7 @@ export class CreditCardComponent implements OnInit {
     this.creditCard= new CreditCard();
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
+      this.id=this.customer.customer_id;
     }
   }
 
@@ -28,7 +30,7 @@ export class CreditCardComponent implements OnInit {
   creditCard:CreditCard;
 
   message:string;
-
+  
   createCreditCard(id:number,credit_card:CreditCard){
     this.creditCardServ.createCreditCard(this.id,this.creditCard).subscribe(data =>{
       console.log("credit card is running ");
@@ -39,4 +41,5 @@ export class CreditCardComponent implements OnInit {
     });
     
   }
+
 }
