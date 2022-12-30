@@ -14,13 +14,17 @@ import { CreditCardAllComponent } from './credit-card-all/credit-card-all.compon
 import { CheckBookServiceService } from './check-book-service.service';
 import { CheckbookAllComponent } from './checkbook-all/checkbook-all.component';
 import { OffersAmdinComponent } from './offers-amdin/offers-amdin.component';
+import { OfferAllComponent } from './offer-all/offer-all.component';
+
+import { DataTablesModule } from 'angular-datatables';
+import { TransactionModule } from '../transaction/transaction.module';
 
 
 
 @NgModule({
-  declarations: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent, CreditCardAllComponent, CheckbookAllComponent, OffersAmdinComponent],
+  declarations: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent, CreditCardAllComponent, CheckbookAllComponent, OffersAmdinComponent, OfferAllComponent],
   imports: [
-    CommonModule,FormsModule,LovedeepModuleModule,UserModule,AppRoutingModule
+    CommonModule,FormsModule,LovedeepModuleModule,UserModule,AppRoutingModule,TransactionModule, DataTablesModule
   ],
   providers:[CreditCardService,CheckBookServiceService],
   exports: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent,OffersAmdinComponent,CreditCardAllComponent],

@@ -8,8 +8,7 @@ import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/u
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { CheckbookComponent } from './credit-and-check/checkbook/checkbook.component';
 import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.component';
-import { UserQueryComponent } from './lovedeep-module/components/query/user-query/user-query.component';
-import { AccountDetailsComponent } from './lovedeep-module/components/account-details/account-details.component';
+
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
 import { AdminDashboardComponent } from './lovedeep-module/pages/admin-dashboard/admin-dashboard.component';
 import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
@@ -19,11 +18,22 @@ import { CheckbookAllComponent } from './credit-and-check/checkbook-all/checkboo
 import { MakeTransactionComponent } from './transaction/make-transaction/make-transaction.component';
 import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashboard.component';
 import { LoanReqComponent } from './loan/loan-req/loan-req.component';
-import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
+import { AccountDetailsComponent } from './lovedeep-module/components/account-details/account-details.component';
+import { OffersAmdinComponent } from './credit-and-check/offers-amdin/offers-amdin.component';
+import { OfferAllComponent } from './credit-and-check/offer-all/offer-all.component';
+import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
+import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
 import { UserOffersComponent } from './lovedeep-module/components/user-offers/user-offers.component';
+import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
 
 const routes: Routes = [
+
+  //acount details
+  {
+    path: 'accountdetails',
+    component: AccountDetailsComponent,
+  },
   {
     path: '',
     redirectTo: '/home',
@@ -37,6 +47,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'contact', component: ContactQueryComponent },
+  { path: 'customerdashboard', component: UserDashboardComponent ,outlet:'udash-outlet'},
+
 
   {
     path: 'customerdashboard',
@@ -49,23 +61,25 @@ const routes: Routes = [
   { path: 'updateUser', component: UserUpdationComponent },
 
   //payee Routes
-  { path: 'updatePayee', component: AddPayeeComponent },
-  { path: 'addPayee', component: AddPayeeComponent },
+  {path:'updatePayee/:id',component:UpdatePayeeComponent},
+  {path:'addPayee',component:AddPayeeComponent},
+  {path:'getAllPayee',component:AllPayeeComponent},
 
   { path: 'checkbR', component: CheckbookComponent },
 
-  { path: 'creditR', component: CreditCardComponent },
+  // { path: 'customerdashboard/creditR', component: CreditCardComponent , outlet:'udash-outlet' },
 
+  { path: 'admin/listCredits', component: CreditCardAllComponent },
+  { path: 'admin/check_books/requests', component: CheckbookAllComponent },
+  { path: 'register', component: UserRegistrationComponent },
+  { path: 'checkbR', component: CheckbookComponent,outlet:'udash-outlet' },
+  { path: 'creditR', component: CreditCardComponent },
+  { path: '', component: LandingComponent },
+  { path: 'admin/createOffers', component: OffersAmdinComponent },
+  { path: 'admin/allOffers', component: OfferAllComponent },
   {
-    path: 'logout',
-    component: LogoutComponent,
-  },
-  { path: 'usercontact', component: UserQueryComponent },
-  { path: 'accountdetails', component: AccountDetailsComponent },
-  {
-    path: 'admindashboard',
-    component: AdminDashboardComponent,
-    canActivate: [AuthActivateRouteGuard],
+    path: 'payment',
+    component: MakeTransactionComponent,
   },
   {
     path: 'payment',

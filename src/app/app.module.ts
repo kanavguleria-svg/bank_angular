@@ -10,6 +10,7 @@ import { CreditAndCheckModule } from './credit-and-check/credit-and-check.module
 import { UserModule } from './User/user.module';
 import { LovedeepModuleModule } from './lovedeep-module/lovedeep-module.module';
 import { PayeeModule } from './Payee/payee.module';
+import { CommonModule } from '@angular/common';
 import {
   HttpClientModule,
   HTTP_INTERCEPTORS,
@@ -17,6 +18,8 @@ import {
 } from '@angular/common/http';
 import { XhrInterceptor } from './interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+import { NavbarComponent } from './nav-footer/navbar/navbar.component';
+import { MainfooterComponent } from './nav-footer/mainfooter/mainfooter.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,6 +40,7 @@ import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',
     }),
+    CommonModule
   ],
   providers: [
     {

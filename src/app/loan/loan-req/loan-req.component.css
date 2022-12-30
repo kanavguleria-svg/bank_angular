@@ -4,8 +4,9 @@
   align-items: flex-start;
 } */
 .bg-orange {
-  background-color: rgb(255, 221, 0);
-}
+  background-color: #ff9500;
+	border-color: rgb(238, 168, 81);
+  box-shadow: 0 0 50px rgb(0, 0, 0, 0.4);}
 
 textarea:focus,
 input[type="text"]:focus,

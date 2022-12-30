@@ -9,15 +9,12 @@ import { Account_details, User } from '../models/user';
 export class UserService {
   private basePath = 'http://localhost:8091';
 
-  getcustomerId(): Observable<any> {
-    return this.http.get<number>(`${this.basePath}/user`);
-  }
 
   updateUser(customerId: number, user: User): Observable<any> {
     return this.http.patch(
       `${this.basePath}/customer/${customerId}/details/update`,
       user,
-      { responseType: 'text' }
+      { responseType: 'text',withCredentials:true }
     );
   }
 
@@ -34,9 +31,10 @@ export class UserService {
     return this.http.post(
       `${this.basePath}/register/customer/${customerId}/account-details`,
       account_details,
-      { responseType: 'text' }
+      { responseType: 'text'}
     );
   }
+
 
   constructor(private http: HttpClient) {}
 }

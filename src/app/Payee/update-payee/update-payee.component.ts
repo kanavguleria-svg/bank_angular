@@ -9,6 +9,7 @@ import { PayeeServiceService } from '../payee-service.service';
   styleUrls: ['./update-payee.component.css']
 })
 export class UpdatePayeeComponent implements OnInit {
+  showDropDown = false;
   payee:Payee;
   message:any;
   payeeId:number;
@@ -26,6 +27,9 @@ export class UpdatePayeeComponent implements OnInit {
       console.log(this.message); // read message // clear form
       
     });
+  }
+  showDropdown(): void {
+    this.showDropDown = !this.showDropDown;
   }
   ngOnInit(): void {
     this.payeeId = this.activatedRoute.snapshot.params['id'];

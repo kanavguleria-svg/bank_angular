@@ -15,6 +15,7 @@ creditArray:[];
 constructor(private creditCardServ:CreditCardService ) {}
 
   ngOnInit(): void { 
+    this.getCreditCards();
   }
 
   getCreditCards(){
