@@ -82,7 +82,7 @@ const routes: Routes = [
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
   {
-    path: '/allCustomers:',
+    path: 'allCustomers:',
     component: AllcustomersComponent,
   },
 ];
