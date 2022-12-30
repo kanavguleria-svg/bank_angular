@@ -20,6 +20,8 @@ import { UserdashhomeComponent } from './components/userdashhome/userdashhome.co
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
 import { PayeeModule } from '../Payee/payee.module';
+import { AdminqueryComponent } from './components/adminquery/adminquery.component';
+import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { PayeeModule } from '../Payee/payee.module';
     UserdashhomeComponent,
     AccountDetailsComponent,
     AdminsidenavComponent,
+    AdminqueryComponent,
+    AllcustomersComponent,
   ],
   imports: [
     CommonModule,

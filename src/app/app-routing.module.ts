@@ -21,6 +21,9 @@ import { TrxnDashboardComponent } from './transaction/trxn-dashboard/trxn-dashbo
 import { LoanReqComponent } from './loan/loan-req/loan-req.component';
 import { UpdatePayeeComponent } from './Payee/update-payee/update-payee.component';
 import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
+import { UserOffersComponent } from './lovedeep-module/components/user-offers/user-offers.component';
+import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
+import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
 
 const routes: Routes = [
   {
@@ -44,17 +47,17 @@ const routes: Routes = [
   },
 
   //user Routes
-  {path:'register',component:UserRegistrationComponent},
-  {path:'updateUser',component:UserUpdationComponent},
- 
+  { path: 'register', component: UserRegistrationComponent },
+  { path: 'updateUser', component: UserUpdationComponent },
+
   //payee Routes
   {path:'updatePayee/:id',component:UpdatePayeeComponent},
   {path:'addPayee',component:AddPayeeComponent},
   {path:'getAllPayee',component:AllPayeeComponent},
 
-  {path:'checkbR',component:CheckbookComponent},
+  { path: 'checkbR', component: CheckbookComponent },
 
-  {path:'creditR',component:CreditCardComponent},
+  { path: 'creditR', component: CreditCardComponent },
 
   {
     path: 'logout',
@@ -68,21 +71,24 @@ const routes: Routes = [
     canActivate: [AuthActivateRouteGuard],
   },
   {
-    path: 'payment', 
-    component: MakeTransactionComponent
+    path: 'payment',
+    component: MakeTransactionComponent,
   },
   {
-    path: 'transaction', 
-    component: TrxnDashboardComponent
+    path: 'transaction',
+    component: TrxnDashboardComponent,
   },
   {
     path: 'loanreq',
-    component: LoanReqComponent
-  }
+    component: LoanReqComponent,
+  },
+  { path: 'adminUserQueries', component: AdminqueryComponent },
+  { path: 'generateOffers/:id', component: UserOffersComponent },
+  { path: 'allCustomers', component: AllcustomersComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
