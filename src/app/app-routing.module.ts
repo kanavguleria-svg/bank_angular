@@ -28,7 +28,6 @@ import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adm
 import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
 
 const routes: Routes = [
-
   //acount details
   {
     path: 'accountdetails',
@@ -40,6 +39,10 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
     path: 'home',
     component: LandingComponent,
   },
@@ -47,8 +50,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'contact', component: ContactQueryComponent },
-  { path: 'customerdashboard', component: UserDashboardComponent ,outlet:'udash-outlet'},
-
 
   {
     path: 'customerdashboard',
@@ -61,18 +62,16 @@ const routes: Routes = [
   { path: 'updateUser', component: UserUpdationComponent },
 
   //payee Routes
-  {path:'updatePayee/:id',component:UpdatePayeeComponent},
-  {path:'addPayee',component:AddPayeeComponent},
-  {path:'getAllPayee',component:AllPayeeComponent},
+  { path: 'updatePayee/:id', component: UpdatePayeeComponent },
+  { path: 'addPayee', component: AddPayeeComponent },
+  { path: 'getAllPayee', component: AllPayeeComponent },
 
   { path: 'checkbR', component: CheckbookComponent },
-
-  // { path: 'customerdashboard/creditR', component: CreditCardComponent , outlet:'udash-outlet' },
 
   { path: 'admin/listCredits', component: CreditCardAllComponent },
   { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
-  { path: 'checkbR', component: CheckbookComponent,outlet:'udash-outlet' },
+  { path: 'checkbR', component: CheckbookComponent },
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
