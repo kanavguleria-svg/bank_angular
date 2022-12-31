@@ -23,6 +23,7 @@
     "angular-datatables": "^14.0.2",
     "datatables.net": "^1.13.1",
     "datatables.net-dt": "^1.13.1",
+    "html2canvas": "^1.4.1",
     "jquery": "^3.6.3",
     "jspdf": "^2.5.1",
     "rxjs": "~7.5.0",

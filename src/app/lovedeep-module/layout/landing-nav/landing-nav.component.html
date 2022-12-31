@@ -44,7 +44,12 @@
     <!--? right-part -->
     <div class="lower-right">
       <span class="dropdown-service" (click)="showDropdown()">Services</span>
-      <a class="text-white" href="#">Offers</a>
+
+      <a class="text-white" routerLink="/admin/allOffers">Offers</a>
+      <!-- <a class="text-white" href="#">Pay</a> -->
+
+
+      <!-- <a class="text-white" href="#">Offers</a> -->
       <a
         class="text-white"
         routerLink={{link}}
@@ -53,10 +58,9 @@
       <a class="text-white" routerLink="/contact">Contact</a>
       <!--? services-dropdown -->
       <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
-        <a href="#">Credit Card</a>
-        <a href="#">Loans</a>
-        <a routerLink="/checkbR">Checkbook</a>
-        <a routerLink="/creditR">CreditCard</a>
+        <a routerLink={{linkLoan}}>Loans</a>
+        <a routerLink={{linkCheque}}>Checkbook</a>
+        <a routerLink={{linkCredit}}>CreditCard</a>
       </span>
     </div>
   </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidenav',
@@ -8,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   collapsed = true;
 
-  constructor() {}
+  constructor(private router:Router) {}
 
   ngOnInit(): void {}
 
   toggleBtn() {
     this.collapsed = !this.collapsed;
   }
+
+  
 }
+
+

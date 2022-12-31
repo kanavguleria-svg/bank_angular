@@ -7,6 +7,10 @@
   }
   /* 	border-color: rgb(224, 148, 55);
  */
+
+ .show {
+  display: none;
+ }
   
   textarea:focus,
   input[type="text"]:focus,

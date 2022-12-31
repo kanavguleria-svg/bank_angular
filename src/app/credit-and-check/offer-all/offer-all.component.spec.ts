@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainnavComponent } from './mainnav.component';
+import { OfferAllComponent } from './offer-all.component';
 
-describe('MainnavComponent', () => {
-  let component: MainnavComponent;
-  let fixture: ComponentFixture<MainnavComponent>;
+describe('OfferAllComponent', () => {
+  let component: OfferAllComponent;
+  let fixture: ComponentFixture<OfferAllComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainnavComponent ]
+      declarations: [ OfferAllComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainnavComponent);
+    fixture = TestBed.createComponent(OfferAllComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,6 +10,7 @@ import { CreditAndCheckModule } from './credit-and-check/credit-and-check.module
 import { UserModule } from './User/user.module';
 import { LovedeepModuleModule } from './lovedeep-module/lovedeep-module.module';
 import { PayeeModule } from './Payee/payee.module';
+import { CommonModule } from '@angular/common';
 import {
   HttpClientModule,
   HTTP_INTERCEPTORS,
@@ -39,6 +40,7 @@ import { MainfooterComponent } from './nav-footer/mainfooter/mainfooter.componen
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',
     }),
+    CommonModule
   ],
   providers: [
     {

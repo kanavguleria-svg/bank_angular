@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckBook } from 'src/app/models/checkBook';
+import { Customer } from 'src/app/models/customer.model';
 import { CheckBookServiceService } from '../check-book-service.service';
 
 
@@ -11,12 +12,17 @@ import { CheckBookServiceService } from '../check-book-service.service';
 export class CheckbookComponent implements OnInit {
 
   constructor(private checkbookServ:CheckBookServiceService) { }
-
-  id:number=3;
+  customer=new Customer();
+  id:number=this.customer.customer_id;
   message:string;
   checkbook:CheckBook;
   ngOnInit(): void {
+    
     this.checkbook=new CheckBook();
+    if(sessionStorage.getItem('userdetails')){
+      this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
+      this.id=this.customer.customer_id;
+    }
     
   }
 

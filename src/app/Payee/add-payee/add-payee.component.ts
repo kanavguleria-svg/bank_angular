@@ -9,12 +9,14 @@ import { PayeeServiceService } from '../payee-service.service';
   styleUrls: ['./add-payee.component.css']
 })
 export class AddPayeeComponent implements OnInit {
+
   customer=new Customer();
   payee:Payee;
-  customerId:number;
+  customerId:number=this.customer.customer_id;
   message:any;
   toggle:boolean=false;
 
+  
   
   savePayee(){
     this.toggle=true;
@@ -25,6 +27,7 @@ export class AddPayeeComponent implements OnInit {
       this.payee=new Payee;
       console.log(this.message);
   });
+
 }
 
   constructor(private service:PayeeServiceService) { }
@@ -34,7 +37,12 @@ export class AddPayeeComponent implements OnInit {
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
       this.customerId=this.customer.customer_id;
+      console.log(this.customerId);
+      console.log("--------");
+      
     }
+    
+    
     
   }
 
