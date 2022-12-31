@@ -17,6 +17,7 @@ interface carouselImage {
   styleUrls: ['./crousel.component.css'],
 })
 export class CrouselComponent implements OnInit {
+  customer = new Customer();
   authStatus: string = '';
   model = new Customer();
 
@@ -32,6 +33,9 @@ export class CrouselComponent implements OnInit {
   ngOnInit(): void {
     if (this.autoSlide) {
       this.autoSlideImages();
+    }
+    if (sessionStorage.getItem('userdetails')) {
+      this.customer = JSON.parse(sessionStorage.getItem('userdetails')!);
     }
   }
 

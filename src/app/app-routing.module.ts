@@ -71,7 +71,11 @@ const routes: Routes = [
   { path: 'loanreq', component: LoanReqComponent },
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
-  { path: 'allCustomers:', component: AllcustomersComponent },
+  {
+    path: 'allCustomers',
+    component: AllcustomersComponent,
+  },
+  { path: 'logout', component: LogoutComponent},
 ];
 
 @NgModule({

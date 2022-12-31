@@ -12,7 +12,7 @@
 
     <!--? right-part -->
     <div class="upper-right">
-      <a routerLink="/register">Register</a>
+      <a *ngIf="customer.authStatus != 'AUTH'" routerLink="/register">Register</a>
       <a
         class="login py-1 px-2 rounded-md"
         *ngIf="customer.authStatus != 'AUTH'"
@@ -22,7 +22,7 @@
       <a
         class="login py-1 px-2 rounded-md"
         *ngIf="customer.authStatus == 'AUTH'"
-        routerLink="/customerdashboard"
+        routerLink={{linkdash}}
         >DashBoard</a
       >
       <a
@@ -52,17 +52,15 @@
       <!-- <a class="text-white" href="#">Offers</a> -->
       <a
         class="text-white"
-        *ngIf="customer.authStatus != 'AUTH'"
-        routerLink="/login"
+        routerLink={{link}}
         >Pay</a
       >
       <a class="text-white" routerLink="/contact">Contact</a>
       <!--? services-dropdown -->
       <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
-        <a href="#">Credit Card</a>
-        <a routerLink="loanreq">Loans</a>
-        <a routerLink="/checkbR">Checkbook</a>
-        <a routerLink="/creditR">CreditCard</a>
+        <a routerLink={{linkLoan}}>Loans</a>
+        <a routerLink={{linkCheque}}>Checkbook</a>
+        <a routerLink={{linkCredit}}>CreditCard</a>
       </span>
     </div>
   </div>

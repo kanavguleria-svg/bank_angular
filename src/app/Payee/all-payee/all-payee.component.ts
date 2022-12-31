@@ -6,6 +6,7 @@ import { PayeeServiceService } from '../payee-service.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import Swal from 'sweetalert2';
+import { Observable, observable } from 'rxjs';
 
 
 @Component({
@@ -91,6 +92,9 @@ export class AllPayeeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    setTimeout(() :Observable<any> => {return this.dtOptions
+      
+    }, 3000);
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
       this.customerId=this.customer.customer_id;
@@ -101,18 +105,20 @@ export class AllPayeeComponent implements OnInit {
 
   console.log(this.customer)
   this.getAllPayee();
-  this.dtOptions = {
-    pageLength: 5,
-  lengthMenu : [5, 10, 25, 50, 100],
-    order: [[0, 'desc']],
-    responsive: true,
-    columnDefs: [ {
-      'targets': [1,2,4,6], /* column index */
-      'orderable': false, /* true or false */
+  this.dtOptions.subscribe(
+  // this.dtOptions = {
+  //   pageLength: 5,
+  // lengthMenu : [5, 10, 25, 50, 100],
+  //   order: [[0, 'desc']],
+  //   responsive: true,
+  //   columnDefs: [ {
+  //     'targets': [1,2,4,6], /* column index */
+  //     'orderable': false, /* true or false */
   
-   }]
-    // dom: 'Blfrtip',  buttons: ['copy', 'print', 'csv', 'excel', 'pdf' ]
-  };
+  //  }]
+  //   // dom: 'Blfrtip',  buttons: ['copy', 'print', 'csv', 'excel', 'pdf' ]
+  // }
+  );
 }
 
 }
