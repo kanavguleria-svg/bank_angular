@@ -14,6 +14,7 @@ export class LandingNavComponent implements OnInit {
   linkCredit:string="/login";
   linkCheque:string="/login";
   linkLoan:string="/login";
+  linkdash:string="/customerdashboard";
 
 
   constructor() {}
@@ -26,6 +27,9 @@ export class LandingNavComponent implements OnInit {
         this.linkCheque="/checkbR"
         this.linkCredit="/creditR"
         this.linkLoan="/loanreq"
+      }
+      if(this.customer.role=="ROLE_ADMIN"){
+        this.linkdash="/admindashboard"
       }
       }
     }

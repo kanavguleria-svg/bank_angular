@@ -93,10 +93,11 @@ const routes: Routes = [
     path: 'loanreq',
     component: LoanReqComponent,
   },
+  {path:'admindashboard',component:AdminDashboardComponent},
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
   {
-    path: 'allCustomers:',
+    path: 'allCustomers',
     component: AllcustomersComponent,
   },
   { path: 'logout', component: LogoutComponent},
