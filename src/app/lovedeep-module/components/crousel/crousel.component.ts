@@ -28,10 +28,14 @@ export class CrouselComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router) {}
   selectedIndex = 0;
+  customer = new Customer();
 
   ngOnInit(): void {
     if (this.autoSlide) {
       this.autoSlideImages();
+    }
+    if (sessionStorage.getItem('userdetails')) {
+      this.customer = JSON.parse(sessionStorage.getItem('userdetails')!);
     }
   }
 

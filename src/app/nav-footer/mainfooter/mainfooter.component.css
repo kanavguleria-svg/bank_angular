@@ -1,13 +1,19 @@
 .footer-links a {
-    margin: 0 8px;
-    color: white;
-  }
-  
-  .social a {
-    margin: 0 8px;
-  }
-  
-  .bottom-footer a {
-    color: white;
-  }
-  
+  margin: 0 8px;
+  color: white;
+}
+
+.social a {
+  margin: 0 8px;
+}
+
+.bottom-footer a {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+.brand-span {
+  color: #ff7b00;
+}

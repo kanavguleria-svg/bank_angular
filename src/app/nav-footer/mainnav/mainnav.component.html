@@ -1,43 +1,43 @@
 <nav class="flex flex-col">
-    <!--? upper-nav -->
-    <div class="flex justify-between px-4 items-center bg-gray-900 py-2">
-      <!--? left part -->
-      <div class="upper-left">
-        <a href="#">Personal</a>
-        <span>|</span>
-        <a href="#">Asset Management</a>
-        <span>|</span>
-        <a href="#">Business</a>
-      </div>
-  
-      <!--? right-part -->
-      <div class="upper-right">
-        <a routerLink="/register">Register</a>
-        <a class="login py-1 px-2 rounded-md" routerLink="/login">Login</a>
-      </div>
+  <!--? upper-nav -->
+  <div class="flex justify-between px-3 text-sm items-center bg-gray-900 py-2">
+    <!--? left part -->
+    <div class="upper-left">
+      <a href="#">Personal</a>
+      <span>|</span>
+      <a href="#">Asset Management</a>
+      <span>|</span>
+      <a href="#">Business</a>
     </div>
-  
-    <!--? lower-nav -->
-    <div class="flex justify-between px-4 items-center py-2 lowernavbg">
-      <!--? brand -->
-      <div class="text-black text-2xl font-medium pl-3">
-        <a routerLink="/home"> H<span class="text-white text-3xl">M</span>B </a>
-      </div>
-  
-      <!--? right-part -->
-      <div class="lower-right">
-        <span class="dropdown-service" (click)="showDropdown()">Services</span>
-        <a class="text-white" routerLink="/addPayee">Offers</a>
-        <a class="text-white" routerLink="/getAllPayee">Pay</a>
-        <a class="text-white" routerLink="/contact">Contact</a>
-        <!--? services-dropdown -->
-        <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
-          <a href="#">Credit Card</a>
-          <a href="#">Loans</a>
-          <a routerLink="/checkbR">Checkbook</a>
-          <a routerLink="/creditR">CreditCard Req.</a>
-        </span>
-      </div>
+
+    <!--? right-part -->
+    <div class="upper-right">
+      <a routerLink="/register">Register</a>
+      <a class="login py-1 px-2 rounded-md" routerLink="/login">Login</a>
     </div>
-  </nav>
-  
+  </div>
+
+  <!--? lower-nav -->
+  <div class="flex justify-between px-3 items-center py-2 lowernavbg">
+    <!--? brand -->
+    <div class="text-black text-2xl font-medium pl-3">
+      <a class="text-black" routerLink="/home">
+        H<span class="text-white text-3xl">M</span>B
+      </a>
+    </div>
+
+    <!--? right-part -->
+    <div class="lower-right">
+      <span class="dropdown-service" (click)="showDropdown()">Services</span>
+      <a class="text-white" routerLink="/offers">Offers</a>
+      <a class="text-white" routerLink="/login">Pay</a>
+      <a class="text-white" routerLink="/contact">Contact</a>
+      <!--? services-dropdown -->
+      <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
+        <a class="no-underline text-white" routerLink="/login">Credit Card</a>
+        <a class="no-underline text-white" routerLink="/login">Loans</a>
+        <a class="no-underline text-white" routerLink="/login">Checkbook</a>
+      </span>
+    </div>
+  </div>
+</nav>

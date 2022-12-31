@@ -12,17 +12,16 @@
 
     <!--? right-part -->
     <div class="upper-right">
-      <a routerLink="/register">Register</a>
+      <a *ngIf="customer.authStatus != 'AUTH'" routerLink="/register"
+        >Register</a
+      >
       <a
         class="login py-1 px-2 rounded-md"
         *ngIf="customer.authStatus != 'AUTH'"
         routerLink="/login"
         >Login</a
       >
-      <a
-        class="login py-1 px-2 rounded-md"
-        *ngIf="customer.authStatus == 'AUTH'"
-        routerLink="/customerdashboard"
+      <a *ngIf="customer.authStatus == 'AUTH'" routerLink="/customerdashboard"
         >DashBoard</a
       >
       <a
@@ -46,23 +45,19 @@
       <span class="dropdown-service" (click)="showDropdown()">Services</span>
 
       <a class="text-white" routerLink="/admin/allOffers">Offers</a>
+
       <!-- <a class="text-white" href="#">Pay</a> -->
 
-
       <!-- <a class="text-white" href="#">Offers</a> -->
-      <a
-        class="text-white"
-        *ngIf="customer.authStatus != 'AUTH'"
-        routerLink="/login"
-        >Pay</a
-      >
+      <a class="text-white" routerLink="{{ pay }}">Pay</a>
+
       <a class="text-white" routerLink="/contact">Contact</a>
+
       <!--? services-dropdown -->
       <span [ngClass]="{ show: showDropDown === true }" class="dropdown">
-        <a href="#">Credit Card</a>
-        <a routerLink="loanreq">Loans</a>
-        <a routerLink="/checkbR">Checkbook</a>
-        <a routerLink="/creditR">CreditCard</a>
+        <a routerLink="{{ creditReq }}">Credit Card</a>
+        <a routerLink="{{ loanreq }}">Loans</a>
+        <a routerLink="{{ checkreq }}">Checkbook</a>
       </span>
     </div>
   </div>

@@ -1,70 +1,72 @@
 .upper-left * {
-    color: white;
-  }
-  
-  .upper-left a {
-    margin: 0 10px;
-  }
-  
-  .upper-right * {
-    color: white;
-  }
-  
-  .upper-right a {
-    margin: 0 10px;
-  }
-  
-  .lower-right a {
-    margin: 0 10px;
-  }
-  
-  /*? dropdown */
-  
-  .dropdown {
-    display: none;
-  }
-  
-  .show {
-    margin-top: 13px;
-    position: absolute;
-    display: block;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    width: 120px;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    right: 160px;
-    color: white;
-  }
-  
-  .lower-right {
-    position: relative;
-  }
-  
-  .show a:hover {
-    margin: 0;
-    background-color: black;
-  }
-  
-  .dropdown-service {
-    color: white;
-    border: 2px solid white;
-    background-color: #ff7b00;
-    padding: 4px 6px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: inline-block;
-  }
-  .dropdown-service:hover {
-    background-color: white;
-    color: #ff7b00;
-  }
-  .login {
-    background-color: #ff7b00;
-  }
-  
-  .lowernavbg {
-    background-color: #ff7b00;
-  }
-  
+  color: white;
+}
+
+.upper-left a {
+  margin: 0 10px;
+}
+
+.upper-right * {
+  color: white;
+}
+
+.upper-right a {
+  margin: 0 10px;
+}
+
+.lower-right a {
+  margin: 0 10px;
+}
+
+/*? dropdown */
+
+.dropdown {
+  display: none;
+}
+
+.show {
+  margin-top: 13px;
+  position: absolute;
+  display: block;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  right: 160px;
+  color: white;
+}
+
+.lower-right {
+  position: relative;
+}
+
+.show a:hover {
+  margin: 0;
+  background-color: black;
+}
+
+.dropdown-service {
+  color: white;
+  border: 2px solid white;
+  background-color: #ff7b00;
+  padding: 4px 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.dropdown-service:hover {
+  background-color: white;
+  color: #ff7b00;
+}
+.login {
+  background-color: #ff7b00;
+}
+
+.lowernavbg {
+  background-color: #ff7b00;
+}
+a {
+  text-decoration: none;
+}

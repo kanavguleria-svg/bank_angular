@@ -1,0 +1,55 @@
+<div>
+  <div>
+    <h1>Your Credit Card Request</h1>
+    <table>
+      <tr>
+        <th>Req_Id</th>
+        <th>Type Of Card</th>
+        <th>Request Dt</th>
+      </tr>
+      <tr>
+        <td>{{ creditReq.req_id }}</td>
+        <td>{{ creditReq.type_of_card }}</td>
+        <td>{{ creditReq.req_dt }}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h1>Your Credit Card Request</h1>
+    <table>
+      <tr>
+        <th>Req_Id</th>
+        <th>Leafs</th>
+        <th>Request Dt</th>
+      </tr>
+      <tr>
+        <td>{{ checkReq.req_id }}</td>
+        <td>{{ checkReq.no_of_leaf }}</td>
+        <td>{{ checkReq.req_dt }}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h1>Your Loan Request</h1>
+    <table>
+      <tr>
+        <th>Req_Id</th>
+        <th>Type Of Loan</th>
+        <th>Loan Amt</th>
+        <th>Loan Term</th>
+        <th>Request Dt</th>
+        <th>Loan Desc</th>
+        <th>Loan Rate</th>
+      </tr>
+      <tr>
+        <td>{{ loanReq.req_id }}</td>
+        <td>{{ loanReq.loan_type }}</td>
+        <td>{{ loanReq.loan_amt }}</td>
+        <td>{{ loanReq.loan_term }}</td>
+        <td>{{ loanReq.req_dt }}</td>
+        <td>{{ loanReq.loan_desc }}</td>
+        <td>{{ loanReq.loan_rate }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

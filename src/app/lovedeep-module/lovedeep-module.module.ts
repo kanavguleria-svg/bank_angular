@@ -24,6 +24,8 @@ import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 import { UserModule } from '../User/user.module';
+import { RequestsComponent } from './components/requests/requests.component';
+import { LoanModule } from '../loan/loan.module';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,7 @@ import { UserModule } from '../User/user.module';
     AdminsidenavComponent,
     AdminqueryComponent,
     AllcustomersComponent,
-    
+    RequestsComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { UserModule } from '../User/user.module';
     HttpClientModule,
     AppRoutingModule,
     PayeeModule,
-    UserModule
+    UserModule,
+    LoanModule,
   ],
   providers: [],
   exports: [

@@ -197,3 +197,9 @@
 .form .register-form {
   display: none;
 }
+
+.investment {
+  font-size: 17px;
+  padding-bottom: 24px;
+  color: #ff9500;
+}
