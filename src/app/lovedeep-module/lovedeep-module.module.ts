@@ -24,6 +24,7 @@ import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 import { UserModule } from '../User/user.module';
+import { TransactionModule } from '../transaction/transaction.module';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { UserModule } from '../User/user.module';
     UserDashboardComponent,
     AdminDashboardComponent,
     UserNavComponent,
+    SidenavComponent
   ],
 })
 export class LovedeepModuleModule {}

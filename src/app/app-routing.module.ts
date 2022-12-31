@@ -45,64 +45,37 @@ const routes: Routes = [
   },
   //landing Route
   { path: 'login', component: LoginComponent },
-
+  { path: 'logout', component: LogoutComponent },
   { path: 'contact', component: ContactQueryComponent },
-  { path: 'customerdashboard', component: UserDashboardComponent ,outlet:'udash-outlet'},
-
-
-  {
-    path: 'customerdashboard',
-    component: UserDashboardComponent,
-    canActivate: [AuthActivateRouteGuard],
-  },
-
+  { path: 'customerdashboard', component: UserDashboardComponent, outlet: 'udash-outlet' },
+  { path: 'customerdashboard', component: UserDashboardComponent, canActivate: [AuthActivateRouteGuard] },
   //user Routes
   { path: 'register', component: UserRegistrationComponent },
   { path: 'updateUser', component: UserUpdationComponent },
-
   //payee Routes
-  {path:'updatePayee/:id',component:UpdatePayeeComponent},
-  {path:'addPayee',component:AddPayeeComponent},
-  {path:'getAllPayee',component:AllPayeeComponent},
-
+  { path: 'updatePayee/:id', component: UpdatePayeeComponent },
+  { path: 'addPayee', component: AddPayeeComponent },
+  { path: 'getAllPayee', component: AllPayeeComponent },
   { path: 'checkbR', component: CheckbookComponent },
-
   // { path: 'customerdashboard/creditR', component: CreditCardComponent , outlet:'udash-outlet' },
-
   { path: 'admin/listCredits', component: CreditCardAllComponent },
   { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
-  { path: 'checkbR', component: CheckbookComponent,outlet:'udash-outlet' },
+  { path: 'checkbR', component: CheckbookComponent, outlet: 'udash-outlet' },
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
-  {
-    path: 'payment',
-    component: MakeTransactionComponent,
-  },
-  {
-    path: 'payment',
-    component: MakeTransactionComponent,
-  },
-  {
-    path: 'transaction',
-    component: TrxnDashboardComponent,
-  },
-  {
-    path: 'loanreq',
-    component: LoanReqComponent,
-  },
+  { path: 'payment', component: MakeTransactionComponent },
+  { path: 'transaction', component: TrxnDashboardComponent },
+  { path: 'loanreq', component: LoanReqComponent },
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
-  {
-    path: 'allCustomers:',
-    component: AllcustomersComponent,
-  },
+  { path: 'allCustomers:', component: AllcustomersComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
