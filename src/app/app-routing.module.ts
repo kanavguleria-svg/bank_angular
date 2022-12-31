@@ -8,7 +8,7 @@ import { UserDashboardComponent } from './lovedeep-module/pages/user-dashboard/u
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { CheckbookComponent } from './credit-and-check/checkbook/checkbook.component';
 import { CreditCardComponent } from './credit-and-check/credit-card/credit-card.component';
-import { UserQueryComponent } from './lovedeep-module/components/query/user-query/user-query.component';
+import { RequestsComponent } from './lovedeep-module/components/requests/requests.component';
 import { UserRegistrationComponent } from './User/user-registration/user-registration.component';
 import { AdminDashboardComponent } from './lovedeep-module/pages/admin-dashboard/admin-dashboard.component';
 import { AddPayeeComponent } from './Payee/add-payee/add-payee.component';
@@ -26,9 +26,13 @@ import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
 import { UserOffersComponent } from './lovedeep-module/components/user-offers/user-offers.component';
 import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
-import { RequestsComponent } from './lovedeep-module/components/requests/requests.component';
 
 const routes: Routes = [
+  //acount details
+  {
+    path: 'accountdetails',
+    component: AccountDetailsComponent,
+  },
   {
     path: '',
     redirectTo: '/home',
@@ -38,7 +42,6 @@ const routes: Routes = [
     path: 'home',
     component: LandingComponent,
   },
-
   //landing Route
   { path: 'login', component: LoginComponent },
 
@@ -58,27 +61,23 @@ const routes: Routes = [
   { path: 'updatePayee/:id', component: UpdatePayeeComponent },
   { path: 'addPayee', component: AddPayeeComponent },
   { path: 'getAllPayee', component: AllPayeeComponent },
-  { path: 'usercontact', component: UserQueryComponent },
 
   { path: 'checkbR', component: CheckbookComponent },
-  { path: 'creditR', component: CreditCardComponent },
 
-  //acount details
-  {
-    path: 'accountdetails',
-    component: AccountDetailsComponent,
-  },
-  {
-    path: 'logout',
-    component: LogoutComponent,
-  },
+  // { path: 'customerdashboard/creditR', component: CreditCardComponent , outlet:'udash-outlet' },
 
   { path: 'admin/listCredits', component: CreditCardAllComponent },
   { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
+  { path: 'checkbR', component: CheckbookComponent, outlet: 'udash-outlet' },
+  { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
+  {
+    path: 'payment',
+    component: MakeTransactionComponent,
+  },
   {
     path: 'payment',
     component: MakeTransactionComponent,
@@ -91,11 +90,6 @@ const routes: Routes = [
     path: 'loanreq',
     component: LoanReqComponent,
   },
-  {
-    path: 'admindashboard',
-    component: AdminDashboardComponent,
-    canActivate: [AuthActivateRouteGuard],
-  },
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
   {
@@ -103,6 +97,7 @@ const routes: Routes = [
     component: AllcustomersComponent,
   },
   { path: 'customer/requests', component: RequestsComponent },
+  { path: 'logout', component: LogoutComponent },
 ];
 
 @NgModule({

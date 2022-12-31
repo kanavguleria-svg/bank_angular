@@ -9,20 +9,22 @@ import { Customer } from 'src/app/models/customer.model';
 export class LandingNavComponent implements OnInit {
   customer = new Customer();
   showDropDown = false;
-  creditReq = '/login';
-  loanreq = '/login';
-  checkreq = '/login';
-  pay = '/login';
+  link: string = '/login';
+  linkCredit: string = '/login';
+  linkCheque: string = '/login';
+  linkLoan: string = '/login';
 
   constructor() {}
 
   ngOnInit(): void {
     if (sessionStorage.getItem('userdetails')) {
       this.customer = JSON.parse(sessionStorage.getItem('userdetails')!);
-      this.creditReq = '/creditR';
-      this.checkreq = '/checkbR';
-      this.loanreq = '/loanreq';
-      this.pay = '/payment';
+      if (this.customer.authStatus == 'AUTH') {
+        this.link = '/payment';
+        this.linkCheque = '/checkbR';
+        this.linkCredit = '/creditR';
+        this.linkLoan = '/loanreq';
+      }
     }
   }
 
