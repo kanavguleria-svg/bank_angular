@@ -75,6 +75,8 @@ import { ShowuseroffersComponent } from './components/showuseroffers/showuseroff
     AdminDashboardComponent,
     UserNavComponent,
     SidenavComponent,
+    AdminsidenavComponent,
+
     
   ],
 })
