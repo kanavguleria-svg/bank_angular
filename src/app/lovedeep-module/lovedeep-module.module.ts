@@ -24,6 +24,8 @@ import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 import { UserModule } from '../User/user.module';
+import { UserrequestsComponent } from './components/userrequests/userrequests.component';
+import { ShowuseroffersComponent } from './components/showuseroffers/showuseroffers.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { UserModule } from '../User/user.module';
     AdminsidenavComponent,
     AdminqueryComponent,
     AllcustomersComponent,
+    UserrequestsComponent,
+    ShowuseroffersComponent,
     
   ],
   imports: [

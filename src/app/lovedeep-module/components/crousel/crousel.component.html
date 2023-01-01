@@ -15,8 +15,11 @@
       {{ desc.imageDesc }}
     </h2>
   </div>
-<!-- ---------------------Rounded form start ------------------ -->
-  <div *ngIf="customer.authStatus != 'AUTH'" class="login-form-crousel rounded-xl">
+  <!-- ---------------------Rounded form start ------------------ -->
+  <div
+    *ngIf="customer.authStatus != 'AUTH'"
+    class="login-form-crousel rounded-xl"
+  >
     <div class="form">
       <h2 class="loginbutton text-center mb-10 text-lg font-medium">LOGIN</h2>
       <form
@@ -44,6 +47,74 @@
       </form>
     </div>
   </div>
+
+  <div
+    *ngIf="customer.authStatus == 'AUTH'"
+    class="login-form-crousel rounded-xl"
+  >
+    <div class="form">
+      <h1 class="investment">Grow Your Investment</h1>
+      <div class="flex flex-wrap">
+        <div class="w-1/2 pr-1 pb-2">
+          <img
+            class="cursor-pointer rounded-full bg-gray-200 p-2 mb-1 hover:bg-gray-400"
+            style="
+              width: 40px;
+              height: 40px;
+              display: inline;
+              text-align: center;
+            "
+            src="../../../../assets/deposit.png"
+            alt=""
+          />
+          <p>Fixed Deposit</p>
+        </div>
+        <div class="w-1/2 pl-1 pb-2">
+          <img
+            class="cursor-pointer rounded-full bg-gray-200 p-2 mb-1 hover:bg-gray-400"
+            style="
+              width: 40px;
+              height: 40px;
+              display: inline;
+              text-align: center;
+            "
+            src="/assets/growth.png"
+            alt=""
+          />
+          <p>Mutal Funds</p>
+        </div>
+        <div class="w-1/2 pr-1">
+          <img
+            class="cursor-pointer rounded-full bg-gray-200 p-2 mb-1 hover:bg-gray-400"
+            style="
+              width: 40px;
+              height: 40px;
+              display: inline;
+              text-align: center;
+            "
+            src="/assets/stock-market.png"
+            alt=""
+          />
+          <p>Invest In Stocks</p>
+        </div>
+        <div class="w-1/2 pl-1">
+          <img
+            class="cursor-pointer rounded-full bg-gray-200 p-2 mb-1 hover:bg-gray-400"
+            style="
+              width: 40px;
+              height: 40px;
+              display: inline;
+              text-align: center;
+            "
+            src="/assets/retirement.png"
+            alt=""
+          />
+          <p>Retierment Planning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- -------------rounded form end ------------------- -->
 
   <div *ngIf="indicators" class="carousel-dot-container">

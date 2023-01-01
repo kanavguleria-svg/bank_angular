@@ -26,9 +26,11 @@ import { AllPayeeComponent } from './Payee/all-payee/all-payee.component';
 import { UserOffersComponent } from './lovedeep-module/components/user-offers/user-offers.component';
 import { AdminqueryComponent } from './lovedeep-module/components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './lovedeep-module/components/allcustomers/allcustomers.component';
+import { UserrequestsComponent } from './lovedeep-module/components/userrequests/userrequests.component';
+import { ShowuseroffersComponent } from './lovedeep-module/components/showuseroffers/showuseroffers.component';
+import { UserQueryComponent } from './lovedeep-module/components/query/user-query/user-query.component';
 
 const routes: Routes = [
-
   //acount details
   {
     path: 'accountdetails',
@@ -47,8 +49,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'contact', component: ContactQueryComponent },
-  { path: 'customerdashboard', component: UserDashboardComponent ,outlet:'udash-outlet'},
-
 
   {
     path: 'customerdashboard',
@@ -61,9 +61,9 @@ const routes: Routes = [
   { path: 'updateUser', component: UserUpdationComponent },
 
   //payee Routes
-  {path:'updatePayee/:id',component:UpdatePayeeComponent},
-  {path:'addPayee',component:AddPayeeComponent},
-  {path:'getAllPayee',component:AllPayeeComponent},
+  { path: 'updatePayee/:id', component: UpdatePayeeComponent },
+  { path: 'addPayee', component: AddPayeeComponent },
+  { path: 'getAllPayee', component: AllPayeeComponent },
 
   { path: 'checkbR', component: CheckbookComponent },
 
@@ -72,7 +72,7 @@ const routes: Routes = [
   { path: 'admin/listCredits', component: CreditCardAllComponent },
   { path: 'admin/check_books/requests', component: CheckbookAllComponent },
   { path: 'register', component: UserRegistrationComponent },
-  { path: 'checkbR', component: CheckbookComponent,outlet:'udash-outlet' },
+  { path: 'checkbR', component: CheckbookComponent },
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
@@ -93,14 +93,17 @@ const routes: Routes = [
     path: 'loanreq',
     component: LoanReqComponent,
   },
-  {path:'admindashboard',component:AdminDashboardComponent},
+  { path: 'admindashboard', component: AdminDashboardComponent },
   { path: 'adminUserQueries', component: AdminqueryComponent },
   { path: 'generateOffers/:id', component: UserOffersComponent },
   {
     path: 'allCustomers',
     component: AllcustomersComponent,
   },
-  { path: 'logout', component: LogoutComponent},
+  { path: 'logout', component: LogoutComponent },
+  { path: 'user/requests', component: UserrequestsComponent },
+  { path: 'userOffers', component: ShowuseroffersComponent },
+  { path: 'usercontact', component: UserQueryComponent },
 ];
 
 @NgModule({
