@@ -1,14 +1,33 @@
-<div>
-  <table>
-    <tr>
-      <th>Username</th>
-      <th>Query</th>
-      <th>QueryDt</th>
-    </tr>
-    <tr *ngFor="let query of adminUserQueries">
-      <td>{{ query.userName }}</td>
-      <td>{{ query.query_desc }}</td>
-      <td>{{ query.query_dt }}</td>
-    </tr>
-  </table>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin DashBoard</title>
+  </head>
+  <body>
+    <app-user-nav></app-user-nav>
+    <div class="flex justify-between">
+      <app-adminsidenav></app-adminsidenav>
+
+      <div class="main-screen pt-10 pl-52">
+        <!-- credit card Request -->
+        <div class="my-5">
+          <table id="customers">
+            <tr>
+              <th>Username</th>
+              <th>Query</th>
+              <th>QueryDt</th>
+            </tr>
+            <tr *ngFor="let query of adminUserQueries">
+              <td>{{ query.userName }}</td>
+              <td>{{ query.query_desc }}</td>
+              <td>{{ query.query_dt }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

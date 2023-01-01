@@ -1,0 +1,17 @@
+.main-screen {
+  width: 85%;
+}
+
+#useroffers {
+  width: 60%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#useroffers tr td {
+  padding: 10px 0;
+}
+
+#useroffers tr:nth-child(even) {
+  background-color: rgb(207, 207, 207);
+}
