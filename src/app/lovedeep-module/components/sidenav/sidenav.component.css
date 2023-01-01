@@ -21,3 +21,15 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
 }
+.sidenav button {
+  width: 100%;
+  padding: 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+.sidenav button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}

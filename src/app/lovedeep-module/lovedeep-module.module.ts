@@ -20,7 +20,6 @@ import { UserdashhomeComponent } from './components/userdashhome/userdashhome.co
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
 import { PayeeModule } from '../Payee/payee.module';
-import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 import { UserModule } from '../User/user.module';
@@ -50,7 +49,6 @@ import { ShowuseroffersComponent } from './components/showuseroffers/showuseroff
     AllcustomersComponent,
     UserrequestsComponent,
     ShowuseroffersComponent,
-    
   ],
   imports: [
     CommonModule,
@@ -59,7 +57,7 @@ import { ShowuseroffersComponent } from './components/showuseroffers/showuseroff
     HttpClientModule,
     AppRoutingModule,
     PayeeModule,
-    UserModule
+    UserModule,
   ],
   providers: [],
   exports: [
@@ -74,6 +72,7 @@ import { ShowuseroffersComponent } from './components/showuseroffers/showuseroff
     UserDashboardComponent,
     AdminDashboardComponent,
     UserNavComponent,
+    SidenavComponent,
   ],
 })
 export class LovedeepModuleModule {}
