@@ -18,13 +18,14 @@ import { OfferAllComponent } from './offer-all/offer-all.component';
 
 import { DataTablesModule } from 'angular-datatables';
 import { TransactionModule } from '../transaction/transaction.module';
+import { NavFooterModule } from '../nav-footer/nav-footer.module';
 
 
 
 @NgModule({
   declarations: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent, CreditCardAllComponent, CheckbookAllComponent, OffersAmdinComponent, OfferAllComponent],
   imports: [
-    CommonModule,FormsModule,LovedeepModuleModule,UserModule,AppRoutingModule,TransactionModule, DataTablesModule
+    CommonModule,FormsModule,LovedeepModuleModule,UserModule,AppRoutingModule,TransactionModule, DataTablesModule,NavFooterModule,
   ],
   providers:[CreditCardService,CheckBookServiceService],
   exports: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent,OffersAmdinComponent,CreditCardAllComponent],

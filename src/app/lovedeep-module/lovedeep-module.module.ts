@@ -24,6 +24,7 @@ import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 import { UserModule } from '../User/user.module';
+import { NavFooterModule } from '../nav-footer/nav-footer.module';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { UserModule } from '../User/user.module';
     HttpClientModule,
     AppRoutingModule,
     PayeeModule,
-    UserModule
+    UserModule,
+    NavFooterModule
   ],
   providers: [],
   exports: [
@@ -70,6 +72,8 @@ import { UserModule } from '../User/user.module';
     UserDashboardComponent,
     AdminDashboardComponent,
     UserNavComponent,
+    SidenavComponent,
+    
   ],
 })
 export class LovedeepModuleModule {}
