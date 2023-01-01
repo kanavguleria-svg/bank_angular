@@ -4,7 +4,7 @@
   </div>
   <div class="flex items-center">
     <div *ngIf="customer.authStatus == 'AUTH'" class="mx-4">
-      <a routerLink="/logout">Logout</a>
+      <a (click)="logoutSession()">Logout</a>
     </div>
     <div>{{ customer.name }}</div>
   </div>

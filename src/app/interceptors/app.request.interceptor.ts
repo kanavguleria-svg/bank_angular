@@ -31,7 +31,7 @@ export class XhrInterceptor implements HttpInterceptor {
     if (xsrf) {
       httpHeaders = httpHeaders.append('X-XSRF-TOKEN', xsrf);
     }
-
+    console.log("xsrf->"+sessionStorage.getItem('XSRF-TOKEN'))
     httpHeaders = httpHeaders.append('X-Requested-With', 'XMLHttpRequest');
     const xhr = req.clone({
       headers: httpHeaders,
