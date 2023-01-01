@@ -36,10 +36,11 @@ export class UserNavComponent implements OnInit {
       // }
     }).then((result) => {
       if (result.isConfirmed) {
+        console.log("entered logout service")
         this.logoutService.logout(this.customer.username, this.customer.password).subscribe();
         this.router.navigate["logout"]
             } else if (result.isDenied) {
-
+        
         // Swal.fire('Changes are not saved', '', 'info')
       }
     })
