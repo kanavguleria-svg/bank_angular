@@ -7,6 +7,8 @@ import { TrxnDashboardComponent } from './trxn-dashboard/trxn-dashboard.componen
 import { DataTablesModule } from 'angular-datatables';
 import { CreditAndCheckModule } from '../credit-and-check/credit-and-check.module';
 import { LovedeepModuleModule } from '../lovedeep-module/lovedeep-module.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { NavFooterModule } from '../nav-footer/nav-footer.module';
 
 
 
@@ -20,7 +22,11 @@ import { LovedeepModuleModule } from '../lovedeep-module/lovedeep-module.module'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    DataTablesModule],
+    DataTablesModule,
+    AppRoutingModule,
+    NavFooterModule,
+    LovedeepModuleModule
+  ],
   exports: [
     MakeTransactionComponent,
     TrxnDashboardComponent
