@@ -20,11 +20,11 @@ import { UserdashhomeComponent } from './components/userdashhome/userdashhome.co
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { AdminsidenavComponent } from './components/adminsidenav/adminsidenav.component';
 import { PayeeModule } from '../Payee/payee.module';
-import { AllPayeeComponent } from '../Payee/all-payee/all-payee.component';
 import { AdminqueryComponent } from './components/adminquery/adminquery.component';
 import { AllcustomersComponent } from './components/allcustomers/allcustomers.component';
 import { UserModule } from '../User/user.module';
-import { TransactionModule } from '../transaction/transaction.module';
+import { UserrequestsComponent } from './components/userrequests/userrequests.component';
+import { ShowuseroffersComponent } from './components/showuseroffers/showuseroffers.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ import { TransactionModule } from '../transaction/transaction.module';
     AdminsidenavComponent,
     AdminqueryComponent,
     AllcustomersComponent,
-    
+    UserrequestsComponent,
+    ShowuseroffersComponent,
   ],
   imports: [
     CommonModule,
@@ -56,7 +57,7 @@ import { TransactionModule } from '../transaction/transaction.module';
     HttpClientModule,
     AppRoutingModule,
     PayeeModule,
-    UserModule
+    UserModule,
   ],
   providers: [],
   exports: [
@@ -71,7 +72,7 @@ import { TransactionModule } from '../transaction/transaction.module';
     UserDashboardComponent,
     AdminDashboardComponent,
     UserNavComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
 })
 export class LovedeepModuleModule {}

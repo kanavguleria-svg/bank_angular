@@ -5,19 +5,17 @@
     <div class="text-center">${{ accountBalance }}</div>
   </div>
   <div
-    class="services py-3 px-10 text-white rounded-xl text-xl flex justify-center items-center"
+    class="services text-white rounded-xl text-xl flex justify-center items-center"
   >
-    Services
+    <a class="py-3 px-10" routerLink="/user/requests">Requests</a>
   </div>
   <div
-    class="offers py-3 px-10 flex justify-center text-xl items-center text-white rounded-xl"
+    class="cursor-pointer offers py-3 px-10 flex justify-center text-xl items-center text-white rounded-xl"
   >
-    Offers
+    <a routerLink="/userOffers" class="py-3 px-6">Offers</a>
   </div>
 </div>
 
 <div class="transactions mt-12 pl-10">
   <h1 class="text-xl">YOUR RECENT TRANSACTIONS</h1>
 </div>
-
- <!-- <router-outlet  name="udash-outlet" ></router-outlet> -->

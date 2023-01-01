@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer DashBoard</title>
+  </head>
+  <body>
+    <app-user-nav></app-user-nav>
+    <div class="flex justify-between">
+      <app-sidenav></app-sidenav>
+
+      <div class="main-screen pt-10 pl-52">
+        <!-- credit card Request -->
+        <div class="my-5">
+          <h1 class="request-heading">Your Credit Card Request</h1>
+          <table id="customers">
+            <tr></tr>
+            <tr>
+              <th>Req_Id</th>
+              <th>Type Of Card</th>
+              <th>Request Dt</th>
+            </tr>
+            <tr>
+              <td>{{ creditReq.req_id }}</td>
+              <td>{{ creditReq.type_of_card }}</td>
+              <td>{{ creditReq.req_dt }}</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- checkbook request  -->
+        <div class="my-5">
+          <h1 class="request-heading">Your CheckBook Request</h1>
+          <table id="customers">
+            <tr>
+              <th>Req_Id</th>
+              <th>Leafs</th>
+              <th>Request Dt</th>
+            </tr>
+            <tr>
+              <td>{{ checkReq.req_id }}</td>
+              <td>{{ checkReq.no_of_leaf }}</td>
+              <td>{{ checkReq.req_dt }}</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Loan Request  -->
+
+        <div class="my-5">
+          <h1 class="request-heading">Your Loan Request</h1>
+          <table id="customers">
+            <tr>
+              <th>Req_Id</th>
+              <th>Type Of Loan</th>
+              <th>Loan Amt</th>
+              <th>Loan Term</th>
+              <th>Request Dt</th>
+              <th>Loan Desc</th>
+              <th>Loan Rate</th>
+            </tr>
+            <tr>
+              <td>{{ loanReq.req_id }}</td>
+              <td>{{ loanReq.loan_type }}</td>
+              <td>{{ loanReq.loan_amt }}</td>
+              <td>{{ loanReq.loan_term }}</td>
+              <td>{{ loanReq.req_dt }}</td>
+              <td>{{ loanReq.loan_desc }}</td>
+              <td>{{ loanReq.loan_rate }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
