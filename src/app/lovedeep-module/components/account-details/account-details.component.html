@@ -10,17 +10,10 @@
       >
       <p>Users Account details</p>
 
-      <!-- <hr> -->
-
-      <!-- <h1 class="pt-10 pl-20 justify-center underline">Account Details</h1> -->
-
       <div class="grid grid-rows-1 grid-flow-col gap-1">
         <div class="row-span-6 auto-cols-max ...">
-          <!-- ----------------------- -->
-
           <div class="max-w-sm w-full lg: lg:flex">
-            <!-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
-          </div> -->
+
             <div
               class="max-h-80 border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b-lg lg:rounded-b-none lg:rounded-r p-3 flex flex-col justify-between leading-normal"
               >
@@ -113,7 +106,31 @@
                     >
                       uno : {{ uniqueNo }}
                     </h3>
+                  </div>'
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      Email : {{customer['email']}}
+                    </h3>
                   </div>
+
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      address : {{customer['address']}}
+                    </h3>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      Employment : {{customer['employement_status']}}
+                    </h3>
+                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -139,7 +156,7 @@
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 p-2 rounded"
         (click)="updatePayeeToggel()"
       >
-        update
+        update Account 
       </button>
         </div>
 
@@ -162,5 +179,5 @@
     </div>
   </div>
 </div>
-
+<!-- <app-mainfooter></app-mainfooter> -->
 <!-- <app-footer></app-footer> -->
