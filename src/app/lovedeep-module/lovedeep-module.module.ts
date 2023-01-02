@@ -26,7 +26,6 @@ import { UserModule } from '../User/user.module';
 import { NavFooterModule } from '../nav-footer/nav-footer.module';
 import { UserrequestsComponent } from './components/userrequests/userrequests.component';
 import { ShowuseroffersComponent } from './components/showuseroffers/showuseroffers.component';
-import { NavFooterModule } from '../nav-footer/nav-footer.module';
 import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({

@@ -31,7 +31,7 @@ export class AdminLoanlistComponent implements OnInit {
         order: [[0, 'desc']],
         responsive: true,
         columnDefs: [{
-          'targets': [1, 2, 4, 6], /* column index */
+          'targets': [ 2, 4, 6], /* column index */
           'orderable': false, /* true or false */
         }]
         // dom: 'Blfrtip',  buttons: ['copy', 'print', 'csv', 'excel', 'pdf' ]
