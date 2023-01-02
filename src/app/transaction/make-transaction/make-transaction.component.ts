@@ -63,8 +63,8 @@ export class MakeTransactionComponent implements OnInit {
     this.transferForm = new FormGroup({
       account_num_reciever: new FormControl(this.trxndetails.account_num_reciever, [
         Validators.required,
-        // Validators.minLength(12),
-        // Validators.maxLength(12)
+        // Validators.minLength(8),
+        // Validators.maxLength(8)
       ]),
       transaction_amt: new FormControl(this.trxndetails.transaction_amt, [Validators.required]),
       trxnDescription: new FormControl(this.trxndetails.trxnDescription, []),

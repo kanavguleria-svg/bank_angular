@@ -30,15 +30,15 @@
             <div class="col-lg-6">
                 <div class="bg-orange rounded shadow-lg border-0 p-5">
                     <h1 class="mb-4 text-dark">Loan Request</h1>
-                    <form (ngSubmit)="loanrequest(ngForm)" name="ngForm" #ngForm="ngForm" method=post>
+                    <form (ngSubmit)="loanrequest(ngForm)" name="ngForm" #ngForm="ngForm" method=post ngNativeValidate>
                         <div class="row g-3">
                             <div class="col-12 col-sm-12">
                                 <input type="number" class="form-control bg-light border-0" [placeholder]="customphacc"
-                                    name="customphacc" style="height: 55px;" [readOnly]="true" required>
+                                    name="customphacc" style="height: 55px;" [readOnly]="true">
                             </div>
                             <div class="col-12 col-sm-12">
                                 <select class="form-select" name="loan_type" id="loan_type"
-                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;" required="true">
+                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;" required appForbiddenName="null">
                                     <option [ngValue]="null" [disabled]="true" [hidden]="true">Select Loan Type</option>
                                     <!-- <option value="" disabled selected hidden>Choose a drink</option> -->
                                     <option *ngFor="let type of loantypes" [value]="type" >
@@ -64,7 +64,7 @@
                                     style="height: 55px;"
                                     (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
                                     #loanamt
-                                    required="true">
+                                    required>
                                     <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Amount</option>
                                     <option *ngFor="let amt of loanamount" [value]="amt.id">
                                         {{amt.value}}
@@ -92,7 +92,7 @@
 
                             <div class="col-12">
                                 <input class="btn btn-dark w-100 py-3" type="submit" name="submit"
-                                    value="Make Loan Request" />
+                                    value="Make Loan Request" [disabled]="!ngForm.valid" />
                             </div>
                         </div>
                     </form>
