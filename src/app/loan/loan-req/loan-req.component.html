@@ -34,14 +34,14 @@
                         <div class="row g-3">
                             <div class="col-12 col-sm-12">
                                 <input type="number" class="form-control bg-light border-0" [placeholder]="customphacc"
-                                    name="customphacc" style="height: 55px;" [readOnly]="true">
+                                    name="customphacc" style="height: 55px;" [readOnly]="true" required>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <select class="form-select" name="loan_type" id="loan_type"
-                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;">
+                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;" required="true">
                                     <option [ngValue]="null" [disabled]="true" [hidden]="true">Select Loan Type</option>
                                     <!-- <option value="" disabled selected hidden>Choose a drink</option> -->
-                                    <option *ngFor="let type of loantypes" [value]="type">
+                                    <option *ngFor="let type of loantypes" [value]="type" >
                                         {{type}}
                                     </option>
                                 </select>
@@ -49,7 +49,8 @@
                             <div class="col-6 col-sm-6">
                                 <select class="form-select rounded" [(ngModel)]="loanReqDetails.loan_term"
                                     name="loan_term" id="loan_term" style="height: 55px;"
-                                    (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)">
+                                    (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
+                                    required>
                                     <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Term (in Yrs)
                                     </option>
                                     <option *ngFor="let term of loanterm" [value]="term">
@@ -62,7 +63,8 @@
                                     [(ngModel)]="loanReqDetails.loan_amt" name="loan_amt" id="loan_amt"
                                     style="height: 55px;"
                                     (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
-                                    #loanamt>
+                                    #loanamt
+                                    required="true">
                                     <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Amount</option>
                                     <option *ngFor="let amt of loanamount" [value]="amt.id">
                                         {{amt.value}}
@@ -84,7 +86,7 @@
                             </div>
                             <div class="col-12 col-sm-12">
                                 <textarea class="form-control" [(ngModel)]="loanReqDetails.loan_desc" id="loan_desc"
-                                    name="loan_desc" rows="3" placeholder="Add Loan Description"></textarea>
+                                    name="loan_desc" rows="3" placeholder="Add Loan Description" required="true"></textarea>
                                 <!-- <input type="textfield" class="form-control bg-light" placeholder="Add Loan Description"  name="loan_desc" style="height: 55px;"> -->
                             </div>
 

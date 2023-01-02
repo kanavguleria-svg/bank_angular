@@ -26,6 +26,7 @@ import { UserModule } from '../User/user.module';
 import { NavFooterModule } from '../nav-footer/nav-footer.module';
 import { UserrequestsComponent } from './components/userrequests/userrequests.component';
 import { ShowuseroffersComponent } from './components/showuseroffers/showuseroffers.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ShowuseroffersComponent } from './components/showuseroffers/showuseroff
     AppRoutingModule,
     PayeeModule,
     UserModule,
-    NavFooterModule
+    NavFooterModule,
+    DataTablesModule
   ],
   providers: [],
   exports: [
@@ -76,8 +78,7 @@ import { ShowuseroffersComponent } from './components/showuseroffers/showuseroff
     UserNavComponent,
     SidenavComponent,
     AdminsidenavComponent,
-
-    
+   
   ],
 })
 export class LovedeepModuleModule {}
