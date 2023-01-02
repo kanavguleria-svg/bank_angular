@@ -30,6 +30,7 @@ import { UserrequestsComponent } from './lovedeep-module/components/userrequests
 import { ShowuseroffersComponent } from './lovedeep-module/components/showuseroffers/showuseroffers.component';
 import { UserQueryComponent } from './lovedeep-module/components/query/user-query/user-query.component';
 import { AdminLoanlistComponent } from './loan/admin-loanlist/admin-loanlist.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   //acount details
@@ -98,6 +99,8 @@ const routes: Routes = [
   { path: 'user/requests', component: UserrequestsComponent },
   { path: 'userOffers', component: ShowuseroffersComponent },
   { path: 'usercontact', component: UserQueryComponent },
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
