@@ -68,3 +68,11 @@
     background-color: #ff7b00;
   }
   
+  a{
+    text-decoration: none;
+  }
+
+  .dropdown a{
+    text-decoration: none;
+    color: white;
+  }

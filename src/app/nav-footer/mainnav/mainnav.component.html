@@ -22,7 +22,7 @@
       <a
         class="login py-1 px-2 rounded-md"
         *ngIf="customer.authStatus == 'AUTH'"
-        routerLink="/customerdashboard"
+        routerLink={{linkdash}}
         >DashBoard</a
       >
       <a
@@ -37,8 +37,8 @@
   <!--? lower-nav -->
   <div class="flex justify-between px-4 items-center py-2 lowernavbg">
     <!--? brand -->
-    <div class="text-black text-2xl font-medium pl-3">
-      <a routerLink="/home"> H<span class="text-white text-3xl">M</span>B </a>
+    <div class=" text-2xl font-medium pl-3">
+      <a class="text-gray-900" routerLink="/home"> H<span class="text-white text-3xl">M</span>B </a>
     </div>
 
     <!--? right-part -->
