@@ -7,7 +7,7 @@
 	<div class="text-xl">H<span class="text-2xl" style="color: #ff7b00;">M</span>B</div>
 	<div class="flex items-center">
 		<div *ngIf="customer.authStatus == 'AUTH'" class="mx-4">
-			<a routerLink="/logout" class="text-decoration-none text-dark" style="font-size: 15px;">Logout</a>
+			<a (click)="logoutSession()" class="text-decoration-none text-dark" style="font-size: 15px;">Logout</a>
 		</div>
 		<div class="text-dark" style="font-size: 15px;">{{ customer.name }}</div>
 	</div>

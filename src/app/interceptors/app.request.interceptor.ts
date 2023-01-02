@@ -56,7 +56,7 @@ export class XhrInterceptor implements HttpInterceptor {
                 return false
               }
             })
-            this.router.navigate(['login'])
+            this.router.navigate(['home'])
         }
         const error = err.statusText;
         return throwError(error);

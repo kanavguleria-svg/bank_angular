@@ -1,7 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LogoutServiceService } from 'src/app/lovedeep-module/logout-service.service';
 import { Customer } from 'src/app/models/customer.model';
+import Swal from 'sweetalert2';
 import { LoanReq } from '../loan-req';
 import { LoanReqService } from '../loan-req.service';
 import { LoanAccount } from '../loanacc';
@@ -57,7 +60,7 @@ export class LoanReqComponent implements OnInit {
   customer: Customer;
   
 
-  constructor(private service: LoanReqService) { }
+  constructor(private service: LoanReqService, private logoutService: LogoutServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.loanReqDetails = new LoanReq();
@@ -115,6 +118,34 @@ export class LoanReqComponent implements OnInit {
       this.loanReqDetails.loan_rate = 5.3;
     }
     this.loanrate = "Loan rate : " + final_rate + "% Your final amount will be ₹ " + ((final_rate * amount) / 100) + " + " + amount;
+  }
+
+  logoutSession(){
+    Swal.fire({
+      title: 'Do you want to Logout?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Logout!',
+      // customClass: {
+      //   actions: 'my-actions',
+      //   cancelButton: 'order-1 right-gap',
+      //   confirmButton: 'order-2',
+      //   denyButton: 'order-3',
+      // }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.logoutService.logout(this.customer.username, this.customer.password).subscribe();
+        this.navigatetologout();
+            } else if (result.isDenied) {
+        Swal.fire('You made the right choice!', '', )
+      }
+    })
+  }
+
+  navigatetologout() {
+    this.router.navigate(["logout"])
   }
 
 }

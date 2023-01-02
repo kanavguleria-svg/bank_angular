@@ -21,7 +21,6 @@ export class UserNavComponent implements OnInit {
   }
 
   logoutSession(){
-    console.log("entered logout session method")
     Swal.fire({
       title: 'Do you want to Logout?',
       icon: 'warning',
@@ -37,19 +36,15 @@ export class UserNavComponent implements OnInit {
       // }
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log("entered logout service")
         this.logoutService.logout(this.customer.username, this.customer.password).subscribe();
-        console.log("crossed logout service")
         this.navigatetologout();
             } else if (result.isDenied) {
-        console.log("denied")
-        // Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('You made the right choice!', '', )
       }
     })
   }
 
   navigatetologout() {
-    console.log("trying to call logout page")
     this.router.navigate(["logout"])
   }
 }

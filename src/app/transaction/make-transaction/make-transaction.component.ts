@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LogoutServiceService } from 'src/app/lovedeep-module/logout-service.service';
 import { Customer } from 'src/app/models/customer.model';
 import Swal from 'sweetalert2';
 import { TrxnPayee } from '../payee';
@@ -36,7 +38,7 @@ export class MakeTransactionComponent implements OnInit {
   tr_dt: any = new Date();
   transaction_dt: string;
 
-  constructor(private service: TrxnService, private formBuilder: FormBuilder) {
+  constructor(private service: TrxnService, private formBuilder: FormBuilder, private logoutService: LogoutServiceService, private router: Router) {
     if (sessionStorage.getItem('userdetails')) {
       console.log(JSON.parse(sessionStorage.getItem('userdetails')))
       this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
@@ -74,6 +76,9 @@ export class MakeTransactionComponent implements OnInit {
 
     });
 
+    const ctrl = this.transferForm.get('account_num_reciever');
+      ctrl.disable()
+
   }
 
   getPayeeDetails() {
@@ -90,6 +95,9 @@ export class MakeTransactionComponent implements OnInit {
     const payeectrl = this.transferForm.get('payee')
     const ctrl = this.transferForm.get('account_num_reciever');
 
+    if (payeectrl.value == null){
+      ctrl.disable()
+    } else
     if (payeectrl.value === 'transaction') {
       ctrl.setValue(null);
       ctrl.enable();
@@ -102,6 +110,7 @@ export class MakeTransactionComponent implements OnInit {
   }
 
   transfer() {
+    
     this.submitted = true;
     this.trxndetails.account_num_reciever = this.transferForm.get('account_num_reciever').value;
     this.trxndetails.account_num_sender = this.customer_acc;
@@ -111,6 +120,7 @@ export class MakeTransactionComponent implements OnInit {
       this.trxndetails.trxnDescription = this.transferForm.get('trxnDescriptionCustom').value;
     }
     console.log(this.trxndetails);
+    console.log(this.transferForm.invalid)
     if (this.transferForm.invalid) {
       return;
     }
@@ -154,6 +164,34 @@ export class MakeTransactionComponent implements OnInit {
     } catch {
       this.loading = false;
     }
+  }
+
+  logoutSession(){
+    Swal.fire({
+      title: 'Do you want to Logout?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Logout!',
+      // customClass: {
+      //   actions: 'my-actions',
+      //   cancelButton: 'order-1 right-gap',
+      //   confirmButton: 'order-2',
+      //   denyButton: 'order-3',
+      // }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.logoutService.logout(this.customer.username, this.customer.password).subscribe();
+        this.navigatetologout();
+            } else if (result.isDenied) {
+        Swal.fire('You made the right choice!', '', )
+      }
+    })
+  }
+
+  navigatetologout() {
+    this.router.navigate(["logout"])
   }
 
   get account_num_reciever() { return this.transferForm.get('account_num_reciever'); }

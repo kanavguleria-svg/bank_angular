@@ -11,7 +11,7 @@ export class User {
   password: string;
   unique_identity: string;
   unique_identity_number: number;
-  role: string="ROLE_ADMIN";
+  role: string;
   employement_status: string;
   role_code: string;
 }
