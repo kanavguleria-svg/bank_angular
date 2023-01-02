@@ -29,6 +29,7 @@ import { AllcustomersComponent } from './lovedeep-module/components/allcustomers
 import { UserrequestsComponent } from './lovedeep-module/components/userrequests/userrequests.component';
 import { ShowuseroffersComponent } from './lovedeep-module/components/showuseroffers/showuseroffers.component';
 import { UserQueryComponent } from './lovedeep-module/components/query/user-query/user-query.component';
+import { AdminLoanlistComponent } from './loan/admin-loanlist/admin-loanlist.component';
 
 const routes: Routes = [
   //acount details
@@ -73,6 +74,8 @@ const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
   { path: 'admin/allOffers', component: OfferAllComponent },
+  { path: 'admin/loanrequests', component: AdminLoanlistComponent },
+
   {
     path: 'payment',
     component: MakeTransactionComponent,

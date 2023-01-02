@@ -36,6 +36,7 @@ import { MainfooterComponent } from './nav-footer/mainfooter/mainfooter.componen
     TransactionModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    LoanModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',

@@ -69,8 +69,7 @@ export class TrxnDashboardComponent implements OnInit {
       this.trxnhistory = data;
     }, error => {
       console.log(error);
-    }
-    )
+    })
   }
 
 }
