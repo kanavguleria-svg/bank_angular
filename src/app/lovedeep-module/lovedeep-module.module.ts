@@ -6,7 +6,7 @@ import { CrouselComponent } from './components/crousel/crousel.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ContactQueryComponent } from './components/query/contact-query/contact-query.component';
 import { UserQueryComponent } from './components/query/user-query/user-query.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserOffersComponent } from './components/user-offers/user-offers.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
@@ -61,7 +61,8 @@ import { DataTablesModule } from 'angular-datatables';
     PayeeModule,
     UserModule,
     NavFooterModule,
-    DataTablesModule
+    ReactiveFormsModule,
+    DataTablesModule,
   ],
   providers: [],
   exports: [

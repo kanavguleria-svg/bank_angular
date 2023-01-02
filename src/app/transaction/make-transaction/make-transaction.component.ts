@@ -36,15 +36,28 @@ export class MakeTransactionComponent implements OnInit {
   tr_dt: any = new Date();
   transaction_dt: string;
 
-  constructor(private service: TrxnService, private formBuilder: FormBuilder) { }
+  constructor(private service: TrxnService, private formBuilder: FormBuilder) {
+    if (sessionStorage.getItem('userdetails')) {
+      console.log(JSON.parse(sessionStorage.getItem('userdetails')))
+      this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
+      this.customer = JSON.parse(sessionStorage.getItem('userdetails'))
+      this.customer_acc = JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_no;
+      // this.customer_bal = JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_balance;
+    }
+
+  }
 
   ngOnInit(): void {
-
-    this.getAccountDetails();
-    this.transaction_dt = "Date : " + this.tr_dt.getDate() + "-" + (parseInt(this.tr_dt.getMonth())+1) + "-" + this.tr_dt.getFullYear();
-    this.customphacc = "Account number : " + this.customer_acc + "\nAccount Balance : " + this.customer_bal;
+    this.service.getAccount(this.customer_id).subscribe(data => {
+      this.customer_bal = data.account_balance;
+      this.customphacc = "Account number : " + this.customer_acc + "\nAccount Balance : " + this.customer_bal;
+    }, error => {
+      console.log(error);
+    }
+    )
+    this.transaction_dt = "Date : " + this.tr_dt.getDate() + "-" + (parseInt(this.tr_dt.getMonth()) + 1) + "-" + this.tr_dt.getFullYear();
     this.getPayeeDetails();
-    console.log(this.trxnPayee)
+
     this.trxndetails = new TransactionDetails();
 
     this.transferForm = new FormGroup({
@@ -53,10 +66,11 @@ export class MakeTransactionComponent implements OnInit {
         // Validators.minLength(12),
         // Validators.maxLength(12)
       ]),
-      transaction_amt: new FormControl(this.trxndetails.transaction_amt, [ Validators.required ]),
+      transaction_amt: new FormControl(this.trxndetails.transaction_amt, [Validators.required]),
       trxnDescription: new FormControl(this.trxndetails.trxnDescription, []),
       trxnDescriptionCustom: new FormControl(this.trxndetails.trxnDescription, []),
       payee: new FormControl(),
+      userdet: new FormControl(),
 
     });
 
@@ -87,26 +101,6 @@ export class MakeTransactionComponent implements OnInit {
     }
   }
 
-  getAccountDetails() {
-    if (sessionStorage.getItem('userdetails')) {
-      console.log(JSON.parse(sessionStorage.getItem('userdetails')))
-      this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
-      this.customer = JSON.parse(sessionStorage.getItem('userdetails'))
-      this.customer_acc = JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_no;
-      this.customer_bal = JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_balance;
-    }
-  }
-
-  get account_num_reciever() { return this.transferForm.get('account_num_reciever'); }
-
-  get transaction_amt() { return this.transferForm.get('transaction_amt'); }
-
-  get trxnDescription() { return this.transferForm.get('trxnDescription'); }
-
-  get trxnDescriptionCustom() { return this.transferForm.get('trxnDescriptionCustom'); }
-
-  get fval() { return this.transferForm.controls; }
-
   transfer() {
     this.submitted = true;
     this.trxndetails.account_num_reciever = this.transferForm.get('account_num_reciever').value;
@@ -125,21 +119,27 @@ export class MakeTransactionComponent implements OnInit {
       this.service.maketrxn(this.trxndetails, this.customer_id).subscribe(data => {
         this.loading = false;
         this.message = data;
-        console.log(this.message)
-        if (data.slice(0,6) === 'Saved!') {
+        this.trxndetails = new TransactionDetails();
+        if (data.slice(0, 6) === 'Saved!') {
+          this.service.getAccount(this.customer_id).subscribe(data => {
+            this.customer_bal = data.account_balance;
+            this.customphacc = "Account number : " + this.customer_acc + "\nAccount Balance : " + this.customer_bal;
+          }, error => {
+            console.log(error);
+          }
+          )
           Swal.fire({
             icon: 'success',
             title: 'Transaction successful',
-            text: data.responseMessage
+            text: data.slice(7,)
           })
-          this.trxndetails = new TransactionDetails();
-
+         
         }
         else {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: data.responseMessage,
+            text: data,
           })
         }
       }, error => {
@@ -156,7 +156,14 @@ export class MakeTransactionComponent implements OnInit {
     }
   }
 
-  
+  get account_num_reciever() { return this.transferForm.get('account_num_reciever'); }
 
+  get transaction_amt() { return this.transferForm.get('transaction_amt'); }
+
+  get trxnDescription() { return this.transferForm.get('trxnDescription'); }
+
+  get trxnDescriptionCustom() { return this.transferForm.get('trxnDescriptionCustom'); }
+
+  get fval() { return this.transferForm.controls; }
 
 }

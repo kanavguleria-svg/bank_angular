@@ -23,6 +23,9 @@ constructor(private creditCardServ:CreditCardService ) {}
       console.log("all credit cards are fetched");
       this.creditCollection=data;
       console.log(this.creditCollection);
+
+      console.log(this.creditCollection,"---------");
+      
       
     //  for (var i of this.creditCollection)
     //  {
