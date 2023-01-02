@@ -18,8 +18,12 @@ export class TrxnDashboardComponent implements OnInit {
   account_num_sender: number;
 
   constructor(private service: TrxnService) {
-    this.account_num_sender = 1234;
-
+    if (sessionStorage.getItem('userdetails')) {
+      this.customer_id = JSON.parse(sessionStorage.getItem('userdetails')).customer_id;
+      this.account_num_sender = JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_no;
+      // JSON.parse(sessionStorage.getItem('userdetails')).account_details.account_num_sender
+    }
+    
   }
 
   ngOnInit(): void {
@@ -67,10 +71,10 @@ export class TrxnDashboardComponent implements OnInit {
   getAlltrxn() {
     this.service.getAlltrxn(this.customer_id).subscribe(data => {
       this.trxnhistory = data;
+      console.log(this.trxnhistory)
     }, error => {
       console.log(error);
-    }
-    )
+    })
   }
 
 }

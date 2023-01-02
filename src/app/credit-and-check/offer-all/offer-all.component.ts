@@ -13,11 +13,15 @@ constructor(private offerServ: OfferServiceService) {}
 dtOptions:any;
 ngOnInit(): void {
 
+  this.getOffers();
+
 }
 
 offersCollection:[];
 
-getCheckBooks(){
+getOffers(){
+  console.log("this is working");
+  
   this.offerServ.getOffer().subscribe(data=>{
     console.log("all offers are fetched");
     this.offersCollection=data;
@@ -33,8 +37,6 @@ getCheckBooks(){
       
   //  }
     
-  },error => {
-    console.log(error);
   });
 }
 

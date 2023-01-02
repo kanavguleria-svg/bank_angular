@@ -20,9 +20,12 @@ export class OffersAmdinComponent implements OnInit {
   offer:Offer;
 
   saveOffer(offer:Offer){
-    console.log("this is running");
-    
+    console.log("this is running"); 
+    console.log(this.offer); 
     this.offerserv.createOffer(this.offer).subscribe(data=>{
+        console.log("offer is created");
+        
+        
         this.message=data;
         console.log(this.message);
         

@@ -7,8 +7,10 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { Customer } from '../models/customer.model';
+import Swal from 'sweetalert2';
+import { throwError } from 'rxjs';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -37,14 +39,60 @@ export class XhrInterceptor implements HttpInterceptor {
       headers: httpHeaders,
     });
     return next.handle(xhr).pipe(
-      tap((err: any) => {
-        if (err instanceof HttpErrorResponse) {
-          if (err.status !== 401) {
-            return;
-          }
-          this.router.navigate(['dashboard']);
+      catchError(err => {
+        if (err.status === 401) {
+            Swal.fire({
+              icon: 'question',
+              title: 'Error 401 encountered! Access denied',
+              allowOutsideClick: () => {
+                const popup = Swal.getPopup()
+                popup.classList.remove('swal2-show')
+                setTimeout(() => {
+                  popup.classList.add('animate__animated', 'animate__headShake')
+                })
+                setTimeout(() => {
+                  popup.classList.remove('animate__animated', 'animate__headShake')
+                }, 500)
+                return false
+              }
+            })
+            this.router.navigate(['login'])
         }
-      })
-    );
+        const error = err.statusText;
+        return throwError(error);
+}));
+    //   tap((err: any) => {
+    //     console.log(err)
+    //     console.log("enters pipe")
+    //     console.log(HttpErrorResponse);
+    //     if (err instanceof HttpErrorResponse) {
+    //       console.log("httperrorresponse")
+    //       if (err.status !== 401) {
+    //         console.log("enters 401")
+    //         Swal.fire({
+    //           icon: 'question',
+    //           title: 'Error 401 encountered! Access denied',
+    //           allowOutsideClick: () => {
+    //             const popup = Swal.getPopup()
+    //             popup.classList.remove('swal2-show')
+    //             setTimeout(() => {
+    //               popup.classList.add('animate__animated', 'animate__headShake')
+    //             })
+    //             setTimeout(() => {
+    //               popup.classList.remove('animate__animated', 'animate__headShake')
+    //             }, 500)
+    //             return false
+    //           }
+    //         })
+    //         this.router.navigate(["/404"])
+    //         return;
+    //       }
+    //       this.router.navigate(['dashboard']);
+    //     }
+    //     else {
+    //       console.log('koi error werror nahi hain')
+    //     }
+    //   })
+    // );
   }
 }

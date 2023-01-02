@@ -1,9 +1,13 @@
-<nav class="flex justify-between px-8 py-4 items-center bg-gray-100">
+<nav
+  class="flex justify-between px-8 py-4 items-center sticky top-0 bg-gray-100"
+  style="box-shadow: 0 0 10px rgb(0, 0, 0, 0.4)"
+>
   <div class="text-xl">
     <a routerLink="/home"> H<span class="text-primary text-2xl">M</span>B </a>
   </div>
   <div class="flex items-center">
     <div *ngIf="customer.authStatus == 'AUTH'" class="mx-4">
+      <a routerLink="/home">home</a>
       <a (click)="logoutSession()">Logout</a>
     </div>
     <div>{{ customer.name }}</div>

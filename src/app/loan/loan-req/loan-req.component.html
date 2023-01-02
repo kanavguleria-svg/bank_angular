@@ -1,15 +1,36 @@
+
+
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 
-<!-- Bootstrap Form -->
+<nav class="d-flex justify-content-between px-4 py-3 items-center bg-gray-100 sticky top-0 z-50"
+	style="box-shadow: 0 0 10px rgb(0, 0, 0, 0.4); background-color: azure;">
+	<div class="text-xl">H<span class="text-2xl" style="color: #ff7b00;">M</span>B</div>
+	<div class="flex items-center">
+		<div *ngIf="customer.authStatus == 'AUTH'" class="mx-4">
+			<a routerLink="/logout" class="text-decoration-none text-dark" style="font-size: 15px;">Logout</a>
+		</div>
+		<div class="text-dark" style="font-size: 15px;">{{ customer.name }}</div>
+	</div>
+</nav>
+
+
+<div>
+	<div>
+		<app-sidenav></app-sidenav>
+	</div>
+	<div class="flex justify-between">
+		<app-sidenav></app-sidenav>
+		<div class="main-screen">
+			<!-- Bootstrap Form -->
 <div class="container-fluid bg-light py-5">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6">
                 <div class="bg-orange rounded shadow-lg border-0 p-5">
                     <h1 class="mb-4 text-dark">Loan Request</h1>
-                    <form (ngSubmit)="loanrequest()" name="ngForm" method=post>
+                    <form (ngSubmit)="loanrequest(ngForm)" name="ngForm" #ngForm="ngForm" method=post ngNativeValidate>
                         <div class="row g-3">
                             <div class="col-12 col-sm-12">
                                 <input type="number" class="form-control bg-light border-0" [placeholder]="customphacc"
@@ -17,10 +38,10 @@
                             </div>
                             <div class="col-12 col-sm-12">
                                 <select class="form-select" name="loan_type" id="loan_type"
-                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;">
+                                    [(ngModel)]="loanReqDetails.loan_type" style="height: 55px;" required appForbiddenName="null">
                                     <option [ngValue]="null" [disabled]="true" [hidden]="true">Select Loan Type</option>
                                     <!-- <option value="" disabled selected hidden>Choose a drink</option> -->
-                                    <option *ngFor="let type of loantypes" [value]="type">
+                                    <option *ngFor="let type of loantypes" [value]="type" >
                                         {{type}}
                                     </option>
                                 </select>
@@ -28,7 +49,8 @@
                             <div class="col-6 col-sm-6">
                                 <select class="form-select rounded" [(ngModel)]="loanReqDetails.loan_term"
                                     name="loan_term" id="loan_term" style="height: 55px;"
-                                    (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)">
+                                    (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
+                                    required>
                                     <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Term (in Yrs)
                                     </option>
                                     <option *ngFor="let term of loanterm" [value]="term">
@@ -41,7 +63,8 @@
                                     [(ngModel)]="loanReqDetails.loan_amt" name="loan_amt" id="loan_amt"
                                     style="height: 55px;"
                                     (change)="calculate_loan_rate(loanReqDetails.loan_term,loanReqDetails.loan_amt)"
-                                    #loanamt>
+                                    #loanamt
+                                    required>
                                     <option [ngValue]="0" [disabled]="true" [hidden]="true">Select Loan Amount</option>
                                     <option *ngFor="let amt of loanamount" [value]="amt.id">
                                         {{amt.value}}
@@ -63,13 +86,13 @@
                             </div>
                             <div class="col-12 col-sm-12">
                                 <textarea class="form-control" [(ngModel)]="loanReqDetails.loan_desc" id="loan_desc"
-                                    name="loan_desc" rows="3" placeholder="Add Loan Description"></textarea>
+                                    name="loan_desc" rows="3" placeholder="Add Loan Description" required="true"></textarea>
                                 <!-- <input type="textfield" class="form-control bg-light" placeholder="Add Loan Description"  name="loan_desc" style="height: 55px;"> -->
                             </div>
 
                             <div class="col-12">
                                 <input class="btn btn-dark w-100 py-3" type="submit" name="submit"
-                                    value="Make Loan Request" />
+                                    value="Make Loan Request" [disabled]="!ngForm.valid" />
                             </div>
                         </div>
                     </form>
@@ -77,10 +100,128 @@
             </div>
             <div class="col-lg-6 mb-3 mb-lg-0">
                 <!-- add loan offers or simple offers here! -->
+                <div class="container-fluid py-5 my-3">
+                    <div id="carouselExampleCaptions" class="carousel slide relative rounded" data-bs-ride="carousel">
+                        <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+                          <button
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                          ></button>
+                          <button
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2"
+                          ></button>
+                          <button
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3"
+                          ></button>
+                          <button
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="3"
+                            aria-label="Slide 4"
+                          ></button>
+                        </div>
+                        <div class="carousel-inner relative w-full overflow-hidden">
+                          <div class="carousel-item active relative float-left w-full">
+                            <img
+                              src="assets/img/netbanking.jpg"
+                              class="block w-full"
+                              alt="..."
+                              width="25vw"
+                              height="50vh"
+                            />
+                            <div class="carousel-caption hidden md:block absolute text-center rounded" style="background-color: rgb(0, 0, 0, 0.4);">
+                              <h3>SeamLess Online Shopping Experience</h3>
+                              <p>As smooth as butter.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item relative float-left w-full">
+                            <img
+                              src="assets/img/homeloan.jpg"
+                              class="block w-full"
+                              alt="..."
+                              width="25vw"
+                              height="50vh"
+                            />
+                            <div class="carousel-caption hidden md:block absolute text-center rounded" style="background-color: rgb(0, 0, 0, 0.4);">
+                              <h2>Easy Home Loan</h2>
+                              <p>Home Loan at lowest interest rates so you can get your dream home.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item relative float-left w-full">
+                            <img
+                              src="assets/img/creditcard.jpg"
+                              class="block w-full"
+                              alt="..."
+                              width="25vw"
+                              height="50vh"
+                            />
+                            <div class="carousel-caption hidden md:block absolute text-center">
+                              <h2>HMB Credit Card</h2>
+                              <p>Get </p>
+                            </div>
+                          </div>
+                          <div class="carousel-item relative float-left w-full">
+                            <img
+                              src="assets/img/bank.jpg"
+                              class="block w-full"
+                              alt="..."
+                              width="25vw"
+                              height="50vh"
+                            />
+                            <div class="carousel-caption hidden md:block absolute text-center rounded" style="background-color: rgb(0, 0, 0, 0.4)">
+                              <h2>HMB Bank</h2>
+                              <p class="lead">A Bank You Can Trust</p>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                          type="button"
+                          data-bs-target="#carouselExampleCaptions"
+                          data-bs-slide="prev"
+                        >
+                          <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                          class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                          type="button"
+                          data-bs-target="#carouselExampleCaptions"
+                          data-bs-slide="next"
+                        >
+                          <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+			
+
+			<div>
+				<app-mainfooter></app-mainfooter>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+
 
 
 

@@ -13,6 +13,7 @@ export class User {
   unique_identity_number: number;
   role: string="ROLE_ADMIN";
   employement_status: string;
+  role_code: string;
 }
 export class Account_details {
   account_no: number;

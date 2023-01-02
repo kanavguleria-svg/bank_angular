@@ -18,15 +18,18 @@ import { OfferAllComponent } from './offer-all/offer-all.component';
 
 import { DataTablesModule } from 'angular-datatables';
 import { TransactionModule } from '../transaction/transaction.module';
+import { NavFooterModule } from '../nav-footer/nav-footer.module';
+// import { LovedeepModuleModule } from "../lovedeep-module/lovedeep-module.module";
 
 
 
 @NgModule({
-  declarations: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent, CreditCardAllComponent, CheckbookAllComponent, OffersAmdinComponent, OfferAllComponent],
-  imports: [
-    CommonModule,FormsModule,LovedeepModuleModule,UserModule,AppRoutingModule,TransactionModule, DataTablesModule
-  ],
-  providers:[CreditCardService,CheckBookServiceService],
-  exports: [CreditCardComponent,CheckbookComponent,CrouselEmptyComponent,OffersAmdinComponent,CreditCardAllComponent],
+    declarations: [CreditCardComponent, CheckbookComponent, CrouselEmptyComponent, CreditCardAllComponent, CheckbookAllComponent, OffersAmdinComponent, OfferAllComponent],
+    providers: [CreditCardService, CheckBookServiceService],
+    exports: [CreditCardComponent, CheckbookComponent, CrouselEmptyComponent, OffersAmdinComponent, CreditCardAllComponent],
+    imports: [
+        CommonModule, FormsModule, LovedeepModuleModule, UserModule, AppRoutingModule, TransactionModule, DataTablesModule, NavFooterModule,
+        LovedeepModuleModule
+    ]
 })
 export class CreditAndCheckModule { }

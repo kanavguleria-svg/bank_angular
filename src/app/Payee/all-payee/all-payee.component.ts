@@ -19,12 +19,12 @@ export class AllPayeeComponent implements OnInit {
   customer= new Customer();
   customerId:number;
   message:any;
-  dtOptions: any;
+  dtOptions: any = {};
 
   constructor(private service:PayeeServiceService, private router: Router) { }
 
   public openPDF(): void {
-    let DATA: any = document.getElementById('mytable');
+    let DATA: any = document.getElementById('customers');
     html2canvas(DATA).then((canvas) => {
       let fileWidth = 208;
       let fileHeight = (canvas.height * fileWidth) / canvas.width;
@@ -33,8 +33,9 @@ export class AllPayeeComponent implements OnInit {
       let position = 0;
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
       PDF.save('yourpayees.pdf');
-    });
-  }
+    }
+    )
+    .catch(error => console.log(error))  }
   
 
   getAllPayee(){
@@ -92,9 +93,9 @@ export class AllPayeeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    setTimeout(() :Observable<any> => {return this.dtOptions
+    // setTimeout(() :Observable<any> => {return this.dtOptions
       
-    }, 3000);
+    // }, 3000);
     if(sessionStorage.getItem('userdetails')){
       this.customer=JSON.parse(sessionStorage.getItem('userdetails')!);
       this.customerId=this.customer.customer_id;
@@ -105,20 +106,20 @@ export class AllPayeeComponent implements OnInit {
 
   console.log(this.customer)
   this.getAllPayee();
-  this.dtOptions.subscribe(
+  // this.dtOptions.subscribe(
   // this.dtOptions = {
   //   pageLength: 5,
   // lengthMenu : [5, 10, 25, 50, 100],
-  //   order: [[0, 'desc']],
-  //   responsive: true,
-  //   columnDefs: [ {
-  //     'targets': [1,2,4,6], /* column index */
-  //     'orderable': false, /* true or false */
+  // //   order: [[0, 'desc']],
+  // //   responsive: true,
+  // //   columnDefs: [ {
+  // //     'targets': [1,2,4,6], /* column index */
+  // //     'orderable': false, /* true or false */
   
-  //  }]
+  // //  }]
   //   // dom: 'Blfrtip',  buttons: ['copy', 'print', 'csv', 'excel', 'pdf' ]
   // }
-  );
+  // );
 }
 
 }

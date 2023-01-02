@@ -10,17 +10,10 @@
       >
       <p>Users Account details</p>
 
-      <!-- <hr> -->
-
-      <!-- <h1 class="pt-10 pl-20 justify-center underline">Account Details</h1> -->
-
       <div class="grid grid-rows-1 grid-flow-col gap-1">
         <div class="row-span-6 auto-cols-max ...">
-          <!-- ----------------------- -->
-
           <div class="max-w-sm w-full lg: lg:flex">
-            <!-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
-          </div> -->
+
             <div
               class="max-h-80 border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b-lg lg:rounded-b-none lg:rounded-r p-3 flex flex-col justify-between leading-normal"
               >
@@ -51,10 +44,10 @@
                     Account Type : {{ accountdetails["account_type"] }}
                   </h3>
                   <h3 class="font-mono">
-                    balance : {{ accountdetails["account_balance"] }}
+                    Balance : {{ accountdetails["account_balance"] }}
                   </h3>
                   <h3 class="font-mono">
-                    branch Address : {{ accountdetails["branch_address"] }}
+                    Branch Address : {{ accountdetails["branch_address"] }}
                   </h3>
                   <div class="vl"></div>
                 </div>
@@ -65,10 +58,10 @@
 
        
 
-        <div class="">
+        <div class="" >
           <div
-            class="shadow-orange-600 p-4 items-center justify-center w-[680px] rounded-xl group sm:flex space-x-2 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl"
-          >
+            class=" p-4 items-center justify-center w-[680px] rounded-xl group sm:flex space-x-2 bg-white bg-opacity-50  hover:rounded-2xl" style="box-shadow: 20px 20px 25px 20px rgb(0 0 0 / 0.1), 0 8px 10px 20px rgb(0 0 0 / 0.1);">
+          
             <div class="">
               <div class="space-y-10 space-x-4">
                 <div class="space-y-8">
@@ -97,23 +90,48 @@
                     <h3
                       class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
                     >
-                      age : {{ customer["age"] }}
+                      Age : {{ customer["age"] }}
                     </h3>
                   </div>
                   <div>
                     <h3
                       class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
                     >
-                      uid : {{ uniqueIdentity }}
+                      Unique id : {{ uniqueIdentity }}
                     </h3>
                   </div>
                   <div>
                     <h3
                       class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
                     >
-                      uno : {{ uniqueNo }}
+                      Unique id: {{ uniqueNo }}
                     </h3>
                   </div>
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                    Employment : {{customer['employement_status']}}
+                      
+                    </h3>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                      Address : {{customer['address']}}
+                    </h3>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    >
+                    Mail : {{customer['email']}}
+                    </h3>
+                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -124,14 +142,14 @@
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             (click)="payetoggel()"
           >
-            show all payees
+            Show All Payees
           </button>
           &nbsp; &nbsp;
           <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 p-2 rounded"
           (click)="addpayetoggel()"
         >
-          add Payee
+          Add Payee
         </button>
 
         &nbsp; &nbsp;
@@ -139,7 +157,7 @@
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 p-2 rounded"
         (click)="updatePayeeToggel()"
       >
-        update
+        Update Account Details
       </button>
         </div>
 
@@ -162,5 +180,5 @@
     </div>
   </div>
 </div>
-
+<!-- <app-mainfooter></app-mainfooter> -->
 <!-- <app-footer></app-footer> -->

@@ -3,7 +3,7 @@
 </head>
 
 <nav class="d-flex justify-content-between px-4 py-3 items-center bg-gray-100 sticky top-0 z-50"
-	style="box-shadow: 0 0 10px rgb(0, 0, 0, 0.4); background-color: azure;">
+	style="box-shadow: 0 0 10px rgb(0, 0, 0, 0.4); background-color: rgb(255, 255, 255);">
 	<div class="text-xl">H<span class="text-2xl" style="color: #ff7b00;">M</span>B</div>
 	<div class="flex items-center">
 		<div *ngIf="customer.authStatus == 'AUTH'" class="mx-4">
@@ -32,7 +32,7 @@
 									<div class="row g-3">
 										<div class="col-12 col-sm-12">
 											<textarea class="form-control" [placeholder]="customphacc"
-												name="account_num_sender" style="height: 70px; resize: none; background-color: aliceblue;"
+												formControlName="userdet" name="account_num_sender" style="height: 70px; resize: none; background-color: aliceblue;"
 												[readonly]="true" [disabled]="true"></textarea>
 										</div>
 										<div class="col-12 col-sm-12">
@@ -58,7 +58,7 @@
 												</div>
 												<div
 													*ngIf="account_num_reciever.errors?.['minlength'] || account_num_reciever.errors?.['maxlength']">
-													Acount number must be 12 characters long.
+													Acount number must be 8 characters long.
 												</div>
 											</div>
 										</div>

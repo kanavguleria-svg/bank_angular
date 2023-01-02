@@ -1,7 +1,17 @@
-<app-landing-nav></app-landing-nav>
+
+<body class="border-3">
+  <app-user-nav></app-user-nav>
+  <div class="flex justify-between">
+    <app-adminsidenav></app-adminsidenav>
+    <div class="main-screen">
+
+      
 
 <div class="flex justify-evenly ">
+  
     <div class=" container mx-auto p-9 .grid-cols-1">
+      
+      <h1 class="underline">Generate Offers</h1>
     <form class="w-full max-w-lg " (ngSubmit)="saveOffer(offer)">
     
     
@@ -40,17 +50,7 @@
          
           ></button>
       </div>
-    
-      
-    
-      
-     
-    
-      
-    
-    
-    
-    
+
       </form>
     </div>
     
@@ -66,4 +66,8 @@
     
     </div>
 
-    <app-footer></app-footer>
+    <app-mainfooter></app-mainfooter>
+    </div>
+    </div>
+    </body>
+  

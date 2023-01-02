@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer DashBoard</title>
+  </head>
+  <body>
+    <app-user-nav></app-user-nav>
+    <div class="flex justify-between">
+      <app-sidenav></app-sidenav>
+      <div class="main-screen">
+        <div class="flex flex-col items-center mt-7">
+          <h1>Personalised Offers</h1>
+          <table id="useroffers">
+            <tr class="bg-primary">
+              <th class="py-3">Offer Desc</th>
+              <th class="py-3">Start Date</th>
+              <th class="py-3">End Date</th>
+            </tr>
+            <tr *ngFor="let offer of offers">
+              <td>{{ offer.offer_desc }}</td>
+              <td>{{ offer.start_date }}</td>
+              <td>{{ offer.expiry_date }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

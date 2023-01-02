@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { UserContactQuery } from '../models/userquery.model';
+import { ContactQuery } from '../models/contactquery.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,13 @@ export class AdminService {
   getUserQuery(): Observable<any> {
     return this.http.get<UserContactQuery[]>(
       environment.rooturl + '/admin/queries',
+      { withCredentials: true }
+    );
+  }
+
+  getContactQuery(): Observable<any> {
+    return this.http.get<ContactQuery[]>(
+      environment.rooturl + '/admin/contactqueries',
       { withCredentials: true }
     );
   }
