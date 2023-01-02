@@ -17,7 +17,7 @@ export class OfferServiceService {
 
   getOffer()
   {
-    return this.http.get<any>(`${this.basePath}/admin/offers`,{withCredentials:true});
+    return this.http.get<any>(`${this.basePath}/offersAll`,{});
   }
 
   removeOffer(id:number)

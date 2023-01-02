@@ -72,7 +72,7 @@ const routes: Routes = [
   { path: 'creditR', component: CreditCardComponent },
   { path: '', component: LandingComponent },
   { path: 'admin/createOffers', component: OffersAmdinComponent },
-  { path: 'admin/allOffers', component: OfferAllComponent },
+  { path: 'offersAll', component: OfferAllComponent },
   {
     path: 'payment',
     component: MakeTransactionComponent,
