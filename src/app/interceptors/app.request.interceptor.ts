@@ -42,8 +42,8 @@ export class XhrInterceptor implements HttpInterceptor {
       catchError(err => {
         if (err.status === 401) {
             Swal.fire({
-              icon: 'question',
-              title: 'Error 401 encountered! Access denied',
+              icon: 'warning',
+              title: 'Invalid Login!',
               allowOutsideClick: () => {
                 const popup = Swal.getPopup()
                 popup.classList.remove('swal2-show')
