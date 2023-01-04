@@ -17,11 +17,11 @@ export class LoanReqService {
   constructor(private http: HttpClient) { }
 
   loanRequest(loanreq: LoanReq, customer_id: number): Observable<any> {
-    return this.http.post(`${this.basepath}/customer/${customer_id}/loan/request`, loanreq, {responseType: 'text'});
+    return this.http.post(`${this.basepath}/customer/${customer_id}/loan/request`, loanreq, {responseType: 'text', withCredentials: true});
   }
 
   getCustomerAccno(customer_id: number): Observable<LoanAccount>{
-    return this.http.get<LoanAccount>(`${this.basepath}/customer/${customer_id}/account-details`);
+    return this.http.get<LoanAccount>(`${this.basepath}/customer/${customer_id}/account-details`, {withCredentials: true});
   }
 
   getLoanRequests(): Observable<any> {
