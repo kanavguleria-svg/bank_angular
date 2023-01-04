@@ -20,9 +20,10 @@ import { XhrInterceptor } from './interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { NavbarComponent } from './nav-footer/navbar/navbar.component';
 import { MainfooterComponent } from './nav-footer/mainfooter/mainfooter.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotFoundComponent],
 
   imports: [
     BrowserModule,
